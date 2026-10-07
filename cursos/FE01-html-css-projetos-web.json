@@ -1,0 +1,345 @@
+{
+  "id_itt": "FE01",
+  "escola": "Front-end",
+  "trilha": {
+    "titulo_itt": "A partir do zero: HTML e CSS para projetos web",
+    "titulo_alura": "HTML e CSS: do zero ao layout responsivo",
+    "url": "https://www.alura.com.br/formacao-html-css",
+    "carga_horaria_h": 54,
+    "n_cursos": 4,
+    "publico_alvo": "Adolescentes do ensino fundamental II e médio atendidos pela ITT, sem experiência prévia em desenvolvimento web",
+    "pre_requisitos": [],
+    "projeto_fio_condutor": "Sites completos construídos do zero (portfólio, Cinetopia, Jornada Viagens), versionados no GitHub e publicados no GitHub Pages"
+  },
+
+  "competencias": [
+    {
+      "id": "FE01.C1",
+      "titulo": "Explicar como a internet e a web funcionam",
+      "descricao": "Descrever o caminho de uma requisição entre cliente e servidor, reconhecer o papel de HTTP, DNS e TCP/IP e situar o navegador nesse fluxo.",
+      "nivel_bloom": "entender",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["FE01.01"],
+      "evidencias_observaveis": [
+        "Coloca em ordem os passos entre digitar um endereço e a página aparecer",
+        "Explica o que o DNS faz em uma frase",
+        "Distingue o papel do cliente e o do servidor em um exemplo concreto"
+      ],
+      "erros_comuns": [
+        "Achar que internet e web são a mesma coisa",
+        "Supor que o site inteiro fica salvo no navegador",
+        "Confundir o DNS com o servidor que hospeda o site",
+        "Achar que o Wi-Fi é a internet"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    },
+    {
+      "id": "FE01.C2",
+      "titulo": "Estruturar uma página com HTML semântico",
+      "descricao": "Montar a estrutura de um documento HTML, escolher a tag pelo significado do conteúdo (header, nav, main, section, article, footer), respeitar a hierarquia de títulos e usar atributos essenciais.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.18,
+      "itens_alvo": 4,
+      "cursos_origem": ["FE01.02", "FE01.04"],
+      "evidencias_observaveis": [
+        "Dado um conteúdo descrito em texto, escolhe a tag semântica adequada",
+        "Corrige uma hierarquia de títulos que pula de h1 para h3",
+        "Identifica o atributo alt como requisito de uma imagem"
+      ],
+      "erros_comuns": [
+        "Usar div para tudo em vez da tag semântica correta",
+        "Escolher a tag de título pelo tamanho visual e não pela hierarquia",
+        "Esquecer de fechar tags ou aninhá-las na ordem errada",
+        "Omitir o alt das imagens"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "FE01.C3",
+      "titulo": "Estilizar com CSS usando seletores e propriedades",
+      "descricao": "Conectar CSS ao HTML, selecionar elementos por tag, classe e id, aplicar cores, tipografia e espaçamento, e prever qual regra vence quando há conflito.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.18,
+      "itens_alvo": 4,
+      "cursos_origem": ["FE01.02", "FE01.04"],
+      "evidencias_observaveis": [
+        "Dado um HTML e um CSS, aponta quais elementos recebem determinado estilo",
+        "Escolhe entre classe e id conforme o estilo se repetir ou não",
+        "Resolve um conflito de especificidade simples entre duas regras"
+      ],
+      "erros_comuns": [
+        "Confundir o seletor de classe (.) com o de id (#)",
+        "Repetir o mesmo id em vários elementos",
+        "Esperar que a última regra do arquivo sempre vença, ignorando especificidade",
+        "Esquecer a unidade (px, rem) no valor"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "FE01.C4",
+      "titulo": "Controlar espaçamento e dimensões com o box model, e organizar o código",
+      "descricao": "Distinguir margin, border e padding, prever o tamanho final de uma caixa e manter CSS organizado e reaproveitável.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["FE01.02"],
+      "evidencias_observaveis": [
+        "Dado um elemento com width, padding e border, identifica o espaço ocupado",
+        "Escolhe entre margin e padding para resolver um problema de espaçamento descrito",
+        "Reconhece quando criar uma classe reutilizável em vez de repetir regras"
+      ],
+      "erros_comuns": [
+        "Trocar margin por padding (e vice-versa)",
+        "Ignorar o efeito de box-sizing no cálculo da largura",
+        "Resolver espaçamento com múltiplos <br> em vez de CSS",
+        "Escrever estilo inline em vez de usar o arquivo CSS"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "FE01.C5",
+      "titulo": "Construir formulários utilizáveis e validados",
+      "descricao": "Escolher o tipo de campo adequado ao dado, associar label ao campo pelo id, agrupar opções (radio, checkbox, select) e aplicar validação básica.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.12,
+      "itens_alvo": 2,
+      "cursos_origem": ["FE01.03"],
+      "evidencias_observaveis": [
+        "Dado um dado a coletar (e-mail, data, arquivo), escolhe o input adequado",
+        "Associa corretamente label e campo via for/id",
+        "Reconhece o papel do atributo required e do name no envio"
+      ],
+      "erros_comuns": [
+        "Usar input type text para tudo",
+        "Esquecer o name e perder o dado no envio",
+        "Agrupar radios sem o mesmo name, permitindo múltipla seleção",
+        "Usar placeholder como se fosse label"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "FE01.C6",
+      "titulo": "Aplicar acessibilidade digital e SEO técnico",
+      "descricao": "Aplicar diretrizes de WCAG e ARIA, garantir contraste e navegação por teclado, e usar meta tags e estrutura semântica para que o site seja encontrado nas buscas.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["FE01.03", "FE01.04"],
+      "evidencias_observaveis": [
+        "Identifica uma barreira de acessibilidade em um trecho de HTML",
+        "Explica para que serve o texto alternativo de uma imagem",
+        "Reconhece o papel da meta description e do title na busca"
+      ],
+      "erros_comuns": [
+        "Achar que acessibilidade é só para pessoas cegas",
+        "Usar aria-label onde um HTML semântico já resolveria",
+        "Repetir palavras-chave achando que melhora o SEO",
+        "Confundir o title da aba com o h1 da página"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    },
+    {
+      "id": "FE01.C7",
+      "titulo": "Montar layouts com Flexbox e CSS Grid",
+      "descricao": "Escolher entre Flexbox (um eixo) e Grid (duas dimensões), alinhar e distribuir elementos e montar estruturas de página completas.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.12,
+      "itens_alvo": 2,
+      "cursos_origem": ["FE01.04"],
+      "evidencias_observaveis": [
+        "Dado um layout desenhado, justifica a escolha entre Flexbox e Grid",
+        "Prevê o resultado visual de justify-content e align-items",
+        "Identifica que display: flex vai no contêiner, não nos filhos"
+      ],
+      "erros_comuns": [
+        "Aplicar as propriedades de flex nos itens em vez do contêiner",
+        "Confundir o eixo principal com o transversal ao usar justify/align",
+        "Usar Grid para alinhar um único elemento",
+        "Esquecer de definir flex-direction e estranhar o resultado"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "FE01.C8",
+      "titulo": "Tornar o site responsivo com mobile first e media queries",
+      "descricao": "Escrever CSS partindo da tela pequena, criar pontos de quebra com media queries, usar unidades relativas e adaptar imagens a diferentes telas.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["FE01.04"],
+      "evidencias_observaveis": [
+        "Prevê qual bloco de media query se aplica a uma dada largura de tela",
+        "Explica o princípio mobile first em uma frase",
+        "Escolhe unidade relativa (%, rem, vw) em vez de px fixo quando o layout deve adaptar"
+      ],
+      "erros_comuns": [
+        "Escrever media query com min-width achando que vale para telas menores",
+        "Definir larguras fixas em px e quebrar o layout no celular",
+        "Esquecer a meta tag viewport",
+        "Criar um breakpoint para cada aparelho em vez de para o conteúdo"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    }
+  ],
+
+  "cursos": [
+    {
+      "id": "FE01.01",
+      "titulo": "Internet: entendendo os fundamentos da web",
+      "url": "https://www.alura.com.br/curso-online-internet-entendendo-fundamentos-da-web",
+      "carga_horaria_h": 8,
+      "n_atividades": 47,
+      "atualizado_em": "2026-06-15",
+      "etapa_da_trilha": "Entendendo a internet e criando seu primeiro site",
+      "modulos": [
+        "O que é a internet?",
+        "Como surgiu a internet e a Arpanet",
+        "TCP/IP e a padronização da comunicação",
+        "A criação da World Wide Web",
+        "A era dos navegadores",
+        "Entendendo a relação cliente-servidor",
+        "Como o computador entende os dados",
+        "Conhecendo as áreas para pessoas desenvolvedoras"
+      ],
+      "conceitos_chave": ["internet", "web", "Arpanet", "TCP/IP", "HTTP", "DNS", "cliente-servidor", "navegador", "cabos submarinos", "DevTools"],
+      "objetivos_de_aprendizagem": [
+        { "id": "FE01.01.O1", "enunciado": "Compreender a evolução histórica e os fundamentos técnicos da internet", "nivel_bloom": "entender", "competencia": "FE01.C1" },
+        { "id": "FE01.01.O2", "enunciado": "Identificar tipos de redes e elementos da infraestrutura digital", "nivel_bloom": "entender", "competencia": "FE01.C1" },
+        { "id": "FE01.01.O3", "enunciado": "Reconhecer o papel dos protocolos HTTP, DNS e TCP na comunicação entre dispositivos", "nivel_bloom": "entender", "competencia": "FE01.C1" },
+        { "id": "FE01.01.O4", "enunciado": "Explicar a arquitetura cliente-servidor em um exemplo concreto de navegação", "nivel_bloom": "entender", "competencia": "FE01.C1" },
+        { "id": "FE01.01.O5", "enunciado": "Usar DevTools para observar as requisições e a performance de um site", "nivel_bloom": "aplicar", "competencia": "FE01.C6" }
+      ],
+      "fora_de_escopo": ["configuração de servidores", "redes corporativas", "criptografia", "protocolos de roteamento"]
+    },
+    {
+      "id": "FE01.02",
+      "titulo": "HTML e CSS: ambiente, estrutura e estilo",
+      "url": "https://www.alura.com.br/curso-online-html-css-ambiente-estrutura-estilo",
+      "carga_horaria_h": 20,
+      "n_atividades": 59,
+      "atualizado_em": "2026-07-24",
+      "etapa_da_trilha": "Entendendo a internet e criando seu primeiro site",
+      "modulos": [
+        "Configurando o ambiente e criando o primeiro site",
+        "Instalando e configurando o VSCode",
+        "Google Chrome e as ferramentas de desenvolvedor",
+        "Criando seu primeiro site",
+        "Hierarquia de títulos e integridade dos dados",
+        "Explorando as tags HTML",
+        "HTML semântico e boas práticas de layout",
+        "Estilizando e adaptando layouts com CSS",
+        "Compartilhando o projeto com Git e GitHub",
+        "Hospedagem e publicação de sites"
+      ],
+      "conceitos_chave": ["VSCode", "DevTools", "tag", "atributo", "hierarquia de títulos", "HTML semântico", "seletor", "classe", "id", "box model", "margin", "padding", "Git", "GitHub Pages", "Figma"],
+      "objetivos_de_aprendizagem": [
+        { "id": "FE01.02.O1", "enunciado": "Compreender os fundamentos do HTML e a semântica das tags", "nivel_bloom": "entender", "competencia": "FE01.C2" },
+        { "id": "FE01.02.O2", "enunciado": "Estruturar uma página respeitando a hierarquia de títulos e as boas práticas de layout", "nivel_bloom": "aplicar", "competencia": "FE01.C2" },
+        { "id": "FE01.02.O3", "enunciado": "Aplicar estilos com CSS usando seletores de tag, classe e id", "nivel_bloom": "aplicar", "competencia": "FE01.C3" },
+        { "id": "FE01.02.O4", "enunciado": "Controlar espaçamento e dimensões dos elementos com o box model", "nivel_bloom": "aplicar", "competencia": "FE01.C4" },
+        { "id": "FE01.02.O5", "enunciado": "Organizar e estruturar o código para facilitar a manutenção", "nivel_bloom": "aplicar", "competencia": "FE01.C4" },
+        { "id": "FE01.02.O6", "enunciado": "Explorar as funcionalidades do VSCode e das DevTools para aumentar a produtividade", "nivel_bloom": "aplicar", "competencia": "FE01.C3" },
+        { "id": "FE01.02.O7", "enunciado": "Versionar o projeto com Git e GitHub e publicá-lo com GitHub Pages", "nivel_bloom": "aplicar", "competencia": "FE01.C2" }
+      ],
+      "fora_de_escopo": ["JavaScript", "pré-processadores (Sass/Less)", "frameworks CSS", "animações complexas"]
+    },
+    {
+      "id": "FE01.03",
+      "titulo": "HTML e CSS: formulários, SEO e acessibilidade",
+      "url": "https://www.alura.com.br/curso-online-html-css-formularios-seo-acessibilidade",
+      "carga_horaria_h": 6,
+      "n_atividades": 42,
+      "atualizado_em": "2026-09-21",
+      "etapa_da_trilha": "Formulários acessíveis e visíveis nas buscas",
+      "modulos": [
+        "Construindo componentes de formulário com HTML",
+        "Criando inputs de texto, e-mail, número e arquivo",
+        "Criando radio buttons e select",
+        "Lidando com checkboxes e usabilidade com o atributo ID",
+        "Implementando múltiplas escolhas",
+        "Usabilidade e validação do formulário",
+        "Aplicando práticas de acessibilidade digital",
+        "Aplicando técnicas de Search Engine Optimization (SEO)"
+      ],
+      "conceitos_chave": ["form", "input", "label", "for/id", "name", "required", "radio", "checkbox", "select", "validação", "WCAG", "ARIA", "contraste", "Lighthouse", "WAVE", "meta tags", "SEO"],
+      "objetivos_de_aprendizagem": [
+        { "id": "FE01.03.O1", "enunciado": "Estruturar formulários HTML utilizando elementos semânticos e o tipo de campo adequado ao dado", "nivel_bloom": "aplicar", "competencia": "FE01.C5" },
+        { "id": "FE01.03.O2", "enunciado": "Validar dados do formulário com foco na experiência da pessoa usuária", "nivel_bloom": "aplicar", "competencia": "FE01.C5" },
+        { "id": "FE01.03.O3", "enunciado": "Aplicar diretrizes de acessibilidade digital (WCAG e ARIA)", "nivel_bloom": "aplicar", "competencia": "FE01.C6" },
+        { "id": "FE01.03.O4", "enunciado": "Avaliar um site com ferramentas como Google Lighthouse e WAVE", "nivel_bloom": "analisar", "competencia": "FE01.C6" },
+        { "id": "FE01.03.O5", "enunciado": "Implementar estratégias de SEO técnico e de conteúdo", "nivel_bloom": "aplicar", "competencia": "FE01.C6" }
+      ],
+      "fora_de_escopo": ["validação com JavaScript", "envio ao back-end", "auditoria WCAG completa", "SEO off-page e link building"]
+    },
+    {
+      "id": "FE01.04",
+      "titulo": "HTML e CSS: responsividade em layouts",
+      "url": "https://www.alura.com.br/curso-online-html-css-responsividade-layouts",
+      "carga_horaria_h": 20,
+      "n_atividades": 79,
+      "atualizado_em": "2026-01-16",
+      "etapa_da_trilha": "Adaptando seu site para qualquer tela",
+      "modulos": [
+        "Entendendo o projeto e configurando o ambiente",
+        "Adaptando a interface para diferentes dispositivos",
+        "Aplicando mobile first, flexbox e boas práticas",
+        "Criando layouts responsivos com imagens",
+        "Avançando em técnicas de responsividade e componentização",
+        "Aplicando técnicas de CSS Grid",
+        "SEO e acessibilidade na prática",
+        "Desafio: avançando o projeto"
+      ],
+      "conceitos_chave": ["mobile first", "media query", "breakpoint", "viewport", "unidades relativas (%, rem, vw)", "Flexbox", "justify-content", "align-items", "CSS Grid", "componentização", "imagens responsivas", "otimização"],
+      "objetivos_de_aprendizagem": [
+        { "id": "FE01.04.O1", "enunciado": "Compreender a estrutura e a organização de um projeto web", "nivel_bloom": "entender", "competencia": "FE01.C2" },
+        { "id": "FE01.04.O2", "enunciado": "Aplicar HTML semântico para criar layouts acessíveis", "nivel_bloom": "aplicar", "competencia": "FE01.C2" },
+        { "id": "FE01.04.O3", "enunciado": "Implementar regras de responsividade com CSS avançado e media queries, partindo do mobile first", "nivel_bloom": "aplicar", "competencia": "FE01.C8" },
+        { "id": "FE01.04.O4", "enunciado": "Utilizar Flexbox e CSS Grid para desenvolver interfaces flexíveis", "nivel_bloom": "aplicar", "competencia": "FE01.C7" },
+        { "id": "FE01.04.O5", "enunciado": "Justificar a escolha entre Flexbox e CSS Grid conforme o layout desejado", "nivel_bloom": "analisar", "competencia": "FE01.C7" },
+        { "id": "FE01.04.O6", "enunciado": "Otimizar imagens e meta tags para melhorar a performance e o SEO do site", "nivel_bloom": "aplicar", "competencia": "FE01.C6" },
+        { "id": "FE01.04.O7", "enunciado": "Gerenciar versões e atualizar o código com Git e GitHub", "nivel_bloom": "aplicar", "competencia": "FE01.C3" }
+      ],
+      "fora_de_escopo": ["JavaScript", "frameworks CSS", "container queries", "design system completo"]
+    }
+  ],
+
+  "rubrica_proficiencia": {
+    "faixas": [
+      { "nivel": "iniciante", "min_pct": 0, "max_pct": 49, "descritor": "Reconhece tags isoladas, mas não monta uma página estruturada nem prevê o efeito de uma regra CSS." },
+      { "nivel": "basico", "min_pct": 50, "max_pct": 69, "descritor": "Escreve HTML simples e aplica cores e fontes; erra em semântica, especificidade de seletores e box model." },
+      { "nivel": "adequado", "min_pct": 70, "max_pct": 84, "descritor": "Estrutura páginas com HTML semântico, estiliza com seletores adequados, monta formulários com label e constrói layout com Flexbox e media queries." },
+      { "nivel": "avancado", "min_pct": 85, "max_pct": 100, "descritor": "Justifica Flexbox vs Grid, resolve conflitos de especificidade, aplica acessibilidade e SEO sem consultar e diagnostica por que um layout quebra no celular." }
+    ],
+    "nivel_minimo_esperado": "adequado",
+    "observacao": "Faixas definidas pela coordenação ITT, não extraídas da Alura. Revisar após o primeiro ciclo de aplicação."
+  },
+
+  "blueprint_questionario": {
+    "n_itens_total": 20,
+    "tempo_estimado_min": 40,
+    "por_competencia": {
+      "FE01.C1": 2, "FE01.C2": 4, "FE01.C3": 4, "FE01.C4": 2,
+      "FE01.C5": 2, "FE01.C6": 2, "FE01.C7": 2, "FE01.C8": 2
+    },
+    "por_tipo": { "multipla_escolha": 12, "analise_codigo": 6, "dissertativa": 2 },
+    "por_bloom": { "lembrar_entender": 7, "aplicar": 10, "analisar_avaliar": 3 }
+  },
+
+  "prompt": "prompts/FE01.md",
+
+  "metadados": {
+    "versao": "1.0",
+    "data_extracao": "2026-10-07",
+    "fontes": [
+      "https://www.alura.com.br/formacao-html-css",
+      "https://www.alura.com.br/curso-online-internet-entendendo-fundamentos-da-web",
+      "https://www.alura.com.br/curso-online-html-css-ambiente-estrutura-estilo",
+      "https://www.alura.com.br/curso-online-html-css-formularios-seo-acessibilidade",
+      "https://www.alura.com.br/curso-online-html-css-responsividade-layouts",
+      "imagens/planilha-trilhas-atual.jpeg"
+    ],
+    "derivado_de": "Ementa e bullets 'O que você vai aprender' das páginas públicas da Alura. Competências, pesos, erros comuns e faixas de proficiência são elaboração pedagógica da ITT.",
+    "nota": "A planilha da ITT chama esta trilha de 'HTML e CSS para projetos web'; a Alura renomeou a formação para 'HTML e CSS: do zero ao layout responsivo'. Mesmo slug, mesma trilha."
+  }
+}

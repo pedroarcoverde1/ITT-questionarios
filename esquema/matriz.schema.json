@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/itt/questionarios/esquema/matriz.schema.json",
+  "title": "Matriz de aprendizagem de uma trilha ITT",
+  "description": "Documenta o formato dos arquivos em cursos/. A validação executável do projeto é scripts/validar.py, que checa também as regras de consistência que o JSON Schema não expressa (soma dos pesos, totais do blueprint, competências órfãs).",
+  "type": "object",
+  "required": ["id_itt", "escola", "trilha", "competencias", "cursos", "rubrica_proficiencia", "blueprint_questionario", "prompt", "metadados"],
+  "additionalProperties": false,
+  "properties": {
+    "id_itt": {
+      "type": "string",
+      "pattern": "^(PR|FE|UX|DO)[0-9]{2}$",
+      "description": "ID da trilha na planilha da ITT"
+    },
+    "escola": {
+      "type": "string",
+      "enum": ["Programação", "Front-end", "UX & Design", "DevOps"]
+    },
+    "trilha": {
+      "type": "object",
+      "required": ["titulo_itt", "titulo_alura", "url", "carga_horaria_h", "n_cursos", "publico_alvo", "pre_requisitos"],
+      "additionalProperties": false,
+      "properties": {
+        "titulo_itt": { "type": "string", "description": "Nome como aparece na planilha da ONG" },
+        "titulo_alura": { "type": "string", "description": "Nome atual na Alura; pode divergir do anterior" },
+        "url": { "type": "string", "format": "uri" },
+        "carga_horaria_h": { "type": "integer", "minimum": 1 },
+        "n_cursos": { "type": "integer", "minimum": 1 },
+        "publico_alvo": { "type": "string" },
+        "pre_requisitos": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^(PR|FE|UX|DO)[0-9]{2}$" },
+          "description": "Outras trilhas ITT exigidas antes desta"
+        },
+        "projeto_fio_condutor": { "type": "string" }
+      }
+    },
+    "competencias": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Nível 1: competências terminais da trilha inteira",
+      "items": {
+        "type": "object",
+        "required": ["id", "titulo", "descricao", "nivel_bloom", "peso", "itens_alvo", "cursos_origem", "evidencias_observaveis", "erros_comuns", "tipos_de_item"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^(PR|FE|UX|DO)[0-9]{2}\\.C[0-9]+$" },
+          "titulo": { "type": "string" },
+          "descricao": { "type": "string" },
+          "nivel_bloom": { "$ref": "#/$defs/bloom" },
+          "peso": { "type": "number", "exclusiveMinimum": 0, "maximum": 1, "description": "Fração da avaliação; a soma de todas as competências deve dar 1.0" },
+          "itens_alvo": { "type": "integer", "minimum": 1, "description": "Deve bater com blueprint_questionario.por_competencia" },
+          "cursos_origem": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "evidencias_observaveis": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" },
+            "description": "O que a pessoa consegue fazer; alimenta a redação dos enunciados"
+          },
+          "erros_comuns": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" },
+            "description": "Concepções equivocadas típicas; alimentam os distratores das alternativas"
+          },
+          "tipos_de_item": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#/$defs/tipo_item" }
+          }
+        }
+      }
+    },
+    "cursos": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Nível 2: um objeto por curso da Alura dentro da trilha",
+      "items": {
+        "type": "object",
+        "required": ["id", "titulo", "url", "carga_horaria_h", "modulos", "conceitos_chave", "objetivos_de_aprendizagem", "fora_de_escopo"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^(PR|FE|UX|DO)[0-9]{2}\\.[0-9]{2}$" },
+          "titulo": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "carga_horaria_h": { "type": "integer", "minimum": 1 },
+          "n_atividades": { "type": "integer", "minimum": 1 },
+          "atualizado_em": { "type": "string", "format": "date", "description": "Data em que a Alura atualizou o curso" },
+          "etapa_da_trilha": { "type": "string", "description": "Nome do passo da trilha a que o curso pertence" },
+          "modulos": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "conceitos_chave": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "objetivos_de_aprendizagem": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["id", "enunciado", "nivel_bloom", "competencia"],
+              "additionalProperties": false,
+              "properties": {
+                "id": { "type": "string", "pattern": "^(PR|FE|UX|DO)[0-9]{2}\\.[0-9]{2}\\.O[0-9]+$" },
+                "enunciado": { "type": "string" },
+                "nivel_bloom": { "$ref": "#/$defs/bloom" },
+                "competencia": { "type": "string", "description": "Id de uma competência de nível 1" }
+              }
+            }
+          },
+          "fora_de_escopo": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" },
+            "description": "Fronteira explícita: o gerador de questões não pode cobrar nada daqui"
+          }
+        }
+      }
+    },
+    "rubrica_proficiencia": {
+      "type": "object",
+      "required": ["faixas", "nivel_minimo_esperado"],
+      "additionalProperties": false,
+      "properties": {
+        "faixas": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["nivel", "min_pct", "max_pct", "descritor"],
+            "additionalProperties": false,
+            "properties": {
+              "nivel": { "type": "string" },
+              "min_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+              "max_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+              "descritor": { "type": "string" }
+            }
+          }
+        },
+        "nivel_minimo_esperado": { "type": "string", "description": "O 'nível considerável' que a ITT espera ao fim da trilha" },
+        "observacao": { "type": "string" }
+      }
+    },
+    "blueprint_questionario": {
+      "type": "object",
+      "required": ["n_itens_total", "tempo_estimado_min", "por_competencia", "por_tipo", "por_bloom"],
+      "additionalProperties": false,
+      "properties": {
+        "n_itens_total": { "type": "integer", "minimum": 1 },
+        "tempo_estimado_min": { "type": "integer", "minimum": 1 },
+        "por_competencia": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 },
+          "description": "Id da competência -> nº de itens. Soma = n_itens_total"
+        },
+        "por_tipo": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "multipla_escolha": { "type": "integer", "minimum": 0 },
+            "analise_codigo": { "type": "integer", "minimum": 0 },
+            "dissertativa": { "type": "integer", "minimum": 0 }
+          },
+          "description": "Soma = n_itens_total"
+        },
+        "por_bloom": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "lembrar_entender": { "type": "integer", "minimum": 0 },
+            "aplicar": { "type": "integer", "minimum": 0 },
+            "analisar_avaliar": { "type": "integer", "minimum": 0 }
+          },
+          "description": "Soma = n_itens_total"
+        }
+      }
+    },
+    "prompt": { "type": "string", "description": "Caminho relativo do .md colável na plataforma de questionários" },
+    "metadados": {
+      "type": "object",
+      "required": ["versao", "data_extracao", "fontes"],
+      "additionalProperties": false,
+      "properties": {
+        "versao": { "type": "string" },
+        "data_extracao": { "type": "string", "format": "date" },
+        "fontes": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "derivado_de": { "type": "string" },
+        "nota": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "bloom": {
+      "type": "string",
+      "enum": ["lembrar", "entender", "aplicar", "analisar", "avaliar", "criar"]
+    },
+    "tipo_item": {
+      "type": "string",
+      "enum": ["multipla_escolha", "analise_codigo", "dissertativa"]
+    }
+  }
+}

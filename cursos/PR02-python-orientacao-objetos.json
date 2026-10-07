@@ -1,0 +1,306 @@
+{
+  "id_itt": "PR02",
+  "escola": "Programação",
+  "trilha": {
+    "titulo_itt": "Aprenda a programar em Python com Orientação a Objetos",
+    "titulo_alura": "Aprenda a programar em Python com Orientação a Objetos",
+    "url": "https://www.alura.com.br/formacao-linguagem-python",
+    "carga_horaria_h": 22,
+    "n_cursos": 3,
+    "publico_alvo": "Adolescentes do ensino fundamental II e médio atendidos pela ITT, já alfabetizados em lógica de programação (PR01), iniciando em Python",
+    "pre_requisitos": ["PR01"],
+    "projeto_fio_condutor": "Sistema de cadastro e avaliação de restaurantes/cardápio construído ao longo dos três cursos"
+  },
+
+  "competencias": [
+    {
+      "id": "PR02.C1",
+      "titulo": "Escrever e executar um programa Python usando variáveis, strings e entrada/saída",
+      "descricao": "Criar um script Python, declarar variáveis com nomes significativos, formatar saída com f-strings e ler dados do usuário com input(), respeitando a indentação da linguagem.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.12,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR02.01"],
+      "evidencias_observaveis": [
+        "Dado um trecho com variáveis e print(), prevê corretamente a saída",
+        "Monta uma f-string que interpola o valor de uma variável dentro de um texto",
+        "Reconhece que input() devolve string e precisa de conversão para cálculo numérico"
+      ],
+      "erros_comuns": [
+        "Esquecer que input() retorna string e somar como se fosse número",
+        "Confundir o operador de atribuição = com o de comparação ==",
+        "Usar aspas inconsistentes ou esquecer o f no início da f-string",
+        "Errar a indentação dentro de um bloco"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR02.C2",
+      "titulo": "Controlar o fluxo do programa com condicionais, laços e tratamento de exceções",
+      "descricao": "Decidir entre caminhos com if/elif/else, repetir ações com for e while, e proteger o programa de entradas inválidas com try/except.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR02.01"],
+      "evidencias_observaveis": [
+        "Dado um enunciado, escolhe entre for e while justificando pela condição de parada",
+        "Prevê quantas vezes um laço executa",
+        "Identifica qual bloco except captura um erro específico (ValueError, KeyError)"
+      ],
+      "erros_comuns": [
+        "Condição de parada que gera laço infinito",
+        "Erro de 1 na contagem de range() (esquecer que o fim é exclusivo)",
+        "Usar except genérico que esconde o erro real",
+        "Colocar código dependente do laço fora da indentação do laço"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR02.C3",
+      "titulo": "Armazenar e percorrer dados em listas e dicionários",
+      "descricao": "Escolher entre lista e dicionário conforme o dado, acessar por índice ou por chave, adicionar e remover elementos, e percorrer a coleção com for.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR02.01"],
+      "evidencias_observaveis": [
+        "Justifica o uso de dicionário quando o dado tem rótulo (nome, categoria) e de lista quando a ordem importa",
+        "Acessa corretamente um valor aninhado como lista de dicionários",
+        "Prevê o resultado de append(), len() e de um for sobre a coleção"
+      ],
+      "erros_comuns": [
+        "Achar que a lista começa no índice 1",
+        "Acessar chave inexistente sem tratar KeyError",
+        "Confundir a sintaxe de lista [] com a de dicionário {}",
+        "Modificar a lista enquanto a percorre"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR02.C4",
+      "titulo": "Organizar o código em funções e módulos",
+      "descricao": "Extrair um trecho repetido para uma função com parâmetros e retorno, e separar o programa em arquivos importáveis.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR02.01", "PR02.02"],
+      "evidencias_observaveis": [
+        "Distingue parâmetro de argumento e return de print",
+        "Identifica qual trecho repetido deveria virar função",
+        "Escreve o import correto para usar uma classe ou função de outro arquivo"
+      ],
+      "erros_comuns": [
+        "Usar print() no lugar de return e depois tentar usar o valor",
+        "Esquecer de chamar a função após defini-la",
+        "Confundir variável local com global"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo", "dissertativa"]
+    },
+    {
+      "id": "PR02.C5",
+      "titulo": "Modelar um domínio com classes, atributos de instância e construtor",
+      "descricao": "Dado um enunciado do mundo real, identificar quais entidades viram classes, quais informações viram atributos e quais ações viram métodos; instanciar objetos pelo construtor __init__.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.18,
+      "itens_alvo": 4,
+      "cursos_origem": ["PR02.02"],
+      "evidencias_observaveis": [
+        "Dado 'um jogo tem nome, nota e gênero', escreve a classe com __init__ e os três atributos",
+        "Explica o papel do self no construtor e nos métodos",
+        "Distingue a classe (o molde) do objeto (a instância)"
+      ],
+      "erros_comuns": [
+        "Esquecer o self na assinatura do método",
+        "Confundir atributo de classe com atributo de instância",
+        "Chamar __init__ diretamente em vez de instanciar a classe",
+        "Achar que cada objeto compartilha os mesmos valores de atributo"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo", "dissertativa"]
+    },
+    {
+      "id": "PR02.C6",
+      "titulo": "Aplicar encapsulamento com property e métodos de classe e estáticos",
+      "descricao": "Proteger atributos internos, expor leitura e escrita controladas com @property e @<attr>.setter, e reconhecer quando um método pertence à classe e não à instância.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR02.02"],
+      "evidencias_observaveis": [
+        "Reconhece que @property permite rodar lógica (validação, formatação) ao ler um atributo",
+        "Identifica a convenção do underscore (_atributo) como sinal de uso interno",
+        "Sabe que o setter é quem valida o valor antes de atribuir"
+      ],
+      "erros_comuns": [
+        "Chamar a property com parênteses, como se fosse método",
+        "Criar um setter com nome diferente do getter",
+        "Achar que o underscore impede o acesso pela linguagem"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR02.C7",
+      "titulo": "Reutilizar código com herança, polimorfismo e classes abstratas",
+      "descricao": "Criar uma subclasse que estende a superclasse, sobrescrever métodos para comportamentos diferentes sob a mesma interface, e reconhecer o papel de um método abstrato.",
+      "nivel_bloom": "analisar",
+      "peso": 0.12,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR02.03"],
+      "evidencias_observaveis": [
+        "Dado um conjunto de classes, aponta qual deveria ser a superclasse e por quê",
+        "Prevê qual implementação de método será executada em uma chamada polimórfica",
+        "Explica por que uma classe abstrata não pode ser instanciada"
+      ],
+      "erros_comuns": [
+        "Esquecer super().__init__() na subclasse e perder os atributos herdados",
+        "Confundir sobrescrever (override) com criar um método novo de nome parecido",
+        "Usar herança onde composição seria mais adequada"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo", "dissertativa"]
+    },
+    {
+      "id": "PR02.C8",
+      "titulo": "Trabalhar com ambiente virtual, arquivos JSON e consumo de API",
+      "descricao": "Criar e ativar um ambiente virtual, instalar dependências, fazer uma requisição HTTP, interpretar a resposta JSON e gravá-la em arquivo.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.08,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR02.03"],
+      "evidencias_observaveis": [
+        "Explica para que serve um ambiente virtual em uma frase",
+        "Dado um JSON de resposta, acessa um campo aninhado em Python",
+        "Reconhece o significado de um status code 200 e 404"
+      ],
+      "erros_comuns": [
+        "Instalar a dependência sem ativar o ambiente virtual",
+        "Tratar a resposta da API como texto quando precisa de .json()",
+        "Confundir o arquivo JSON com um dicionário Python já pronto"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    }
+  ],
+
+  "cursos": [
+    {
+      "id": "PR02.01",
+      "titulo": "Python: crie a sua primeira aplicação",
+      "url": "https://www.alura.com.br/curso-online-python-crie-sua-primeira-aplicacao",
+      "carga_horaria_h": 8,
+      "n_atividades": 56,
+      "atualizado_em": "2026-01-26",
+      "etapa_da_trilha": "Entendendo a linguagem Python",
+      "modulos": [
+        "Manipulação de Strings",
+        "Primeiro programa",
+        "Boas práticas",
+        "Interpolação de String",
+        "Módulos e funções",
+        "Lista, laços e exceções",
+        "Dicionários",
+        "Consolidando os conhecimentos"
+      ],
+      "conceitos_chave": ["variável", "string", "f-string", "input", "print", "if/elif/else", "for", "while", "try/except", "lista", "dicionário", "função", "import", "PEP 8"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR02.01.O1", "enunciado": "Criar e executar um projeto Python no VSCode, escrevendo um programa que lê e exibe dados", "nivel_bloom": "aplicar", "competencia": "PR02.C1" },
+        { "id": "PR02.01.O2", "enunciado": "Formatar mensagens com interpolação de strings (f-strings) e manipular textos", "nivel_bloom": "aplicar", "competencia": "PR02.C1" },
+        { "id": "PR02.01.O3", "enunciado": "Controlar o fluxo de uma aplicação com condicionais e laços de repetição", "nivel_bloom": "aplicar", "competencia": "PR02.C2" },
+        { "id": "PR02.01.O4", "enunciado": "Proteger a execução de erros previsíveis com blocos try-except", "nivel_bloom": "aplicar", "competencia": "PR02.C2" },
+        { "id": "PR02.01.O5", "enunciado": "Registrar e consultar dados em listas e dicionários", "nivel_bloom": "aplicar", "competencia": "PR02.C3" },
+        { "id": "PR02.01.O6", "enunciado": "Criar funções para organizar o menu principal e as operações do programa", "nivel_bloom": "aplicar", "competencia": "PR02.C4" },
+        { "id": "PR02.01.O7", "enunciado": "Seguir as convenções de nomenclatura e formatação da comunidade Python", "nivel_bloom": "entender", "competencia": "PR02.C1" }
+      ],
+      "fora_de_escopo": ["decorators próprios", "generators", "async/await", "type hints avançados", "testes automatizados"]
+    },
+    {
+      "id": "PR02.02",
+      "titulo": "Python: aplicando a Orientação a Objetos",
+      "url": "https://www.alura.com.br/curso-online-python-aplicando-orientacao-objetos",
+      "carga_horaria_h": 6,
+      "n_atividades": 42,
+      "atualizado_em": "2025-12-18",
+      "etapa_da_trilha": "Orientação a objetos",
+      "modulos": [
+        "Classes",
+        "Atributos de instância",
+        "Construtor e instanciando objetos",
+        "Property e métodos de classe",
+        "Importando classe e composição",
+        "Consolidando os conhecimentos"
+      ],
+      "conceitos_chave": ["classe", "objeto", "instância", "atributo", "método", "self", "__init__", "@property", "setter", "@classmethod", "@staticmethod", "encapsulamento", "composição"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR02.02.O1", "enunciado": "Explicar por que a Orientação a Objetos organiza melhor um programa que cresce", "nivel_bloom": "entender", "competencia": "PR02.C5" },
+        { "id": "PR02.02.O2", "enunciado": "Declarar uma classe com seus atributos de instância a partir de um enunciado do mundo real", "nivel_bloom": "aplicar", "competencia": "PR02.C5" },
+        { "id": "PR02.02.O3", "enunciado": "Usar o construtor __init__ para inicializar o estado de cada objeto", "nivel_bloom": "aplicar", "competencia": "PR02.C5" },
+        { "id": "PR02.02.O4", "enunciado": "Expor atributos com @property, inserindo lógica de leitura e de validação na escrita", "nivel_bloom": "aplicar", "competencia": "PR02.C6" },
+        { "id": "PR02.02.O5", "enunciado": "Distinguir métodos de instância, de classe e estáticos pelo que cada um precisa acessar", "nivel_bloom": "analisar", "competencia": "PR02.C6" },
+        { "id": "PR02.02.O6", "enunciado": "Importar uma classe de outro arquivo e compor objetos que contêm outros objetos", "nivel_bloom": "aplicar", "competencia": "PR02.C4" }
+      ],
+      "fora_de_escopo": ["metaclasses", "dataclasses", "mixins", "SOLID", "design patterns"]
+    },
+    {
+      "id": "PR02.03",
+      "titulo": "Python: avance na Orientação a Objetos e consuma API",
+      "url": "https://www.alura.com.br/curso-online-python-avance-orientacao-objetos-consuma-api",
+      "carga_horaria_h": 8,
+      "n_atividades": 47,
+      "atualizado_em": "2025-12-22",
+      "etapa_da_trilha": "Ambientes virtuais, arquivos e APIs",
+      "modulos": [
+        "Herança",
+        "Criando a classe ItemCardapio",
+        "Acessando os itens do cardápio",
+        "Polimorfismo e método abstrato",
+        "Ambientes virtuais",
+        "Requisições, JSON e arquivos",
+        "FastAPI"
+      ],
+      "conceitos_chave": ["herança", "superclasse", "subclasse", "super()", "polimorfismo", "classe abstrata", "ABC", "venv", "pip", "requisição HTTP", "JSON", "API", "FastAPI"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR02.03.O1", "enunciado": "Criar uma subclasse que herda atributos e métodos de uma superclasse", "nivel_bloom": "aplicar", "competencia": "PR02.C7" },
+        { "id": "PR02.03.O2", "enunciado": "Sobrescrever métodos para obter comportamentos diferentes sob a mesma chamada (polimorfismo)", "nivel_bloom": "analisar", "competencia": "PR02.C7" },
+        { "id": "PR02.03.O3", "enunciado": "Reconhecer o papel de uma classe abstrata como contrato que as subclasses devem cumprir", "nivel_bloom": "entender", "competencia": "PR02.C7" },
+        { "id": "PR02.03.O4", "enunciado": "Criar e ativar um ambiente virtual e instalar dependências do projeto", "nivel_bloom": "aplicar", "competencia": "PR02.C8" },
+        { "id": "PR02.03.O5", "enunciado": "Consumir dados de uma API externa e interpretar a resposta em JSON", "nivel_bloom": "aplicar", "competencia": "PR02.C8" },
+        { "id": "PR02.03.O6", "enunciado": "Gravar e ler dados de um arquivo JSON a partir de objetos Python", "nivel_bloom": "aplicar", "competencia": "PR02.C8" }
+      ],
+      "fora_de_escopo": ["autenticação OAuth", "banco de dados", "deploy", "testes de API", "assincronismo no FastAPI"]
+    }
+  ],
+
+  "rubrica_proficiencia": {
+    "faixas": [
+      { "nivel": "iniciante", "min_pct": 0, "max_pct": 49, "descritor": "Reconhece a sintaxe mas não consegue prever o comportamento de um programa; não modela classes sozinho." },
+      { "nivel": "basico", "min_pct": 50, "max_pct": 69, "descritor": "Lê e completa código procedural simples; entende classe e objeto no discurso, mas erra ao aplicar construtor e self." },
+      { "nivel": "adequado", "min_pct": 70, "max_pct": 84, "descritor": "Escreve programas com coleções, funções e tratamento de erro; modela uma classe com construtor e atributos a partir de um enunciado e usa herança básica." },
+      { "nivel": "avancado", "min_pct": 85, "max_pct": 100, "descritor": "Escolhe entre herança e composição com justificativa, usa encapsulamento com property e integra dados externos via API/JSON." }
+    ],
+    "nivel_minimo_esperado": "adequado",
+    "observacao": "Faixas definidas pela coordenação ITT, não extraídas da Alura. Revisar após o primeiro ciclo de aplicação."
+  },
+
+  "blueprint_questionario": {
+    "n_itens_total": 20,
+    "tempo_estimado_min": 45,
+    "por_competencia": {
+      "PR02.C1": 2, "PR02.C2": 3, "PR02.C3": 3, "PR02.C4": 2,
+      "PR02.C5": 4, "PR02.C6": 2, "PR02.C7": 2, "PR02.C8": 2
+    },
+    "por_tipo": { "multipla_escolha": 11, "analise_codigo": 7, "dissertativa": 2 },
+    "por_bloom": { "lembrar_entender": 5, "aplicar": 11, "analisar_avaliar": 4 }
+  },
+
+  "prompt": "prompts/PR02.md",
+
+  "metadados": {
+    "versao": "1.0",
+    "data_extracao": "2026-10-07",
+    "fontes": [
+      "https://www.alura.com.br/formacao-linguagem-python",
+      "https://www.alura.com.br/curso-online-python-crie-sua-primeira-aplicacao",
+      "https://www.alura.com.br/curso-online-python-aplicando-orientacao-objetos",
+      "https://www.alura.com.br/curso-online-python-avance-orientacao-objetos-consuma-api",
+      "imagens/planilha-trilhas-atual.jpeg"
+    ],
+    "derivado_de": "Ementa e bullets 'O que você vai aprender' das páginas públicas da Alura. Competências, pesos, erros comuns e faixas de proficiência são elaboração pedagógica da ITT."
+  }
+}

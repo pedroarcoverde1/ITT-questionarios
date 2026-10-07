@@ -1,0 +1,338 @@
+{
+  "id_itt": "PR01",
+  "escola": "Programação",
+  "trilha": {
+    "titulo_itt": "A partir do zero: iniciante em programação",
+    "titulo_alura": "A partir do zero: iniciante em programação",
+    "url": "https://www.alura.com.br/formacao-programacao",
+    "carga_horaria_h": 29,
+    "n_cursos": 5,
+    "publico_alvo": "Adolescentes do ensino fundamental II e médio atendidos pela ITT, sem nenhuma experiência prévia em programação",
+    "pre_requisitos": [],
+    "projeto_fio_condutor": "Pequenos projetos em JavaScript rodando no navegador (jogo de adivinhação, AluGames, carrinho de compras, amigo secreto), publicados no GitHub"
+  },
+
+  "competencias": [
+    {
+      "id": "PR01.C1",
+      "titulo": "Situar a programação como área: o que é, onde se aplica e quais são as frentes de atuação",
+      "descricao": "Reconhecer o que um programa faz, distinguir as grandes áreas (front-end, back-end, mobile, dados) e identificar o papel das ferramentas básicas do desenvolvedor.",
+      "nivel_bloom": "entender",
+      "peso": 0.08,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR01.01"],
+      "evidencias_observaveis": [
+        "Dado um exemplo de produto digital, aponta qual frente da programação o constrói",
+        "Explica em uma frase o que é um algoritmo",
+        "Distingue linguagem de programação de ferramenta (editor, navegador, repositório)"
+      ],
+      "erros_comuns": [
+        "Achar que front-end e back-end são linguagens, não camadas",
+        "Confundir programa com aplicativo de celular apenas",
+        "Supor que o navegador compila o código em outra linguagem"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "PR01.C2",
+      "titulo": "Usar variáveis, tipos e entrada/saída em JavaScript",
+      "descricao": "Declarar variáveis com let e const, atribuir e reatribuir valores, distinguir número de texto e exibir informação na tela de forma interativa.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.17,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR01.02"],
+      "evidencias_observaveis": [
+        "Prevê o valor final de uma variável após uma sequência de atribuições",
+        "Escolhe entre let e const conforme o valor mudar ou não",
+        "Monta uma mensagem concatenando texto com o conteúdo de uma variável"
+      ],
+      "erros_comuns": [
+        "Somar número com texto e obter concatenação em vez de soma",
+        "Reatribuir uma const",
+        "Confundir o nome da variável com o seu valor (usar aspas em volta do nome)",
+        "Usar = quando queria =="
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR01.C3",
+      "titulo": "Tomar decisões no código com condicionais e operadores",
+      "descricao": "Escrever if/else e if/else if encadeados, combinar condições com operadores lógicos e comparar valores corretamente.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.20,
+      "itens_alvo": 4,
+      "cursos_origem": ["PR01.02", "PR01.05"],
+      "evidencias_observaveis": [
+        "Traduz uma regra em linguagem natural ('se a nota for 7 ou mais, aprovado') para um if correto",
+        "Prevê qual ramo de um if/else if executa para um dado valor",
+        "Combina duas condições com && ou || conforme o enunciado"
+      ],
+      "erros_comuns": [
+        "Usar = em vez de == ou === na comparação",
+        "Trocar && por || e inverter a lógica",
+        "Encadear if independentes quando o caso exigia else if",
+        "Escrever condição que nunca é verdadeira por ordem errada dos testes"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo", "dissertativa"]
+    },
+    {
+      "id": "PR01.C4",
+      "titulo": "Repetir ações com laços",
+      "descricao": "Escolher e escrever for ou while conforme o problema, definir corretamente a condição de parada e acumular resultados dentro do laço.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.17,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR01.02", "PR01.05"],
+      "evidencias_observaveis": [
+        "Conta quantas vezes um laço executa para um dado intervalo",
+        "Justifica o uso de while quando o número de repetições não é conhecido de antemão",
+        "Rastreia o valor de um acumulador ao longo das iterações"
+      ],
+      "erros_comuns": [
+        "Laço infinito por esquecer de atualizar a variável de controle",
+        "Erro de 1 a mais ou a menos nos limites do for",
+        "Declarar o acumulador dentro do laço e zerá-lo a cada volta",
+        "Confundir a condição de continuar com a condição de parar"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR01.C5",
+      "titulo": "Organizar o código em funções com parâmetros e retorno",
+      "descricao": "Criar funções que recebem dados, devolvem resultado e evitam repetição; chamar funções passando argumentos e usar o valor retornado.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR01.03", "PR01.05"],
+      "evidencias_observaveis": [
+        "Identifica em um código qual trecho repetido deveria virar função",
+        "Distingue o que a função devolve (return) do que ela mostra na tela",
+        "Prevê a saída de uma chamada de função com argumentos diferentes"
+      ],
+      "erros_comuns": [
+        "Definir a função e nunca chamá-la",
+        "Usar o resultado de uma função que só imprime e não retorna",
+        "Trocar a ordem dos argumentos na chamada",
+        "Usar uma variável declarada dentro da função fora dela"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo", "dissertativa"]
+    },
+    {
+      "id": "PR01.C6",
+      "titulo": "Guardar e percorrer conjuntos de dados em listas",
+      "descricao": "Criar arrays, acessar elementos por índice, adicionar e remover itens, percorrer a lista e tomar decisões sobre seus elementos.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.13,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR01.03", "PR01.05"],
+      "evidencias_observaveis": [
+        "Acessa o elemento correto dado um índice",
+        "Prevê o conteúdo da lista após push/splice e o valor de length",
+        "Combina laço e condicional para filtrar elementos de uma lista"
+      ],
+      "erros_comuns": [
+        "Achar que o primeiro índice é 1",
+        "Acessar índice igual a length e obter undefined",
+        "Confundir o índice com o valor armazenado",
+        "Remover itens enquanto percorre a lista"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR01.C7",
+      "titulo": "Versionar e publicar um projeto com Git e GitHub",
+      "descricao": "Criar um repositório, registrar alterações em commits com mensagem, sincronizar com o GitHub e entender o fluxo de colaboração.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR01.04", "PR01.03"],
+      "evidencias_observaveis": [
+        "Coloca em ordem os passos de salvar uma alteração no GitHub (add, commit, push)",
+        "Explica para que serve um commit em uma frase",
+        "Reconhece o que é um conflito e quando ele aparece"
+      ],
+      "erros_comuns": [
+        "Achar que salvar o arquivo no editor já versiona a mudança",
+        "Confundir commit (local) com push (envio ao GitHub)",
+        "Supor que o GitHub e o Git são a mesma coisa",
+        "Achar que clonar e baixar o ZIP são equivalentes"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    }
+  ],
+
+  "cursos": [
+    {
+      "id": "PR01.01",
+      "titulo": "Começando em Programação: carreira e primeiros passos",
+      "url": "https://www.alura.com.br/curso-online-comecando-programacao-carreira-primeiros-passos",
+      "carga_horaria_h": 1,
+      "n_atividades": 7,
+      "atualizado_em": "2024-11-06",
+      "etapa_da_trilha": "Primeiros passos em Programação",
+      "modulos": [
+        "Começando em Programação",
+        "O que é Programação?",
+        "Áreas de atuação",
+        "Mercado de trabalho e desenvolvimento contínuo",
+        "Desenvolvimento contínuo"
+      ],
+      "conceitos_chave": ["programação", "algoritmo", "front-end", "back-end", "mobile", "carreira em tecnologia"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR01.01.O1", "enunciado": "Explicar o que é programação e o que um programa faz", "nivel_bloom": "entender", "competencia": "PR01.C1" },
+        { "id": "PR01.01.O2", "enunciado": "Compreender os fundamentos e as áreas da programação (front-end, back-end, mobile, entre outras)", "nivel_bloom": "entender", "competencia": "PR01.C1" },
+        { "id": "PR01.01.O3", "enunciado": "Identificar os próximos passos nos estudos e o que o mercado espera de quem começa", "nivel_bloom": "entender", "competencia": "PR01.C1" }
+      ],
+      "fora_de_escopo": ["salários específicos", "comparação entre linguagens", "processos seletivos"]
+    },
+    {
+      "id": "PR01.02",
+      "titulo": "Lógica de programação: mergulhe em programação com JavaScript",
+      "url": "https://www.alura.com.br/curso-online-logica-programacao-mergulhe-programacao-javascript",
+      "carga_horaria_h": 6,
+      "n_atividades": 51,
+      "atualizado_em": "2026-07-17",
+      "etapa_da_trilha": "Entendendo a lógica de programação",
+      "modulos": [
+        "Iniciando com JavaScript",
+        "Carregando o projeto base",
+        "Exibindo mensagens na tela",
+        "Comparando variáveis",
+        "Condicionais e concatenação",
+        "Loops e tentativas",
+        "Boas práticas de programação",
+        "Desafio"
+      ],
+      "conceitos_chave": ["variável", "let", "const", "alert", "prompt", "console.log", "concatenação", "if/else", "operadores de comparação", "while", "for", "boas práticas"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR01.02.O1", "enunciado": "Exibir mensagens na tela de forma interativa e ler dados da pessoa usuária", "nivel_bloom": "aplicar", "competencia": "PR01.C2" },
+        { "id": "PR01.02.O2", "enunciado": "Utilizar variáveis para guardar e atualizar informação durante a execução", "nivel_bloom": "aplicar", "competencia": "PR01.C2" },
+        { "id": "PR01.02.O3", "enunciado": "Comparar valores e decidir o caminho do programa com condicionais", "nivel_bloom": "aplicar", "competencia": "PR01.C3" },
+        { "id": "PR01.02.O4", "enunciado": "Repetir tentativas com laços até que uma condição de parada seja satisfeita", "nivel_bloom": "aplicar", "competencia": "PR01.C4" },
+        { "id": "PR01.02.O5", "enunciado": "Seguir boas práticas de nomenclatura e legibilidade ao escrever código", "nivel_bloom": "entender", "competencia": "PR01.C2" },
+        { "id": "PR01.02.O6", "enunciado": "Desenvolver uma aplicação simples do início ao fim, inspirada em um caso real", "nivel_bloom": "aplicar", "competencia": "PR01.C3" }
+      ],
+      "fora_de_escopo": ["orientação a objetos", "async/await", "frameworks", "APIs externas"]
+    },
+    {
+      "id": "PR01.03",
+      "titulo": "Lógica de programação: explore funções e listas",
+      "url": "https://www.alura.com.br/curso-online-logica-programacao-funcoes-listas",
+      "carga_horaria_h": 6,
+      "n_atividades": 44,
+      "atualizado_em": "2025-08-18",
+      "etapa_da_trilha": "Entendendo a lógica de programação",
+      "modulos": [
+        "Interagindo com HTML",
+        "Manipulando textos",
+        "Criando uma função",
+        "Funções",
+        "Reiniciando o jogo",
+        "Listas",
+        "Publicando o projeto"
+      ],
+      "conceitos_chave": ["função", "parâmetro", "argumento", "return", "document.querySelector", "manipulação de texto", "array", "índice", "push", "length", "publicação (GitHub/Vercel)"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR01.03.O1", "enunciado": "Criar funções com parâmetros e retorno para evitar repetição de código", "nivel_bloom": "aplicar", "competencia": "PR01.C5" },
+        { "id": "PR01.03.O2", "enunciado": "Manipular elementos da tela e textos de forma dinâmica com JavaScript", "nivel_bloom": "aplicar", "competencia": "PR01.C5" },
+        { "id": "PR01.03.O3", "enunciado": "Utilizar listas para armazenar vários valores e percorrê-las", "nivel_bloom": "aplicar", "competencia": "PR01.C6" },
+        { "id": "PR01.03.O4", "enunciado": "Combinar lista e condicional para controlar o estado de um jogo (ex.: não repetir sorteios)", "nivel_bloom": "analisar", "competencia": "PR01.C6" },
+        { "id": "PR01.03.O5", "enunciado": "Publicar o projeto na web usando GitHub e Vercel", "nivel_bloom": "aplicar", "competencia": "PR01.C7" }
+      ],
+      "fora_de_escopo": ["map/filter/reduce", "objetos literais complexos", "CSS avançado", "frameworks front-end"]
+    },
+    {
+      "id": "PR01.04",
+      "titulo": "Git e GitHub: compartilhando e colaborando em projetos",
+      "url": "https://www.alura.com.br/curso-online-git-github-compartilhando-colaborando-projetos",
+      "carga_horaria_h": 8,
+      "n_atividades": 66,
+      "atualizado_em": "2026-03-17",
+      "etapa_da_trilha": "Ferramentas essenciais para programar e compartilhar projetos",
+      "modulos": [
+        "Compartilhando projetos",
+        "Conheça o GitHub",
+        "Criando um repositório",
+        "Instalando o Git",
+        "Sincronizando repositórios",
+        "Colaborando em projetos",
+        "Utilizando Git na IDE",
+        "Voltando no tempo",
+        "Mais recursos"
+      ],
+      "conceitos_chave": ["repositório", "commit", "add", "push", "pull", "clone", "branch", "merge", "conflito", "pull request", "histórico", "portfólio"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR01.04.O1", "enunciado": "Criar um repositório e versionar um projeto de software com Git", "nivel_bloom": "aplicar", "competencia": "PR01.C7" },
+        { "id": "PR01.04.O2", "enunciado": "Compartilhar o código no GitHub e montar um portfólio de projetos", "nivel_bloom": "aplicar", "competencia": "PR01.C7" },
+        { "id": "PR01.04.O3", "enunciado": "Colaborar em projetos sincronizando repositórios local e remoto", "nivel_bloom": "aplicar", "competencia": "PR01.C7" },
+        { "id": "PR01.04.O4", "enunciado": "Reconhecer um conflito de código e entender como resolvê-lo", "nivel_bloom": "analisar", "competencia": "PR01.C7" },
+        { "id": "PR01.04.O5", "enunciado": "Analisar e modificar o histórico de commits de um repositório", "nivel_bloom": "analisar", "competencia": "PR01.C7" }
+      ],
+      "fora_de_escopo": ["rebase interativo", "GitHub Actions", "submodules", "estratégias de branching corporativas"]
+    },
+    {
+      "id": "PR01.05",
+      "titulo": "Lógica de programação: praticando com desafios",
+      "url": "https://www.alura.com.br/curso-online-logica-programacao-praticando-desafios",
+      "carga_horaria_h": 8,
+      "n_atividades": 70,
+      "atualizado_em": "2025-03-18",
+      "etapa_da_trilha": "Praticando Lógica de Programação com desafios",
+      "modulos": [
+        "Projeto AluGames",
+        "Obtendo o jogo clicado e alterando seu status",
+        "Projeto Carrinho de Compras",
+        "Projeto Ingresso Online",
+        "Projeto Amigo Secreto",
+        "Desafios complementares"
+      ],
+      "conceitos_chave": ["decomposição de problema", "estado", "evento de clique", "cálculo com dados da tela", "validação de entrada", "sorteio sem repetição"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR01.05.O1", "enunciado": "Decompor um enunciado de problema em passos implementáveis", "nivel_bloom": "analisar", "competencia": "PR01.C3" },
+        { "id": "PR01.05.O2", "enunciado": "Implementar soluções completas combinando variáveis, condicionais, laços, funções e listas", "nivel_bloom": "aplicar", "competencia": "PR01.C5" },
+        { "id": "PR01.05.O3", "enunciado": "Controlar o estado de uma aplicação a partir da interação da pessoa usuária", "nivel_bloom": "aplicar", "competencia": "PR01.C6" },
+        { "id": "PR01.05.O4", "enunciado": "Identificar e corrigir erros de lógica em um código que não produz o resultado esperado", "nivel_bloom": "analisar", "competencia": "PR01.C4" }
+      ],
+      "fora_de_escopo": ["persistência de dados", "backend", "testes automatizados", "acessibilidade avançada"]
+    }
+  ],
+
+  "rubrica_proficiencia": {
+    "faixas": [
+      { "nivel": "iniciante", "min_pct": 0, "max_pct": 49, "descritor": "Reconhece termos isolados, mas não consegue prever o que um código simples faz nem traduzir uma regra em condicional." },
+      { "nivel": "basico", "min_pct": 50, "max_pct": 69, "descritor": "Lê código com variáveis e if/else e acerta saídas diretas; erra em laços com acumulador, funções com retorno e índices de lista." },
+      { "nivel": "adequado", "min_pct": 70, "max_pct": 84, "descritor": "Traduz um enunciado em código com variáveis, condicionais, laços e listas; cria funções com parâmetros e sabe versionar o projeto no GitHub." },
+      { "nivel": "avancado", "min_pct": 85, "max_pct": 100, "descritor": "Decompõe problemas novos, depura erros de lógica em código alheio e justifica escolhas (for vs while, quando extrair função)." }
+    ],
+    "nivel_minimo_esperado": "adequado",
+    "observacao": "Faixas definidas pela coordenação ITT, não extraídas da Alura. Revisar após o primeiro ciclo de aplicação."
+  },
+
+  "blueprint_questionario": {
+    "n_itens_total": 20,
+    "tempo_estimado_min": 40,
+    "por_competencia": {
+      "PR01.C1": 2, "PR01.C2": 3, "PR01.C3": 4, "PR01.C4": 3,
+      "PR01.C5": 3, "PR01.C6": 3, "PR01.C7": 2
+    },
+    "por_tipo": { "multipla_escolha": 12, "analise_codigo": 6, "dissertativa": 2 },
+    "por_bloom": { "lembrar_entender": 6, "aplicar": 10, "analisar_avaliar": 4 }
+  },
+
+  "prompt": "prompts/PR01.md",
+
+  "metadados": {
+    "versao": "1.0",
+    "data_extracao": "2026-10-07",
+    "fontes": [
+      "https://www.alura.com.br/formacao-programacao",
+      "https://www.alura.com.br/curso-online-comecando-programacao-carreira-primeiros-passos",
+      "https://www.alura.com.br/curso-online-logica-programacao-mergulhe-programacao-javascript",
+      "https://www.alura.com.br/curso-online-logica-programacao-funcoes-listas",
+      "https://www.alura.com.br/curso-online-git-github-compartilhando-colaborando-projetos",
+      "https://www.alura.com.br/curso-online-logica-programacao-praticando-desafios",
+      "imagens/planilha-trilhas-atual.jpeg"
+    ],
+    "derivado_de": "Ementa e bullets 'O que você vai aprender' das páginas públicas da Alura. Competências, pesos, erros comuns e faixas de proficiência são elaboração pedagógica da ITT."
+  }
+}
