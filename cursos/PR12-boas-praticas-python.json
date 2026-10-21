@@ -1,0 +1,283 @@
+{
+  "id_itt": "PR12",
+  "escola": "Programação",
+  "trilha": {
+    "titulo_itt": "Boas práticas em Python",
+    "titulo_alura": "Boas práticas em Python",
+    "url": "https://www.alura.com.br/formacao-boas-praticas-python",
+    "carga_horaria_h": 24,
+    "n_cursos": 3,
+    "publico_alvo": "Adolescentes do ensino fundamental II e médio atendidos pela ITT que já programam em Python com Orientação a Objetos (PR01 e PR02) e vão aprender a escrever código legível, bem estruturado e testado",
+    "pre_requisitos": ["PR01", "PR02"],
+    "projeto_fio_condutor": "Refatoração de aplicações Python existentes: uma API de catálogo e recomendações recebe boas práticas e testes, e um sistema de pedidos é reestruturado com SOLID e design patterns"
+  },
+
+  "competencias": [
+    {
+      "id": "PR12.C1",
+      "titulo": "Escrever código Python legível seguindo a PEP 8",
+      "descricao": "Aplicar as convenções de nomenclatura, indentação e formatação da PEP 8, e preferir construções idiomáticas da linguagem, como list comprehension, a soluções verbosas.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.18,
+      "itens_alvo": 4,
+      "cursos_origem": ["PR12.01"],
+      "evidencias_observaveis": [
+        "Dado um trecho fora do padrão, aponta qual convenção da PEP 8 foi violada e como corrigir",
+        "Nomeia variável, função e classe com o estilo que a PEP 8 prescreve para cada um",
+        "Reescreve um laço que só monta uma lista como uma list comprehension"
+      ],
+      "erros_comuns": [
+        "Nomear classe em snake_case e função em CamelCase, trocando as convenções",
+        "Achar que a PEP 8 é obrigatória para o interpretador e que o código quebra sem ela",
+        "Usar nomes de uma letra em vez de nomes que dizem o que o valor é",
+        "Transformar em list comprehension um laço que faz outras coisas além de montar a lista"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR12.C2",
+      "titulo": "Documentar e tipar o código",
+      "descricao": "Escrever docstrings que digam o propósito, os parâmetros e o retorno de uma função, e anotar as assinaturas com type hints para tornar o contrato explícito.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR12.01"],
+      "evidencias_observaveis": [
+        "Dada uma função sem documentação, escreve a docstring que descreve propósito, parâmetros e retorno",
+        "Anota a assinatura de uma função com os type hints corretos",
+        "Reconhece que o type hint documenta a intenção, mas não é verificado em tempo de execução"
+      ],
+      "erros_comuns": [
+        "Achar que o type hint impede passar um valor do tipo errado",
+        "Escrever docstring que repete o nome da função sem dizer nada novo",
+        "Comentar o óbvio linha a linha em vez de documentar o contrato da função",
+        "Confundir comentário com docstring e usar # onde a docstring é esperada"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR12.C3",
+      "titulo": "Organizar o código em módulos e tratar erros de forma explícita",
+      "descricao": "Separar responsabilidades em arquivos e módulos coerentes, e tratar as falhas previsíveis capturando a exceção específica em vez de silenciar o erro.",
+      "nivel_bloom": "analisar",
+      "peso": 0.14,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR12.01"],
+      "evidencias_observaveis": [
+        "Dado um arquivo que faz de tudo, propõe a separação em módulos por responsabilidade",
+        "Troca um except genérico pela exceção específica que o trecho pode lançar",
+        "Reconhece quando deixar a exceção subir é melhor do que capturá-la ali"
+      ],
+      "erros_comuns": [
+        "Usar except Exception e esconder o erro real do programa",
+        "Capturar a exceção e dar pass, deixando o programa seguir em estado inválido",
+        "Criar um módulo utils onde tudo que não tem lugar é despejado",
+        "Confundir importar o módulo com importar o nome de dentro dele"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo", "dissertativa"]
+    },
+    {
+      "id": "PR12.C4",
+      "titulo": "Aplicar os princípios SOLID",
+      "descricao": "Reconhecer a violação de cada um dos cinco princípios em um código existente e propor a reestruturação que a resolve.",
+      "nivel_bloom": "analisar",
+      "peso": 0.20,
+      "itens_alvo": 4,
+      "cursos_origem": ["PR12.02"],
+      "evidencias_observaveis": [
+        "Dada uma classe que acumula tarefas, identifica a violação da responsabilidade única e propõe a separação",
+        "Reconhece que estender comportamento alterando um if gigante viola o princípio aberto/fechado",
+        "Aponta quando uma subclasse não pode substituir a superclasse sem quebrar quem a usa"
+      ],
+      "erros_comuns": [
+        "Entender responsabilidade única como 'um método por classe'",
+        "Achar que o princípio aberto/fechado proíbe qualquer alteração no código",
+        "Confundir a segregação de interfaces com simplesmente criar mais classes",
+        "Inverter a dependência trocando uma classe concreta por outra classe concreta"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo", "dissertativa"]
+    },
+    {
+      "id": "PR12.C5",
+      "titulo": "Reconhecer e aplicar design patterns essenciais",
+      "descricao": "Identificar qual dos padrões estudados — Factory Method, Template Method, Strategy, Facade e Observer — resolve um problema recorrente apresentado, e reconhecer o padrão em um código já escrito.",
+      "nivel_bloom": "analisar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR12.02"],
+      "evidencias_observaveis": [
+        "Dado o problema 'preciso criar objetos de tipos diferentes conforme a entrada', escolhe Factory Method",
+        "Reconhece Strategy em um código que troca o algoritmo por injeção de um objeto",
+        "Explica o que Facade simplifica e o que Observer desacopla"
+      ],
+      "erros_comuns": [
+        "Aplicar um padrão onde uma função simples resolveria",
+        "Confundir Strategy com Template Method (injetar o algoritmo vs sobrescrever o passo)",
+        "Achar que Facade esconde a complexidade eliminando-a",
+        "Chamar de Observer qualquer código que usa callbacks"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR12.C6",
+      "titulo": "Escrever testes unitários com Pytest",
+      "descricao": "Escrever um teste que verifica uma unidade de código com assert, testar o caminho de erro com pytest.raises, e organizar a execução da suíte com markers.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR12.03"],
+      "evidencias_observaveis": [
+        "Dada uma função, escreve o teste que verifica o retorno esperado para uma entrada conhecida",
+        "Usa pytest.raises para verificar que a exceção certa é lançada",
+        "Reconhece o que o nome e a estrutura de um teste precisam comunicar a quem o lê"
+      ],
+      "erros_comuns": [
+        "Escrever teste que não afirma nada, só executa a função sem assert",
+        "Testar vários comportamentos em um único teste e não saber qual falhou",
+        "Esperar que o teste capture a exceção com try/except em vez de pytest.raises",
+        "Achar que teste que passa prova que o código está correto em todos os casos"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR12.C7",
+      "titulo": "Conduzir o desenvolvimento por testes e interpretar a cobertura",
+      "descricao": "Aplicar o ciclo do TDD — escrever o teste que falha, fazer passar, refatorar — e ler um relatório de cobertura sabendo o que ele mede e o que não mede.",
+      "nivel_bloom": "avaliar",
+      "peso": 0.08,
+      "itens_alvo": 1,
+      "cursos_origem": ["PR12.03"],
+      "evidencias_observaveis": [
+        "Coloca na ordem correta os três passos do ciclo do TDD",
+        "Explica por que o primeiro teste precisa falhar antes de o código existir",
+        "Reconhece que 100% de cobertura não significa ausência de bugs"
+      ],
+      "erros_comuns": [
+        "Escrever o código primeiro e o teste depois, chamando isso de TDD",
+        "Tratar cobertura alta como garantia de qualidade",
+        "Pular a etapa de refatoração assim que o teste passa",
+        "Excluir da cobertura o código difícil de testar para inflar o número"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    }
+  ],
+
+  "cursos": [
+    {
+      "id": "PR12.01",
+      "titulo": "Python: aplicando boas práticas com PEP 8",
+      "url": "https://www.alura.com.br/curso-online-python-aplicando-boas-praticas-pep-8",
+      "carga_horaria_h": 8,
+      "n_atividades": 46,
+      "atualizado_em": "2024-12-09",
+      "etapa_da_trilha": "Aplicando PEP8: melhorando a qualidade do código com práticas consistentes",
+      "modulos": [
+        "Primeiros passos em Boas Práticas",
+        "Trabalhando Nomenclaturas, Tipagem e Arquivos",
+        "Melhorando a Formatação e Documentação",
+        "Tratando Erros e List Comprehensions",
+        "Adicionando Testes Automatizados"
+      ],
+      "conceitos_chave": ["PEP 8", "convenção de nomenclatura", "snake_case", "CamelCase", "type hint", "docstring", "Black Formatter", "list comprehension", "tratamento de erros", "módulo", "ambiente virtual"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR12.01.O1", "enunciado": "Aplicar as convenções de nomenclatura da PEP 8 a variáveis, funções, classes e constantes", "nivel_bloom": "aplicar", "competencia": "PR12.C1" },
+        { "id": "PR12.01.O2", "enunciado": "Formatar o código conforme a PEP 8, manualmente e com o auxílio do Black", "nivel_bloom": "aplicar", "competencia": "PR12.C1" },
+        { "id": "PR12.01.O3", "enunciado": "Substituir um laço que apenas constrói uma lista por uma list comprehension", "nivel_bloom": "aplicar", "competencia": "PR12.C1" },
+        { "id": "PR12.01.O4", "enunciado": "Anotar as assinaturas de funções e métodos com type hints explícitos", "nivel_bloom": "aplicar", "competencia": "PR12.C2" },
+        { "id": "PR12.01.O5", "enunciado": "Escrever docstrings que descrevam o propósito, os parâmetros e o retorno de uma função", "nivel_bloom": "aplicar", "competencia": "PR12.C2" },
+        { "id": "PR12.01.O6", "enunciado": "Organizar o projeto separando as responsabilidades em módulos coerentes", "nivel_bloom": "analisar", "competencia": "PR12.C3" },
+        { "id": "PR12.01.O7", "enunciado": "Tratar erros capturando a exceção específica em vez de silenciar a falha", "nivel_bloom": "aplicar", "competencia": "PR12.C3" }
+      ],
+      "fora_de_escopo": ["construção de APIs com FastAPI", "linters além do Black e do ESLint do projeto", "tipagem com mypy em modo estrito", "pre-commit hooks", "CI/CD"]
+    },
+    {
+      "id": "PR12.02",
+      "titulo": "Python: construindo sistemas eficientes com SOLID e Design Patterns",
+      "url": "https://www.alura.com.br/curso-online-python-construindo-sistemas-eficientes-solid-design-patterns",
+      "carga_horaria_h": 8,
+      "n_atividades": 47,
+      "atualizado_em": "2025-01-20",
+      "etapa_da_trilha": "Dominando SOLID e Design Patterns: construindo soluções robústas",
+      "modulos": [
+        "S - Princípio da responsabilidade única",
+        "O - Princípio Aberto/Fechado",
+        "L - Princípio da substituição de Liskov",
+        "I - Princípio da segregação de interfaces",
+        "D - Princípio da inversão de dependências"
+      ],
+      "conceitos_chave": ["SOLID", "responsabilidade única", "aberto/fechado", "substituição de Liskov", "segregação de interfaces", "inversão de dependências", "abstração", "Factory Method", "Template Method", "Strategy", "Facade", "Observer"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR12.02.O1", "enunciado": "Identificar uma classe que acumula responsabilidades e separá-la em classes de propósito único", "nivel_bloom": "analisar", "competencia": "PR12.C4" },
+        { "id": "PR12.02.O2", "enunciado": "Estender o comportamento do sistema sem alterar o código existente, seguindo o princípio aberto/fechado", "nivel_bloom": "aplicar", "competencia": "PR12.C4" },
+        { "id": "PR12.02.O3", "enunciado": "Avaliar se uma subclasse pode substituir a superclasse sem quebrar quem a utiliza", "nivel_bloom": "avaliar", "competencia": "PR12.C4" },
+        { "id": "PR12.02.O4", "enunciado": "Segregar interfaces por cliente e inverter dependências fazendo o código depender de abstrações", "nivel_bloom": "analisar", "competencia": "PR12.C4" },
+        { "id": "PR12.02.O5", "enunciado": "Escolher entre Factory Method, Template Method e Strategy o padrão que resolve o problema apresentado", "nivel_bloom": "analisar", "competencia": "PR12.C5" },
+        { "id": "PR12.02.O6", "enunciado": "Aplicar Facade para simplificar o acesso a um subsistema e Observer para notificar mudanças de estado", "nivel_bloom": "aplicar", "competencia": "PR12.C5" }
+      ],
+      "fora_de_escopo": ["catálogo completo do GoF", "arquitetura hexagonal", "DDD", "injeção de dependência por framework", "microsserviços"]
+    },
+    {
+      "id": "PR12.03",
+      "titulo": "Python e TDD: explorando testes unitários",
+      "url": "https://www.alura.com.br/curso-online-python-tdd-explorando-testes-unitarios",
+      "carga_horaria_h": 8,
+      "n_atividades": 47,
+      "atualizado_em": "2024-04-11",
+      "etapa_da_trilha": "Automatizando Testes em Python: Escrevendo Testes Unitários com Pytest",
+      "modulos": [
+        "Testes automatizados",
+        "Pytest",
+        "Test-Driven Development",
+        "Exceptions e Marks",
+        "Cobertura de testes"
+      ],
+      "conceitos_chave": ["teste automatizado", "teste unitário", "Pytest", "assert", "TDD", "red-green-refactor", "pytest.raises", "marker", "cobertura de testes", "relatório de cobertura"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR12.03.O1", "enunciado": "Explicar o que um teste automatizado garante e o que ele não garante sobre o código", "nivel_bloom": "entender", "competencia": "PR12.C6" },
+        { "id": "PR12.03.O2", "enunciado": "Escrever um teste unitário com Pytest que verifica o retorno de uma função com assert", "nivel_bloom": "aplicar", "competencia": "PR12.C6" },
+        { "id": "PR12.03.O3", "enunciado": "Testar com pytest.raises que um método lança a exceção esperada", "nivel_bloom": "aplicar", "competencia": "PR12.C6" },
+        { "id": "PR12.03.O4", "enunciado": "Organizar a execução da suíte de testes com markers", "nivel_bloom": "aplicar", "competencia": "PR12.C6" },
+        { "id": "PR12.03.O5", "enunciado": "Aplicar o ciclo do TDD escrevendo o teste que falha antes de implementar a funcionalidade", "nivel_bloom": "aplicar", "competencia": "PR12.C7" },
+        { "id": "PR12.03.O6", "enunciado": "Medir a cobertura de testes e interpretar o que o relatório diz sobre a suíte", "nivel_bloom": "avaliar", "competencia": "PR12.C7" }
+      ],
+      "fora_de_escopo": ["mocks e fixtures avançadas", "testes de integração", "testes end-to-end", "property-based testing", "testes de carga"]
+    }
+  ],
+
+  "rubrica_proficiencia": {
+    "faixas": [
+      { "nivel": "iniciante", "min_pct": 0, "max_pct": 49, "descritor": "Escreve código que funciona, mas não reconhece violações de convenção nem sabe dizer o que um teste verifica." },
+      { "nivel": "basico", "min_pct": 50, "max_pct": 69, "descritor": "Corrige nomenclatura e formatação quando apontadas; repete os nomes dos princípios SOLID sem identificar a violação no código." },
+      { "nivel": "adequado", "min_pct": 70, "max_pct": 84, "descritor": "Escreve código legível e documentado seguindo a PEP 8, trata erros com a exceção específica, identifica a quebra da responsabilidade única e escreve um teste unitário com Pytest." },
+      { "nivel": "avancado", "min_pct": 85, "max_pct": 100, "descritor": "Diagnostica qual princípio SOLID um código viola e propõe a reestruturação, escolhe o design pattern adequado ao problema e usa o ciclo do TDD sabendo o que a cobertura mede." }
+    ],
+    "nivel_minimo_esperado": "adequado",
+    "observacao": "Faixas definidas pela coordenação ITT, não extraídas da Alura. Atenção: a Alura declara os três cursos para público de nível intermediário, e o curso de PEP 8 pressupõe familiaridade com FastAPI. A matriz cobra os conceitos de boas práticas, SOLID, padrões e testes, e mantém a construção de APIs fora de escopo — os itens devem usar contextos do nível de PR02. Revisar após o primeiro ciclo de aplicação."
+  },
+
+  "blueprint_questionario": {
+    "n_itens_total": 20,
+    "tempo_estimado_min": 45,
+    "por_competencia": {
+      "PR12.C1": 4, "PR12.C2": 2, "PR12.C3": 3, "PR12.C4": 4,
+      "PR12.C5": 3, "PR12.C6": 3, "PR12.C7": 1
+    },
+    "por_tipo": { "multipla_escolha": 10, "analise_codigo": 8, "dissertativa": 2 },
+    "por_bloom": { "lembrar_entender": 4, "aplicar": 10, "analisar_avaliar": 6 }
+  },
+
+  "prompt": "prompts/PR12.md",
+
+  "metadados": {
+    "versao": "1.0",
+    "data_extracao": "2026-10-21",
+    "fontes": [
+      "https://www.alura.com.br/formacao-boas-praticas-python",
+      "https://www.alura.com.br/curso-online-python-aplicando-boas-praticas-pep-8",
+      "https://www.alura.com.br/curso-online-python-construindo-sistemas-eficientes-solid-design-patterns",
+      "https://www.alura.com.br/curso-online-python-tdd-explorando-testes-unitarios",
+      "imagens/planilha-trilhas-atual.jpeg"
+    ],
+    "derivado_de": "Ementa, carga horária, público-alvo e bullets 'O que você vai aprender' das páginas públicas da Alura. Competências, pesos, erros comuns e faixas de proficiência são elaboração pedagógica da ITT."
+  }
+}

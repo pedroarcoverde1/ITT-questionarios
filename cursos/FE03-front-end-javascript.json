@@ -1,0 +1,422 @@
+{
+  "id_itt": "FE03",
+  "escola": "Front-end",
+  "trilha": {
+    "titulo_itt": "Desenvolvimento Front-end: criar aplicações web com HTML, CSS e JavaScript",
+    "titulo_alura": "Desenvolvimento Front-end: cursos para criar aplicações web com HTML, CSS e JavaScript",
+    "url": "https://www.alura.com.br/formacao-front-end",
+    "carga_horaria_h": 60,
+    "n_cursos": 8,
+    "publico_alvo": "Adolescentes do ensino fundamental II e médio atendidos pela ITT que já constroem páginas com HTML e CSS (FE01) e vão aprender a torná-las dinâmicas com JavaScript",
+    "pre_requisitos": ["FE01"],
+    "projeto_fio_condutor": "Aplicações web interativas construídas do zero ao deploy: lista de tarefas, temporizador Pomodoro (Fokus), mural de pensamentos com CRUD em API e catálogo de livros com filtros"
+  },
+
+  "competencias": [
+    {
+      "id": "FE03.C1",
+      "titulo": "Integrar JavaScript à página, selecionar elementos e depurar no navegador",
+      "descricao": "Ligar o script ao HTML, entender o DOM como a representação da página em objetos, selecionar elementos por seletor e investigar o comportamento do código nas ferramentas do navegador.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["FE03.01", "FE03.04", "FE03.05"],
+      "evidencias_observaveis": [
+        "Dado um elemento no HTML, escreve o seletor que o recupera em JavaScript",
+        "Explica o que é o DOM e por que o script precisa esperar a página existir",
+        "Usa o console e os breakpoints para descobrir por que um valor chegou errado"
+      ],
+      "erros_comuns": [
+        "Rodar o script antes de a página carregar e receber null no seletor",
+        "Confundir querySelector, que devolve um elemento, com querySelectorAll, que devolve uma lista",
+        "Achar que alterar o DOM muda o arquivo HTML no disco",
+        "Depurar só com console.log, sem olhar a mensagem de erro que o navegador já deu"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "FE03.C2",
+      "titulo": "Reagir a eventos da pessoa usuária",
+      "descricao": "Registrar ouvintes de evento, entender que a função é chamada depois, pelo navegador, e tratar o envio de um formulário coletando e validando os dados.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["FE03.01", "FE03.02", "FE03.04"],
+      "evidencias_observaveis": [
+        "Escreve o addEventListener que executa uma função ao clique",
+        "Distingue passar a função como referência de executá-la na hora do registro",
+        "Sabe por que o envio de um formulário precisa de preventDefault para não recarregar a página"
+      ],
+      "erros_comuns": [
+        "Escrever addEventListener('click', minhaFuncao()) e executar a função no registro",
+        "Esquecer preventDefault no submit e ver a página recarregar perdendo os dados",
+        "Registrar o ouvinte em um elemento que ainda não existe na página",
+        "Registrar o mesmo ouvinte várias vezes e a ação acontecer em duplicidade"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "FE03.C3",
+      "titulo": "Criar, alterar e remover elementos e estilos no DOM",
+      "descricao": "Construir elementos por código e anexá-los à página, alterar texto, imagem, atributos e classes, e renderizar na tela o resultado de um processamento de dados.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["FE03.01", "FE03.03", "FE03.04"],
+      "evidencias_observaveis": [
+        "Dado um dado em memória, escreve o código que cria o elemento e o anexa ao contêiner certo",
+        "Troca a classe de um elemento para mudar o estilo em vez de escrever estilo inline",
+        "Prevê o que aparece na tela depois de um trecho que altera textContent e atributos"
+      ],
+      "erros_comuns": [
+        "Criar o elemento com createElement e esquecer de anexá-lo com append",
+        "Usar innerHTML com conteúdo vindo da pessoa usuária em vez de textContent",
+        "Alterar style no script onde uma classe CSS resolveria",
+        "Confundir textContent com value em campos de formulário"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "FE03.C4",
+      "titulo": "Processar coleções com os métodos de array",
+      "descricao": "Escolher entre forEach, map, filter, sort e reduce conforme o resultado desejado, e reconhecer quais deles devolvem um novo array e quais alteram o original.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.14,
+      "itens_alvo": 3,
+      "cursos_origem": ["FE03.03", "FE03.07"],
+      "evidencias_observaveis": [
+        "Dado 'quero a lista só com os itens disponíveis', escolhe filter e não forEach",
+        "Prevê o valor devolvido por um reduce que soma um campo da coleção",
+        "Encadeia filter e map para transformar e selecionar na mesma passagem"
+      ],
+      "erros_comuns": [
+        "Usar forEach esperando que ele devolva um novo array",
+        "Esquecer o return dentro do callback de map ou filter e receber undefined",
+        "Achar que map filtra elementos quando o callback devolve false",
+        "Usar sort sem função de comparação e ordenar números como texto"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "FE03.C5",
+      "titulo": "Lidar com código assíncrono",
+      "descricao": "Entender que uma operação demorada não bloqueia o restante do programa, consumir uma promise, escrever funções com async/await e tratar o erro que vem de uma operação assíncrona.",
+      "nivel_bloom": "analisar",
+      "peso": 0.14,
+      "itens_alvo": 3,
+      "cursos_origem": ["FE03.02", "FE03.04"],
+      "evidencias_observaveis": [
+        "Dado um trecho com setTimeout e código depois dele, prevê a ordem das saídas",
+        "Reescreve um then/catch como async/await com try/catch",
+        "Explica em uma frase por que o await precisa estar dentro de uma função async"
+      ],
+      "erros_comuns": [
+        "Usar o resultado de uma função assíncrona antes de ela terminar e receber uma promise pendente",
+        "Esquecer o await e tratar a promise como se fosse o valor",
+        "Achar que o setTimeout de 0 ms executa imediatamente, antes do código seguinte",
+        "Esquecer o clearInterval e deixar o temporizador rodando para sempre"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo", "dissertativa"]
+    },
+    {
+      "id": "FE03.C6",
+      "titulo": "Consumir uma API com fetch e implementar o CRUD via HTTP",
+      "descricao": "Fazer requisições ao servidor, escolher o método HTTP de cada operação do CRUD, interpretar a resposta e o status, e reconhecer o papel do cliente e do servidor na troca.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["FE03.06", "FE03.07"],
+      "evidencias_observaveis": [
+        "Associa cada operação do CRUD ao método HTTP correspondente",
+        "Dado um fetch, aponta onde a resposta é convertida em objeto JavaScript",
+        "Reconhece o significado dos status 200, 201, 404 e 500"
+      ],
+      "erros_comuns": [
+        "Usar GET para enviar dados que deveriam ir no corpo de um POST",
+        "Esquecer o .json() e tratar a resposta como se já fosse o objeto",
+        "Confundir PUT, que substitui o recurso, com PATCH, que altera parte dele",
+        "Achar que o fetch devolve os dados direto, sem passar pela promise"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "FE03.C7",
+      "titulo": "Persistir e validar dados no navegador",
+      "descricao": "Guardar o estado da aplicação no localStorage entre sessões, trabalhar com datas, validar entradas com expressões regulares e usar Set para garantir valores únicos.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.12,
+      "itens_alvo": 2,
+      "cursos_origem": ["FE03.05", "FE03.07"],
+      "evidencias_observaveis": [
+        "Sabe que o localStorage guarda texto e que o objeto precisa ser serializado para JSON",
+        "Dada uma regra de preenchimento, escolhe a expressão regular que a valida",
+        "Reconhece que o Set descarta valores repetidos ao ser construído"
+      ],
+      "erros_comuns": [
+        "Gravar um objeto no localStorage sem JSON.stringify e salvar o texto [object Object]",
+        "Ler do localStorage e esquecer o JSON.parse antes de usar como objeto",
+        "Achar que o localStorage é compartilhado entre navegadores ou dispositivos",
+        "Confundir o mês do objeto Date, que começa em zero, com o mês do calendário"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "FE03.C8",
+      "titulo": "Modularizar o código e usar o ambiente Node e NPM",
+      "descricao": "Separar o código em módulos com import e export, e operar o ambiente de desenvolvimento: instalar pacotes com o NPM, distinguir dependência de desenvolvimento da de produção e rodar os scripts do projeto.",
+      "nivel_bloom": "entender",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["FE03.01", "FE03.08"],
+      "evidencias_observaveis": [
+        "Escreve o export e o import que compartilham uma função entre dois arquivos",
+        "Distingue uma dependência de desenvolvimento de uma de produção pelo que ela serve",
+        "Explica o papel do package.json em um projeto front-end"
+      ],
+      "erros_comuns": [
+        "Confundir export default com export nomeado na hora de importar",
+        "Esquecer o type=\"module\" no script e o import não funcionar no navegador",
+        "Instalar como dependência de produção uma ferramenta que só serve para desenvolver",
+        "Versionar a pasta node_modules junto com o projeto"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    }
+  ],
+
+  "cursos": [
+    {
+      "id": "FE03.01",
+      "titulo": "JavaScript: construindo páginas dinâmicas",
+      "url": "https://www.alura.com.br/curso-online-construindo-paginas-dinamicas-javascript",
+      "carga_horaria_h": 8,
+      "n_atividades": 48,
+      "atualizado_em": "2025-03-27",
+      "etapa_da_trilha": "Páginas dinâmicas e assíncronas",
+      "modulos": [
+        "Integrando JavaScript ao projeto",
+        "Detectando interações",
+        "Construindo conteúdos dinâmicos",
+        "Modularizando o código",
+        "Criando novos arquivos"
+      ],
+      "conceitos_chave": ["DOM", "querySelector", "addEventListener", "createElement", "append", "checkbox", "Date", "estilo dinâmico", "módulo", "import", "export default", "parâmetro"],
+      "objetivos_de_aprendizagem": [
+        { "id": "FE03.01.O1", "enunciado": "Ligar um script JavaScript à página e acessar seus elementos pelo DOM", "nivel_bloom": "aplicar", "competencia": "FE03.C1" },
+        { "id": "FE03.01.O2", "enunciado": "Detectar interações da pessoa usuária com ouvintes de evento", "nivel_bloom": "aplicar", "competencia": "FE03.C2" },
+        { "id": "FE03.01.O3", "enunciado": "Criar elementos HTML por código e anexá-los à página", "nivel_bloom": "aplicar", "competencia": "FE03.C3" },
+        { "id": "FE03.01.O4", "enunciado": "Construir conteúdo dinâmico aplicando estilos e formatando data e horário", "nivel_bloom": "aplicar", "competencia": "FE03.C3" },
+        { "id": "FE03.01.O5", "enunciado": "Separar o código em módulos e compartilhar funções com import e export", "nivel_bloom": "aplicar", "competencia": "FE03.C8" }
+      ],
+      "fora_de_escopo": ["frameworks como React, Vue ou Angular", "TypeScript", "Web Components", "service workers"]
+    },
+    {
+      "id": "FE03.02",
+      "titulo": "JavaScript: entendendo promises e async/await",
+      "url": "https://www.alura.com.br/curso-online-javascript-entendendo-promises-async-await",
+      "carga_horaria_h": 6,
+      "n_atividades": 49,
+      "atualizado_em": "2025-03-25",
+      "etapa_da_trilha": "Páginas dinâmicas e assíncronas",
+      "modulos": [
+        "Construindo a página",
+        "Assincronicidade",
+        "Manipulando tags",
+        "Coletando dados do formulário",
+        "Gerando interações com o formulário"
+      ],
+      "conceitos_chave": ["assincronismo", "Promise", "then", "catch", "async", "await", "try/catch", "setTimeout", "Event Loop", "Call Stack", "Task Queue", "FormData"],
+      "objetivos_de_aprendizagem": [
+        { "id": "FE03.02.O1", "enunciado": "Explicar o que é código assíncrono e o papel do Event Loop, da Call Stack e da Task Queue", "nivel_bloom": "entender", "competencia": "FE03.C5" },
+        { "id": "FE03.02.O2", "enunciado": "Consumir o retorno de uma operação assíncrona com Promises", "nivel_bloom": "aplicar", "competencia": "FE03.C5" },
+        { "id": "FE03.02.O3", "enunciado": "Escrever funções assíncronas com async/await e tratar erros com try/catch", "nivel_bloom": "aplicar", "competencia": "FE03.C5" },
+        { "id": "FE03.02.O4", "enunciado": "Coletar e limitar os dados de um formulário antes de simular o envio", "nivel_bloom": "aplicar", "competencia": "FE03.C2" }
+      ],
+      "fora_de_escopo": ["Web Workers", "streams", "generators assíncronos", "AbortController"]
+    },
+    {
+      "id": "FE03.03",
+      "titulo": "JavaScript: métodos de array",
+      "url": "https://www.alura.com.br/curso-online-javascript-metodos-array",
+      "carga_horaria_h": 8,
+      "n_atividades": 40,
+      "atualizado_em": "2024-05-15",
+      "etapa_da_trilha": "Páginas dinâmicas e assíncronas",
+      "modulos": [
+        "forEach: função para cada elemento",
+        "map: novo array modificado",
+        "filter: aplicando filtros",
+        "sort: ordenando a lista",
+        "reduce: um único valor"
+      ],
+      "conceitos_chave": ["array", "forEach", "map", "filter", "sort", "reduce", "callback", "encadeamento de métodos", "fetch"],
+      "objetivos_de_aprendizagem": [
+        { "id": "FE03.03.O1", "enunciado": "Percorrer uma coleção aplicando uma função a cada elemento com forEach", "nivel_bloom": "aplicar", "competencia": "FE03.C4" },
+        { "id": "FE03.03.O2", "enunciado": "Transformar uma coleção com map e selecionar elementos com filter", "nivel_bloom": "aplicar", "competencia": "FE03.C4" },
+        { "id": "FE03.03.O3", "enunciado": "Ordenar uma lista com sort e reduzir a coleção a um único valor com reduce", "nivel_bloom": "aplicar", "competencia": "FE03.C4" },
+        { "id": "FE03.03.O4", "enunciado": "Renderizar na página o resultado do processamento feito pelos métodos de array", "nivel_bloom": "aplicar", "competencia": "FE03.C3" }
+      ],
+      "fora_de_escopo": ["imutabilidade e programação funcional avançada", "estruturas de dados customizadas", "performance e big O de coleções"]
+    },
+    {
+      "id": "FE03.04",
+      "titulo": "JavaScript: manipulando elementos no DOM",
+      "url": "https://www.alura.com.br/curso-online-javascript-manipulando-elementos-dom",
+      "carga_horaria_h": 6,
+      "n_atividades": 47,
+      "atualizado_em": "2024-11-22",
+      "etapa_da_trilha": "Manipulação do DOM e as integrações com o backend",
+      "modulos": [
+        "Iniciando o projeto Fokus",
+        "Manipulando elementos da página",
+        "Aplicando áudio e estilos",
+        "Desenvolvendo o temporizador",
+        "Finalizando o projeto"
+      ],
+      "conceitos_chave": ["data attribute", "classList", "add", "remove", "toggle", "textContent", "src", "Audio", "setInterval", "clearInterval", "Date"],
+      "objetivos_de_aprendizagem": [
+        { "id": "FE03.04.O1", "enunciado": "Selecionar elementos e ler ou alterar seus data attributes", "nivel_bloom": "aplicar", "competencia": "FE03.C1" },
+        { "id": "FE03.04.O2", "enunciado": "Alterar imagens, textos e classes de um elemento de forma dinâmica", "nivel_bloom": "aplicar", "competencia": "FE03.C3" },
+        { "id": "FE03.04.O3", "enunciado": "Criar eventos de interação que disparam as mudanças na interface", "nivel_bloom": "aplicar", "competencia": "FE03.C2" },
+        { "id": "FE03.04.O4", "enunciado": "Controlar um temporizador com setInterval e interrompê-lo com clearInterval", "nivel_bloom": "aplicar", "competencia": "FE03.C5" }
+      ],
+      "fora_de_escopo": ["animações com Web Animations API", "canvas", "acessibilidade programática avançada", "bibliotecas de manipulação do DOM"]
+    },
+    {
+      "id": "FE03.05",
+      "titulo": "JavaScript: explorando a manipulação de elementos e da localStorage",
+      "url": "https://www.alura.com.br/curso-online-javascript-manipulacao-elementos-localstorage",
+      "carga_horaria_h": 8,
+      "n_atividades": 53,
+      "atualizado_em": "2024-12-23",
+      "etapa_da_trilha": "Manipulação do DOM e as integrações com o backend",
+      "modulos": [
+        "Adicionando tarefas",
+        "Exibindo as tarefas no DOM",
+        "Editando tarefas",
+        "Integrando com o cronômetro",
+        "Removendo tarefas"
+      ],
+      "conceitos_chave": ["localStorage", "setItem", "getItem", "JSON.stringify", "JSON.parse", "estado da aplicação", "array de objetos", "depuração no navegador", "breakpoint"],
+      "objetivos_de_aprendizagem": [
+        { "id": "FE03.05.O1", "enunciado": "Gravar e recuperar dados no localStorage para persistir o estado entre sessões", "nivel_bloom": "aplicar", "competencia": "FE03.C7" },
+        { "id": "FE03.05.O2", "enunciado": "Gerenciar o estado de uma lista combinando array em memória e armazenamento local", "nivel_bloom": "analisar", "competencia": "FE03.C7" },
+        { "id": "FE03.05.O3", "enunciado": "Depurar o código no navegador para localizar a origem de um comportamento inesperado", "nivel_bloom": "analisar", "competencia": "FE03.C1" }
+      ],
+      "fora_de_escopo": ["IndexedDB", "cookies e sessão no servidor", "sincronização entre dispositivos", "criptografia de dados locais"]
+    },
+    {
+      "id": "FE03.06",
+      "titulo": "JavaScript: implementando CRUD com requisições HTTP",
+      "url": "https://www.alura.com.br/curso-online-javascript-implementando-crud-requisicoes-http",
+      "carga_horaria_h": 8,
+      "n_atividades": 56,
+      "atualizado_em": "2026-01-06",
+      "etapa_da_trilha": "Manipulação do DOM e as integrações com o backend",
+      "modulos": [
+        "Primeira requisição",
+        "Requisições GET e POST",
+        "Requisição PUT",
+        "Requisição DELETE",
+        "Conhecendo o Axios"
+      ],
+      "conceitos_chave": ["fetch", "cliente-servidor", "JSON Server", "API", "HTTP", "GET", "POST", "PUT", "DELETE", "status code", "CRUD", "Axios"],
+      "objetivos_de_aprendizagem": [
+        { "id": "FE03.06.O1", "enunciado": "Fazer uma requisição com fetch e exibir na interface os dados recebidos", "nivel_bloom": "aplicar", "competencia": "FE03.C6" },
+        { "id": "FE03.06.O2", "enunciado": "Implementar criar, ler, atualizar e deletar associando cada operação ao método HTTP correto", "nivel_bloom": "aplicar", "competencia": "FE03.C6" },
+        { "id": "FE03.06.O3", "enunciado": "Reconhecer o funcionamento do protocolo HTTP e o significado dos status de resposta", "nivel_bloom": "entender", "competencia": "FE03.C6" },
+        { "id": "FE03.06.O4", "enunciado": "Usar o Axios como alternativa ao fetch e inspecionar as requisições no navegador", "nivel_bloom": "aplicar", "competencia": "FE03.C6" }
+      ],
+      "fora_de_escopo": ["autenticação e tokens", "CORS em detalhe", "escrever o back-end da API", "GraphQL", "WebSockets"]
+    },
+    {
+      "id": "FE03.07",
+      "titulo": "JavaScript: evoluindo a sua aplicação com ES6+",
+      "url": "https://www.alura.com.br/curso-online-javascript-evoluindo-sua-aplicacao-es6",
+      "carga_horaria_h": 8,
+      "n_atividades": 61,
+      "atualizado_em": "2024-09-12",
+      "etapa_da_trilha": "Aprimorando e modernizando suas aplicações",
+      "modulos": [
+        "Implementando um campo de busca",
+        "Favoritando um pensamento",
+        "Trabalhando com datas em JavaScript",
+        "Manipulando e exibindo datas",
+        "Implementando validações com expressões regulares",
+        "Evitando pensamentos duplicados"
+      ],
+      "conceitos_chave": ["ES6+", "includes", "filter", "busca typeahead", "PATCH", "Date", "UTC", "formatação de data", "expressão regular", "Regex", "Set", "valores únicos"],
+      "objetivos_de_aprendizagem": [
+        { "id": "FE03.07.O1", "enunciado": "Implementar uma busca typeahead combinando includes e filter sobre a coleção", "nivel_bloom": "aplicar", "competencia": "FE03.C4" },
+        { "id": "FE03.07.O2", "enunciado": "Atualizar parcialmente um recurso da API com o método PATCH", "nivel_bloom": "aplicar", "competencia": "FE03.C6" },
+        { "id": "FE03.07.O3", "enunciado": "Armazenar, converter e exibir datas corretamente com o objeto Date", "nivel_bloom": "aplicar", "competencia": "FE03.C7" },
+        { "id": "FE03.07.O4", "enunciado": "Validar o conteúdo de um campo com expressões regulares", "nivel_bloom": "aplicar", "competencia": "FE03.C7" },
+        { "id": "FE03.07.O5", "enunciado": "Usar Set para garantir que uma coleção não tenha valores duplicados", "nivel_bloom": "aplicar", "competencia": "FE03.C7" }
+      ],
+      "fora_de_escopo": ["Proxy e Reflect", "decorators", "optional chaining em cadeias profundas", "internacionalização completa com Intl"]
+    },
+    {
+      "id": "FE03.08",
+      "titulo": "Node.js e terminal: dominando o ambiente de desenvolvimento front-end",
+      "url": "https://www.alura.com.br/curso-online-node-js-terminal-ambiente-desenvolvimento-front-end",
+      "carga_horaria_h": 8,
+      "n_atividades": 61,
+      "atualizado_em": "2025-02-12",
+      "etapa_da_trilha": "Aprimorando e modernizando suas aplicações",
+      "modulos": [
+        "Conhecendo o Node.js e o terminal",
+        "Gerenciando pacotes com NPM",
+        "Explorando scripts, pacotes locais e globais",
+        "Usando uma biblioteca externa",
+        "Deploy do projeto"
+      ],
+      "conceitos_chave": ["Node.js", "terminal", "NPM", "package.json", "dependência de desenvolvimento", "dependência de produção", "versionamento semântico", "script NPM", "ESLint", "Prettier", "CDN", "Vite", "deploy"],
+      "objetivos_de_aprendizagem": [
+        { "id": "FE03.08.O1", "enunciado": "Configurar um ambiente front-end com Node e NPM, distinguindo dependências de desenvolvimento das de produção", "nivel_bloom": "entender", "competencia": "FE03.C8" },
+        { "id": "FE03.08.O2", "enunciado": "Instalar pacotes, criar scripts no package.json e usar ESLint, Prettier e Vite no projeto", "nivel_bloom": "aplicar", "competencia": "FE03.C8" }
+      ],
+      "fora_de_escopo": ["Node.js no servidor", "monorepos", "configuração avançada de bundler", "Docker", "pipelines de CI/CD"]
+    }
+  ],
+
+  "rubrica_proficiencia": {
+    "faixas": [
+      { "nivel": "iniciante", "min_pct": 0, "max_pct": 49, "descritor": "Lê HTML e CSS, mas não prevê o que um trecho de JavaScript faz com a página nem seleciona um elemento corretamente." },
+      { "nivel": "basico", "min_pct": 50, "max_pct": 69, "descritor": "Registra um clique e altera um texto na tela; erra entre os métodos de array, esquece preventDefault e trata promise como se fosse o valor." },
+      { "nivel": "adequado", "min_pct": 70, "max_pct": 84, "descritor": "Manipula o DOM criando e alterando elementos, escolhe o método de array adequado, escreve função async/await e consome uma API com fetch implementando o CRUD." },
+      { "nivel": "avancado", "min_pct": 85, "max_pct": 100, "descritor": "Prevê a ordem de execução de código assíncrono, diagnostica no navegador por que um valor chegou errado, persiste estado com localStorage e opera o ambiente Node/NPM do projeto." }
+    ],
+    "nivel_minimo_esperado": "adequado",
+    "observacao": "Faixas definidas pela coordenação ITT, não extraídas da Alura. A trilha pressupõe FE01 concluída: os itens não devem cobrar HTML e CSS por si, apenas como suporte ao JavaScript. Revisar após o primeiro ciclo de aplicação."
+  },
+
+  "blueprint_questionario": {
+    "n_itens_total": 20,
+    "tempo_estimado_min": 45,
+    "por_competencia": {
+      "FE03.C1": 2, "FE03.C2": 2, "FE03.C3": 3, "FE03.C4": 3,
+      "FE03.C5": 3, "FE03.C6": 3, "FE03.C7": 2, "FE03.C8": 2
+    },
+    "por_tipo": { "multipla_escolha": 10, "analise_codigo": 8, "dissertativa": 2 },
+    "por_bloom": { "lembrar_entender": 5, "aplicar": 11, "analisar_avaliar": 4 }
+  },
+
+  "prompt": "prompts/FE03.md",
+
+  "metadados": {
+    "versao": "1.0",
+    "data_extracao": "2026-10-21",
+    "fontes": [
+      "https://www.alura.com.br/formacao-front-end",
+      "https://www.alura.com.br/curso-online-construindo-paginas-dinamicas-javascript",
+      "https://www.alura.com.br/curso-online-javascript-entendendo-promises-async-await",
+      "https://www.alura.com.br/curso-online-javascript-metodos-array",
+      "https://www.alura.com.br/curso-online-javascript-manipulando-elementos-dom",
+      "https://www.alura.com.br/curso-online-javascript-manipulacao-elementos-localstorage",
+      "https://www.alura.com.br/curso-online-javascript-implementando-crud-requisicoes-http",
+      "https://www.alura.com.br/curso-online-javascript-evoluindo-sua-aplicacao-es6",
+      "https://www.alura.com.br/curso-online-node-js-terminal-ambiente-desenvolvimento-front-end",
+      "imagens/planilha-trilhas-atual.jpeg"
+    ],
+    "derivado_de": "Ementa, carga horária, público-alvo e bullets 'O que você vai aprender' das páginas públicas da Alura. Competências, pesos, erros comuns e faixas de proficiência são elaboração pedagógica da ITT."
+  }
+}

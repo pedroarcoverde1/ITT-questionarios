@@ -1,0 +1,351 @@
+{
+  "id_itt": "UX03",
+  "escola": "UX & Design",
+  "trilha": {
+    "titulo_itt": "Blender",
+    "titulo_alura": "Blender",
+    "url": "https://www.alura.com.br/formacao-blender",
+    "carga_horaria_h": 40,
+    "n_cursos": 5,
+    "publico_alvo": "Adolescentes do ensino fundamental II e médio atendidos pela ITT, sem experiência prévia em modelagem 3D; a trilha vai da interface do Blender à animação de um personagem",
+    "pre_requisitos": [],
+    "projeto_fio_condutor": "Peças 3D construídas do zero: um ambiente minimalista blocado, uma espada lowpoly modelada e pintada à mão, um personagem modelado poly by poly e, por fim, riggado e animado"
+  },
+
+  "competencias": [
+    {
+      "id": "UX03.C1",
+      "titulo": "Operar a interface do Blender e navegar no espaço 3D",
+      "descricao": "Reconhecer os painéis e os modos de trabalho, navegar no viewport, organizar a área de trabalho com imagem de referência e usar atalhos para agilizar a produção.",
+      "nivel_bloom": "entender",
+      "peso": 0.09,
+      "itens_alvo": 2,
+      "cursos_origem": ["UX03.01", "UX03.02"],
+      "evidencias_observaveis": [
+        "Dada uma tarefa, aponta em qual modo de trabalho ela se realiza (objeto ou edição)",
+        "Reconhece o papel da imagem de referência e do modelsheet antes de começar a modelar",
+        "Distingue mover a câmera do viewport de mover o objeto na cena"
+      ],
+      "erros_comuns": [
+        "Tentar editar vértices sem entrar no modo de edição",
+        "Mover o objeto achando que está apenas girando a visualização",
+        "Modelar sem referência e perder as proporções",
+        "Confundir deletar o objeto com escondê-lo da visualização"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "UX03.C2",
+      "titulo": "Modelar por blocagem e com Box Modeling",
+      "descricao": "Construir a forma partindo de primitivas simples e desenvolvê-la com extrusão e cortes, do ambiente blocado ao objeto lowpoly acabado.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["UX03.01", "UX03.02"],
+      "evidencias_observaveis": [
+        "Dada uma forma a construir, escolhe a primitiva de partida adequada",
+        "Explica o que a extrusão faz com a face selecionada",
+        "Reconhece para que serve a blocagem antes do detalhamento"
+      ],
+      "erros_comuns": [
+        "Começar pelo detalhe antes de a forma geral estar resolvida",
+        "Escalar o objeto no modo objeto quando a alteração deveria ser na malha",
+        "Extrudar sem perceber que criou faces internas sobrepostas",
+        "Confundir lowpoly com modelo malfeito em vez de escolha de estilo"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "UX03.C3",
+      "titulo": "Controlar o fluxo de malha e modelar Poly by Poly",
+      "descricao": "Comparar as técnicas de modelagem, construir a malha polígono a polígono acompanhando a forma do personagem, e reconhecer o papel do fluxo de malha e da retopologia.",
+      "nivel_bloom": "analisar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["UX03.02", "UX03.04"],
+      "evidencias_observaveis": [
+        "Dada uma peça a modelar, justifica a escolha entre Box Modeling e Poly by Poly",
+        "Explica por que o fluxo de malha importa em um modelo que vai ser animado",
+        "Diz em uma frase o que a retopologia resolve"
+      ],
+      "erros_comuns": [
+        "Achar que o fluxo de malha é só questão de aparência, sem efeito na animação",
+        "Deixar faces com mais de quatro lados onde a deformação vai acontecer",
+        "Confundir retopologia com apagar e modelar de novo",
+        "Separar partes da malha e esquecer de uni-las antes de continuar"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    },
+    {
+      "id": "UX03.C4",
+      "titulo": "Usar modificadores e propriedades de objeto",
+      "descricao": "Aplicar modificadores para obter resultados sem alterar a malha base e ajustar as propriedades do objeto conforme o efeito desejado.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["UX03.01", "UX03.04"],
+      "evidencias_observaveis": [
+        "Dado um resultado desejado, escolhe o modificador que o produz",
+        "Reconhece que o modificador é não destrutivo até ser aplicado",
+        "Explica a vantagem de modelar metade e espelhar com modificador"
+      ],
+      "erros_comuns": [
+        "Aplicar o modificador cedo e perder a possibilidade de ajustar",
+        "Esperar que o modificador altere a malha base antes de ser aplicado",
+        "Empilhar modificadores sem atentar para a ordem em que agem",
+        "Modelar as duas metades à mão onde o espelhamento resolveria"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "UX03.C5",
+      "titulo": "Abrir e organizar o mapa UV",
+      "descricao": "Entender o mapa UV como a planificação da malha, abri-lo com unwrap, testar a distribuição e escolher a resolução adequada da textura.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.12,
+      "itens_alvo": 2,
+      "cursos_origem": ["UX03.03"],
+      "evidencias_observaveis": [
+        "Explica em uma frase o que o mapa UV representa",
+        "Reconhece um UV mal distribuído pelo esticamento da textura no modelo",
+        "Relaciona a resolução do mapa ao tamanho do objeto na cena"
+      ],
+      "erros_comuns": [
+        "Pintar a textura antes de abrir o UV",
+        "Marcar costuras em lugares visíveis do modelo",
+        "Achar que o UV é gerado automaticamente sem ajuste",
+        "Usar resolução altíssima em um prop pequeno e pesar o projeto sem ganho"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "UX03.C6",
+      "titulo": "Texturizar e pintar com a técnica Hand Paint",
+      "descricao": "Organizar os materiais do modelo, pintar a textura à mão sobre o mapa UV e preparar a peça colorida para uso em uma engine de jogo.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.14,
+      "itens_alvo": 3,
+      "cursos_origem": ["UX03.03", "UX03.04"],
+      "evidencias_observaveis": [
+        "Distingue o material do modelo da textura aplicada a ele",
+        "Reconhece o que a pintura Hand Paint resolve que a cor lisa não resolve",
+        "Sabe o que precisa estar pronto para levar o prop a uma engine"
+      ],
+      "erros_comuns": [
+        "Confundir atribuir uma cor ao material com pintar uma textura",
+        "Pintar sem considerar onde estão as costuras do UV e ver a emenda aparecer",
+        "Esquecer de exportar a textura junto com o modelo",
+        "Achar que a iluminação da cena substitui o sombreamento pintado"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    },
+    {
+      "id": "UX03.C7",
+      "titulo": "Montar o rig do personagem",
+      "descricao": "Construir o esqueleto com bones, criar IK e controladores para facilitar a animação, e vincular a malha ao esqueleto ajustando a pintura de peso.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["UX03.05"],
+      "evidencias_observaveis": [
+        "Dada uma deformação errada no braço, aponta que a pintura de peso é a causa",
+        "Explica o que o controlador resolve no fluxo de trabalho de animação",
+        "Reconhece a função da IK em um membro do personagem"
+      ],
+      "erros_comuns": [
+        "Animar os bones direto sem criar controladores",
+        "Vincular a malha ao esqueleto e não revisar a pintura de peso",
+        "Montar o esqueleto fora do eixo do personagem",
+        "Confundir o bone com o controlador que o movimenta"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "UX03.C8",
+      "titulo": "Animar com keyframes e renderizar o resultado",
+      "descricao": "Criar a animação por keyframes, organizar trechos com a NonLinear Animation, iluminar a cena, escolher o motor de render e exportar o resultado final.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["UX03.01", "UX03.05"],
+      "evidencias_observaveis": [
+        "Explica o que um keyframe marca e o que o Blender faz entre dois deles",
+        "Reconhece que a escolha do motor de render muda tempo e resultado",
+        "Distingue exportar o modelo de renderizar um vídeo da animação"
+      ],
+      "erros_comuns": [
+        "Marcar keyframe sem perceber que ele registra a posição daquele quadro",
+        "Esperar que a animação apareça no modelo exportado para uma engine sem configurá-la",
+        "Renderizar em alta qualidade para testar e perder horas",
+        "Esquecer a iluminação e renderizar uma cena escura"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    }
+  ],
+
+  "cursos": [
+    {
+      "id": "UX03.01",
+      "titulo": "Blender: criando um modelo 3D",
+      "url": "https://www.alura.com.br/curso-online-blender-criando-primeiro-modelo-3d",
+      "carga_horaria_h": 8,
+      "n_atividades": 39,
+      "atualizado_em": "2026-07-08",
+      "etapa_da_trilha": "O Blender e o universo 3D",
+      "modulos": [
+        "Conhecendo o Blender",
+        "Criando o ambiente",
+        "Texturizando",
+        "Renderizando"
+      ],
+      "conceitos_chave": ["Blender", "viewport", "modo objeto", "modo edição", "blocagem", "propriedades do objeto", "modificador", "iluminação", "material", "motor de render", "exportação"],
+      "objetivos_de_aprendizagem": [
+        { "id": "UX03.01.O1", "enunciado": "Reconhecer os painéis do Blender e navegar no espaço 3D do viewport", "nivel_bloom": "entender", "competencia": "UX03.C1" },
+        { "id": "UX03.01.O2", "enunciado": "Modelar um ambiente minimalista por blocagem a partir de primitivas", "nivel_bloom": "aplicar", "competencia": "UX03.C2" },
+        { "id": "UX03.01.O3", "enunciado": "Ajustar propriedades de objeto e aplicar modificadores à malha", "nivel_bloom": "aplicar", "competencia": "UX03.C4" },
+        { "id": "UX03.01.O4", "enunciado": "Iluminar a cena e escolher o motor de render adequado ao resultado desejado", "nivel_bloom": "aplicar", "competencia": "UX03.C8" },
+        { "id": "UX03.01.O5", "enunciado": "Renderizar e exportar a animação da composição 3D", "nivel_bloom": "aplicar", "competencia": "UX03.C8" },
+        { "id": "UX03.01.O6", "enunciado": "Reconhecer as limitações e as exigências de hardware do trabalho em 3D", "nivel_bloom": "entender", "competencia": "UX03.C1" }
+      ],
+      "fora_de_escopo": ["escultura digital", "simulação de fluidos e partículas", "composição de vídeo", "nodes de shader avançados"]
+    },
+    {
+      "id": "UX03.02",
+      "titulo": "Blender: entendendo o Box Modeling",
+      "url": "https://www.alura.com.br/curso-online-blender-entendendo-box-modeling",
+      "carga_horaria_h": 8,
+      "n_atividades": 39,
+      "atualizado_em": "2026-07-08",
+      "etapa_da_trilha": "Modelagem 3D com Blender",
+      "modulos": [
+        "Organizando o Workspace",
+        "Modelando a Lâmina",
+        "O cabo da espada",
+        "O altar"
+      ],
+      "conceitos_chave": ["box modeling", "concept", "modelsheet", "imagem de referência", "extrusão", "lowpoly", "fluxo de malha", "atalho de teclado", "composição", "render de portfólio"],
+      "objetivos_de_aprendizagem": [
+        { "id": "UX03.02.O1", "enunciado": "Organizar a área de trabalho e inserir concept e modelsheet como referência", "nivel_bloom": "aplicar", "competencia": "UX03.C1" },
+        { "id": "UX03.02.O2", "enunciado": "Modelar um objeto lowpoly com Box Modeling partindo de uma primitiva", "nivel_bloom": "aplicar", "competencia": "UX03.C2" },
+        { "id": "UX03.02.O3", "enunciado": "Usar extrusão para desenvolver a forma a partir das faces selecionadas", "nivel_bloom": "aplicar", "competencia": "UX03.C2" },
+        { "id": "UX03.02.O4", "enunciado": "Explicar o conceito de fluxo de malha e seu efeito sobre o modelo", "nivel_bloom": "entender", "competencia": "UX03.C3" },
+        { "id": "UX03.02.O5", "enunciado": "Usar atalhos de teclado para agilizar o trabalho de modelagem", "nivel_bloom": "aplicar", "competencia": "UX03.C1" }
+      ],
+      "fora_de_escopo": ["modelagem hard surface avançada", "CAD e modelagem para impressão 3D", "escultura de alta densidade"]
+    },
+    {
+      "id": "UX03.03",
+      "titulo": "Blender: texturizando modelos com Hand Paint",
+      "url": "https://www.alura.com.br/curso-online-blender-texturizando-modelos-hand-paint",
+      "carga_horaria_h": 8,
+      "n_atividades": 37,
+      "atualizado_em": "2026-07-08",
+      "etapa_da_trilha": "Modelagem 3D com Blender",
+      "modulos": [
+        "Entendendo o UV Mapping",
+        "Organizando a UV da espada",
+        "Técnica de pintura Hand Painting",
+        "Criando o portfólio"
+      ],
+      "conceitos_chave": ["UV mapping", "UV editor", "unwrap", "costura", "resolução de textura", "material", "Hand Painting", "pintura digital", "prop para game", "portfólio 3D"],
+      "objetivos_de_aprendizagem": [
+        { "id": "UX03.03.O1", "enunciado": "Explicar o que é o mapa UV e qual o seu papel na texturização", "nivel_bloom": "entender", "competencia": "UX03.C5" },
+        { "id": "UX03.03.O2", "enunciado": "Abrir a UV de um modelo com unwrap e testar a distribuição obtida", "nivel_bloom": "aplicar", "competencia": "UX03.C5" },
+        { "id": "UX03.03.O3", "enunciado": "Escolher a resolução de mapa adequada ao tamanho e ao uso do objeto", "nivel_bloom": "avaliar", "competencia": "UX03.C5" },
+        { "id": "UX03.03.O4", "enunciado": "Organizar os materiais e pintar a textura do modelo com a técnica Hand Paint", "nivel_bloom": "aplicar", "competencia": "UX03.C6" },
+        { "id": "UX03.03.O5", "enunciado": "Preparar o prop texturizado para ser levado a uma engine de jogo", "nivel_bloom": "aplicar", "competencia": "UX03.C6" }
+      ],
+      "fora_de_escopo": ["texturização procedural por nodes", "baking de mapas normal e AO", "PBR completo", "Substance Painter"]
+    },
+    {
+      "id": "UX03.04",
+      "titulo": "Blender: modelando com a técnica Poly by Poly",
+      "url": "https://www.alura.com.br/curso-online-blender-modelando-tecnica-poly-by-poly",
+      "carga_horaria_h": 8,
+      "n_atividades": 39,
+      "atualizado_em": "2026-07-08",
+      "etapa_da_trilha": "Modelagem 3D com Blender",
+      "modulos": [
+        "Técnica poly by poly",
+        "Modelando a cabeça",
+        "Modelando o corpo",
+        "Modelando os acessórios",
+        "Textura e finalização"
+      ],
+      "conceitos_chave": ["poly by poly", "retopologia", "fluxo de malha", "separar e unir malha", "modificador", "modelagem de personagem", "acessório", "coloração"],
+      "objetivos_de_aprendizagem": [
+        { "id": "UX03.04.O1", "enunciado": "Comparar as técnicas de modelagem 3D e identificar quando usar Poly by Poly", "nivel_bloom": "analisar", "competencia": "UX03.C3" },
+        { "id": "UX03.04.O2", "enunciado": "Modelar cabeça, corpo e membros de um personagem polígono a polígono", "nivel_bloom": "aplicar", "competencia": "UX03.C3" },
+        { "id": "UX03.04.O3", "enunciado": "Explicar o que é retopologia e em que situação ela é necessária", "nivel_bloom": "entender", "competencia": "UX03.C3" },
+        { "id": "UX03.04.O4", "enunciado": "Separar e unir partes diferentes de uma malha durante a modelagem", "nivel_bloom": "aplicar", "competencia": "UX03.C3" },
+        { "id": "UX03.04.O5", "enunciado": "Aplicar modificadores para facilitar o processo de modelagem do personagem", "nivel_bloom": "aplicar", "competencia": "UX03.C4" },
+        { "id": "UX03.04.O6", "enunciado": "Colorir o personagem finalizado e compor a cena com os acessórios", "nivel_bloom": "aplicar", "competencia": "UX03.C6" }
+      ],
+      "fora_de_escopo": ["anatomia avançada", "escultura em ZBrush", "roupas com simulação de tecido", "cabelo com sistema de partículas"]
+    },
+    {
+      "id": "UX03.05",
+      "titulo": "Blender: riggando e animando seu personagem",
+      "url": "https://www.alura.com.br/curso-online-blender-riggando-animando-personagem",
+      "carga_horaria_h": 8,
+      "n_atividades": 38,
+      "atualizado_em": "2026-07-08",
+      "etapa_da_trilha": "Animação 3D com Blender",
+      "modulos": [
+        "A animação no 3D",
+        "Animação por Bones",
+        "Pintura de peso",
+        "Finalizando a animação"
+      ],
+      "conceitos_chave": ["keyframe", "tipos de animação", "bone", "esqueleto", "armature", "IK", "controlador", "pintura de peso", "vinculação de malha", "NonLinear Animation", "exportação de personagem"],
+      "objetivos_de_aprendizagem": [
+        { "id": "UX03.05.O1", "enunciado": "Distinguir os tipos de animação e explicar o papel dos keyframes", "nivel_bloom": "entender", "competencia": "UX03.C8" },
+        { "id": "UX03.05.O2", "enunciado": "Montar o esqueleto do personagem com bones alinhados à malha", "nivel_bloom": "aplicar", "competencia": "UX03.C7" },
+        { "id": "UX03.05.O3", "enunciado": "Criar IK e controladores para melhorar o fluxo de trabalho de animação", "nivel_bloom": "aplicar", "competencia": "UX03.C7" },
+        { "id": "UX03.05.O4", "enunciado": "Vincular a malha ao esqueleto e corrigir deformações pela pintura de peso", "nivel_bloom": "analisar", "competencia": "UX03.C7" },
+        { "id": "UX03.05.O5", "enunciado": "Animar o personagem e organizar os trechos com a NonLinear Animation", "nivel_bloom": "aplicar", "competencia": "UX03.C8" },
+        { "id": "UX03.05.O6", "enunciado": "Exportar o personagem animado e gerar um vídeo da animação", "nivel_bloom": "aplicar", "competencia": "UX03.C8" }
+      ],
+      "fora_de_escopo": ["motion capture", "rigging facial", "physics de corpo mole", "animação procedural", "retargeting de animação"]
+    }
+  ],
+
+  "rubrica_proficiencia": {
+    "faixas": [
+      { "nivel": "iniciante", "min_pct": 0, "max_pct": 49, "descritor": "Reconhece a tela do Blender, mas confunde os modos de trabalho e não sabe por onde começar um modelo." },
+      { "nivel": "basico", "min_pct": 50, "max_pct": 69, "descritor": "Modela formas simples seguindo um passo a passo; não explica fluxo de malha nem para que serve o mapa UV." },
+      { "nivel": "adequado", "min_pct": 70, "max_pct": 84, "descritor": "Modela por blocagem e Box Modeling escolhendo a primitiva certa, abre e organiza o UV, pinta a textura à mão e monta o esqueleto de um personagem." },
+      { "nivel": "avancado", "min_pct": 85, "max_pct": 100, "descritor": "Justifica a técnica de modelagem pela peça e pelo uso, relaciona fluxo de malha à deformação na animação, diagnostica deformação errada pela pintura de peso e escolhe o motor de render com critério." }
+    ],
+    "nivel_minimo_esperado": "adequado",
+    "observacao": "Faixas definidas pela coordenação ITT, não extraídas da Alura. Trilha de produção prática: o questionário mede o entendimento das decisões de modelagem, texturização e rigging, não a destreza no software — essa só se avalia pelo arquivo entregue. Revisar após o primeiro ciclo de aplicação."
+  },
+
+  "blueprint_questionario": {
+    "n_itens_total": 20,
+    "tempo_estimado_min": 40,
+    "por_competencia": {
+      "UX03.C1": 2, "UX03.C2": 3, "UX03.C3": 3, "UX03.C4": 2,
+      "UX03.C5": 2, "UX03.C6": 3, "UX03.C7": 3, "UX03.C8": 2
+    },
+    "por_tipo": { "multipla_escolha": 18, "dissertativa": 2 },
+    "por_bloom": { "lembrar_entender": 7, "aplicar": 9, "analisar_avaliar": 4 }
+  },
+
+  "prompt": "prompts/UX03.md",
+
+  "metadados": {
+    "versao": "1.0",
+    "data_extracao": "2026-10-21",
+    "fontes": [
+      "https://www.alura.com.br/formacao-blender",
+      "https://www.alura.com.br/curso-online-blender-criando-primeiro-modelo-3d",
+      "https://www.alura.com.br/curso-online-blender-entendendo-box-modeling",
+      "https://www.alura.com.br/curso-online-blender-texturizando-modelos-hand-paint",
+      "https://www.alura.com.br/curso-online-blender-modelando-tecnica-poly-by-poly",
+      "https://www.alura.com.br/curso-online-blender-riggando-animando-personagem",
+      "imagens/planilha-trilhas-atual.jpeg"
+    ],
+    "derivado_de": "Ementa, carga horária, público-alvo e bullets 'O que você vai aprender' das páginas públicas da Alura. Competências, pesos, erros comuns e faixas de proficiência são elaboração pedagógica da ITT. Trilha sem programação: o blueprint não usa o tipo analise_codigo."
+  }
+}

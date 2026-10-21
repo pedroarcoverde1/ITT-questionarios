@@ -1,0 +1,282 @@
+{
+  "id_itt": "PR06",
+  "escola": "Programação",
+  "trilha": {
+    "titulo_itt": "Desenvolva jogos com Unity",
+    "titulo_alura": "Desenvolva jogos com Unity",
+    "url": "https://www.alura.com.br/formacao-desenvolvendo-jogos-2d-unity",
+    "carga_horaria_h": 24,
+    "n_cursos": 2,
+    "publico_alvo": "Adolescentes do ensino fundamental II e médio atendidos pela ITT, iniciando em desenvolvimento de jogos; a trilha introduz a engine e a programação em C# sem exigir experiência prévia",
+    "pre_requisitos": [],
+    "projeto_fio_condutor": "Um jogo metroidvania 2D construído do zero ao fim: controles, mecânicas de andar, pular e atacar, sistema de dano, mapa em tilemap, menus, coletáveis, batalha contra o chefão e game loop completo"
+  },
+
+  "competencias": [
+    {
+      "id": "PR06.C1",
+      "titulo": "Montar uma cena 2D na Unity com GameObjects e componentes",
+      "descricao": "Navegar na interface da engine e compor a cena, entendendo que um GameObject é um contêiner vazio cujo comportamento vem dos componentes anexados a ele.",
+      "nivel_bloom": "entender",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR06.01"],
+      "evidencias_observaveis": [
+        "Dada uma necessidade do jogo, diz qual componente precisa ser adicionado ao GameObject",
+        "Distingue a cena, o GameObject e o componente",
+        "Reconhece que um sprite é um asset e o GameObject é o que o coloca na cena"
+      ],
+      "erros_comuns": [
+        "Achar que o GameObject já tem comportamento sem nenhum componente",
+        "Confundir o asset no projeto com a instância dele na cena",
+        "Editar valores no Inspector durante o Play e perder as alterações ao parar",
+        "Confundir a hierarquia da cena com a estrutura de pastas do projeto"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "PR06.C2",
+      "titulo": "Programar comportamento em C# com scripts de MonoBehaviour",
+      "descricao": "Escrever um script anexado a um GameObject e usar os métodos do ciclo de vida da Unity no momento correto: Start para inicializar e Update para o que roda a cada quadro.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR06.01", "PR06.02"],
+      "evidencias_observaveis": [
+        "Dado um comportamento desejado, decide se o código vai em Start ou em Update",
+        "Prevê o efeito de um trecho de C# que altera a posição ou o estado de um GameObject",
+        "Escreve o script que faz o inimigo perseguir a pessoa jogadora"
+      ],
+      "erros_comuns": [
+        "Colocar em Update o que deveria rodar uma vez só, em Start",
+        "Esquecer que Update roda a cada quadro e multiplicar a velocidade sem usar Time.deltaTime",
+        "Criar o script e não anexá-lo a nenhum GameObject",
+        "Dar ao arquivo um nome diferente do nome da classe e o script não aparecer na engine"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR06.C3",
+      "titulo": "Capturar a entrada da pessoa jogadora",
+      "descricao": "Ler comandos de teclado, mouse ou controle pelo sistema de input da Unity e transformá-los em ações do personagem.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR06.01"],
+      "evidencias_observaveis": [
+        "Dado 'o personagem deve pular ao pressionar a tecla', escolhe a leitura de input adequada",
+        "Distingue ler se a tecla está pressionada de ler o momento em que ela foi pressionada",
+        "Reconhece que o input é lido no Update para responder a cada quadro"
+      ],
+      "erros_comuns": [
+        "Usar a leitura contínua da tecla para uma ação que deveria acontecer uma vez por toque",
+        "Ler o input em Start e o controle nunca responder",
+        "Amarrar a ação a uma tecla fixa em vez de passar pelo mapeamento de input",
+        "Confundir o eixo horizontal do input com a posição do personagem"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR06.C4",
+      "titulo": "Aplicar física 2D e detectar colisões",
+      "descricao": "Configurar Rigidbody2D e Collider2D para que o personagem caia, pule e colida, e distinguir colisão de sobreposição por trigger.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR06.01"],
+      "evidencias_observaveis": [
+        "Dado um GameObject que atravessa o chão, aponta qual componente está faltando",
+        "Distingue um collider sólido de um trigger e sabe quando usar cada um",
+        "Explica por que mover o personagem pela física difere de mover pela posição direta"
+      ],
+      "erros_comuns": [
+        "Esperar gravidade sem adicionar Rigidbody2D",
+        "Adicionar Rigidbody2D e esquecer o Collider2D, e o objeto atravessar o cenário",
+        "Usar trigger onde era preciso bloquear a passagem",
+        "Alterar a posição direto no Update e brigar com o motor de física"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo", "dissertativa"]
+    },
+    {
+      "id": "PR06.C5",
+      "titulo": "Animar o personagem com o Animator",
+      "descricao": "Criar as animações a partir dos sprites e organizar as transições entre estados — parado, andando, atacando — disparadas por parâmetros.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR06.01", "PR06.02"],
+      "evidencias_observaveis": [
+        "Dado um conjunto de estados, aponta qual parâmetro dispara a transição entre eles",
+        "Distingue a animação (o clipe) da máquina de estados que decide qual toca",
+        "Reconhece que o script altera o parâmetro e o Animator decide a transição"
+      ],
+      "erros_comuns": [
+        "Trocar a animação direto no script em vez de alterar o parâmetro do Animator",
+        "Criar a transição sem condição e a animação nunca parar no estado certo",
+        "Confundir o clipe de animação com o estado no Animator",
+        "Esquecer de desmarcar o loop em uma animação que deve tocar uma vez"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "PR06.C6",
+      "titulo": "Construir o nível com Tilemap e implementar o sistema de dano",
+      "descricao": "Montar o mapa do jogo com tilemap e tiles reutilizáveis, e implementar vida, dano e morte do personagem e dos inimigos.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR06.01", "PR06.02"],
+      "evidencias_observaveis": [
+        "Explica por que o tilemap é melhor que posicionar centenas de sprites um a um",
+        "Dado um sistema de vida, aponta onde o dano é aplicado e onde a morte é verificada",
+        "Reconhece que o tilemap também precisa de collider para o personagem pisar nele"
+      ],
+      "erros_comuns": [
+        "Montar o cenário sprite por sprite em vez de usar o tilemap",
+        "Esquecer o Tilemap Collider e o personagem atravessar o chão",
+        "Aplicar dano a cada quadro de contato e matar o personagem instantaneamente",
+        "Verificar a morte antes de subtrair a vida e o personagem sobreviver com vida zero"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR06.C7",
+      "titulo": "Montar a interface do jogo: menus, UI e coletáveis",
+      "descricao": "Construir o menu inicial e de opções, exibir informações na tela, inserir coletáveis com efeitos visuais de partículas e animar a tela de créditos.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.13,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR06.02"],
+      "evidencias_observaveis": [
+        "Dado um botão de menu, identifica o que precisa estar ligado a ele para a ação acontecer",
+        "Explica o papel do sistema de partículas no feedback visual de um coletável",
+        "Distingue o elemento de UI, que acompanha a tela, do GameObject no mundo do jogo"
+      ],
+      "erros_comuns": [
+        "Colocar o elemento de UI na cena como sprite comum e ele se mover com a câmera",
+        "Criar o botão e não ligar a ação ao evento de clique",
+        "Destruir o coletável antes de somar a pontuação",
+        "Confundir o efeito de partículas com uma animação de sprite"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR06.C8",
+      "titulo": "Fechar o game loop: áudio, vitória, derrota e reinício",
+      "descricao": "Adicionar trilha e efeitos sonoros com um audio mixer, implementar as condições de vitória e de derrota e garantir que o jogo reinicie corretamente ao terminar.",
+      "nivel_bloom": "analisar",
+      "peso": 0.12,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR06.01", "PR06.02"],
+      "evidencias_observaveis": [
+        "Dada uma condição de fim de jogo, descreve o que precisa acontecer na transição",
+        "Explica para que serve um audio mixer quando há trilha e vários efeitos sonoros",
+        "Reconhece que reiniciar a cena precisa devolver o estado do jogo ao início"
+      ],
+      "erros_comuns": [
+        "Reiniciar a cena e manter pontuação ou vida do jogo anterior em variáveis estáticas",
+        "Tocar o efeito sonoro a cada quadro em que a condição é verdadeira",
+        "Controlar o volume de cada som separadamente em vez de usar o mixer",
+        "Verificar a vitória em um lugar onde a condição nunca é avaliada"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    }
+  ],
+
+  "cursos": [
+    {
+      "id": "PR06.01",
+      "titulo": "Unity: criando um jogo metroidvania 2D",
+      "url": "https://www.alura.com.br/curso-online-unity-criando-jogo-metroidvania-2d",
+      "carga_horaria_h": 12,
+      "n_atividades": null,
+      "atualizado_em": null,
+      "etapa_da_trilha": "Introdução à criação de Jogos 2D",
+      "modulos": [
+        "Interface da Unity e primeiros passos em um jogo 2D",
+        "Sistema de input e controles do jogo",
+        "Scripts em C# e mecânicas de andar, pular e atacar",
+        "Física do jogo e sistema de dano",
+        "Assets de arte, animações e mapa",
+        "Sistema de som"
+      ],
+      "conceitos_chave": ["Unity", "cena", "GameObject", "componente", "Inspector", "C#", "MonoBehaviour", "Start", "Update", "sistema de input", "Rigidbody2D", "Collider2D", "sprite", "Animator", "tilemap", "AudioSource"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR06.01.O1", "enunciado": "Reconhecer os painéis da interface da Unity e compor uma cena 2D com GameObjects e componentes", "nivel_bloom": "entender", "competencia": "PR06.C1" },
+        { "id": "PR06.01.O2", "enunciado": "Escrever um script em C# anexado a um GameObject para alterar seu comportamento", "nivel_bloom": "aplicar", "competencia": "PR06.C2" },
+        { "id": "PR06.01.O3", "enunciado": "Ler a entrada da pessoa jogadora pelo sistema de input da Unity para criar os controles", "nivel_bloom": "aplicar", "competencia": "PR06.C3" },
+        { "id": "PR06.01.O4", "enunciado": "Implementar as mecânicas de andar, pular e atacar combinando input, física e script", "nivel_bloom": "aplicar", "competencia": "PR06.C4" },
+        { "id": "PR06.01.O5", "enunciado": "Configurar Rigidbody2D e Collider2D para obter a física e as colisões do jogo", "nivel_bloom": "aplicar", "competencia": "PR06.C4" },
+        { "id": "PR06.01.O6", "enunciado": "Adicionar assets de arte e desenvolver as animações do personagem no Animator", "nivel_bloom": "aplicar", "competencia": "PR06.C5" },
+        { "id": "PR06.01.O7", "enunciado": "Construir o mapa do jogo utilizando o tilemap da Unity", "nivel_bloom": "aplicar", "competencia": "PR06.C6" },
+        { "id": "PR06.01.O8", "enunciado": "Implementar um sistema de dano para o personagem e os inimigos", "nivel_bloom": "aplicar", "competencia": "PR06.C6" },
+        { "id": "PR06.01.O9", "enunciado": "Criar o sistema de som com trilha e efeitos sonoros do jogo", "nivel_bloom": "aplicar", "competencia": "PR06.C8" }
+      ],
+      "fora_de_escopo": ["jogos 3D", "multiplayer e rede", "shaders customizados", "publicação em lojas", "Unity DOTS e ECS"]
+    },
+    {
+      "id": "PR06.02",
+      "titulo": "Unity: criando menus, coletáveis e batalha final em um jogo 2D",
+      "url": "https://www.alura.com.br/curso-online-unity-criando-menus-coletaveis-batalha-final-jogo-2d",
+      "carga_horaria_h": 12,
+      "n_atividades": null,
+      "atualizado_em": null,
+      "etapa_da_trilha": "Aprimorando o jogo",
+      "modulos": [
+        "Menu inicial e menu de opções",
+        "Coletáveis e sistema de partículas",
+        "Audio mixer e gerenciamento de sons",
+        "Batalha contra o chefão e comportamento de chasing",
+        "Condições de derrota e vitória",
+        "Créditos e game loop"
+      ],
+      "conceitos_chave": ["UI", "Canvas", "botão", "menu de opções", "coletável", "sistema de partículas", "audio mixer", "chasing", "boss", "condição de vitória", "condição de derrota", "créditos", "game loop", "reinício de cena"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR06.02.O1", "enunciado": "Criar o menu inicial e o menu de opções com os elementos de UI da Unity", "nivel_bloom": "aplicar", "competencia": "PR06.C7" },
+        { "id": "PR06.02.O2", "enunciado": "Inserir coletáveis no jogo e enriquecer o feedback visual com o sistema de partículas", "nivel_bloom": "aplicar", "competencia": "PR06.C7" },
+        { "id": "PR06.02.O3", "enunciado": "Criar e animar a tela de créditos do jogo", "nivel_bloom": "aplicar", "competencia": "PR06.C7" },
+        { "id": "PR06.02.O4", "enunciado": "Programar o comportamento de perseguição do inimigo chefão na batalha final", "nivel_bloom": "aplicar", "competencia": "PR06.C2" },
+        { "id": "PR06.02.O5", "enunciado": "Diagnosticar e corrigir erros no comportamento do personagem usando os recursos da engine", "nivel_bloom": "analisar", "competencia": "PR06.C2" },
+        { "id": "PR06.02.O6", "enunciado": "Ajustar as animações e transições de estado dos novos comportamentos do jogo", "nivel_bloom": "aplicar", "competencia": "PR06.C5" },
+        { "id": "PR06.02.O7", "enunciado": "Adicionar um audio mixer para gerenciar os diferentes sons do jogo", "nivel_bloom": "aplicar", "competencia": "PR06.C8" },
+        { "id": "PR06.02.O8", "enunciado": "Implementar as condições de vitória e derrota e um game loop que reinicia o jogo ao final", "nivel_bloom": "analisar", "competencia": "PR06.C8" },
+        { "id": "PR06.02.O9", "enunciado": "Ajustar o nível e os desafios do mapa para acomodar a batalha final", "nivel_bloom": "aplicar", "competencia": "PR06.C6" }
+      ],
+      "fora_de_escopo": ["save e load de progresso em arquivo", "inteligência artificial com pathfinding", "localização do jogo em outros idiomas", "monetização", "otimização para dispositivos móveis"]
+    }
+  ],
+
+  "rubrica_proficiencia": {
+    "faixas": [
+      { "nivel": "iniciante", "min_pct": 0, "max_pct": 49, "descritor": "Reconhece a interface da Unity, mas não relaciona GameObject, componente e script; não prevê o efeito de um trecho de C#." },
+      { "nivel": "basico", "min_pct": 50, "max_pct": 69, "descritor": "Monta uma cena e segue um script já escrito; erra entre Start e Update, e esquece colliders ao montar o cenário." },
+      { "nivel": "adequado", "min_pct": 70, "max_pct": 84, "descritor": "Programa comportamento em C# no método certo do ciclo de vida, liga input a movimento, configura física e colisões e monta o nível com tilemap e sistema de dano." },
+      { "nivel": "avancado", "min_pct": 85, "max_pct": 100, "descritor": "Diagnostica por que uma mecânica não funciona a partir do código, organiza animações por parâmetros do Animator e fecha o game loop com áudio, vitória, derrota e reinício consistente." }
+    ],
+    "nivel_minimo_esperado": "adequado",
+    "observacao": "Faixas definidas pela coordenação ITT, não extraídas da Alura. Revisar após o primeiro ciclo de aplicação."
+  },
+
+  "blueprint_questionario": {
+    "n_itens_total": 20,
+    "tempo_estimado_min": 45,
+    "por_competencia": {
+      "PR06.C1": 2, "PR06.C2": 3, "PR06.C3": 2, "PR06.C4": 3,
+      "PR06.C5": 2, "PR06.C6": 3, "PR06.C7": 3, "PR06.C8": 2
+    },
+    "por_tipo": { "multipla_escolha": 13, "analise_codigo": 5, "dissertativa": 2 },
+    "por_bloom": { "lembrar_entender": 6, "aplicar": 11, "analisar_avaliar": 3 }
+  },
+
+  "prompt": "prompts/PR06.md",
+
+  "metadados": {
+    "versao": "1.0",
+    "data_extracao": "2026-10-21",
+    "fontes": [
+      "https://www.alura.com.br/formacao-desenvolvendo-jogos-2d-unity",
+      "imagens/planilha-trilhas-atual.jpeg"
+    ],
+    "derivado_de": "Carga horária, público e bullets 'O que você vai aprender' da página pública da formação na Alura. ATENÇÃO: as páginas individuais dos dois cursos (curso-online-unity-criando-jogo-metroidvania-2d e curso-online-unity-criando-menus-coletaveis-batalha-final-jogo-2d) não estão publicadas — redirecionam para a home da Alura em 2026-10-21. Por isso: a lista de módulos de cada curso foi derivada da descrição da etapa na página da formação, não de uma ementa publicada; a carga de 12h por curso é a divisão igual do total de 24h declarado para a formação; n_atividades e atualizado_em ficam nulos. Reconferir quando as páginas forem publicadas. Competências, pesos, erros comuns e faixas de proficiência são elaboração pedagógica da ITT."
+  }
+}

@@ -1,0 +1,350 @@
+{
+  "id_itt": "PR03",
+  "escola": "Programação",
+  "trilha": {
+    "titulo_itt": "Django: crie aplicações em Python",
+    "titulo_alura": "Django: crie aplicações em Python",
+    "url": "https://www.alura.com.br/formacao-django",
+    "carga_horaria_h": 44,
+    "n_cursos": 5,
+    "publico_alvo": "Adolescentes do ensino fundamental II e médio atendidos pela ITT, já alfabetizados em Python e Orientação a Objetos (PR01 e PR02), iniciando em desenvolvimento web com Python",
+    "pre_requisitos": ["PR01", "PR02"],
+    "projeto_fio_condutor": "Galeria de fotografias (projeto Galeria/Alura Space) construída do zero: templates, banco de dados, área administrativa, cadastro e login de usuários, CRUD completo e imagens persistidas na nuvem"
+  },
+
+  "competencias": [
+    {
+      "id": "PR03.C1",
+      "titulo": "Estruturar um projeto Django e mapear URLs para views",
+      "descricao": "Criar o projeto e as apps, subir o servidor de desenvolvimento, distinguir o papel de projeto, app, view e rota, e manter as configurações sensíveis em variáveis de ambiente.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.14,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR03.01"],
+      "evidencias_observaveis": [
+        "Dada uma URL que o navegador precisa atender, aponta qual arquivo de rotas e qual view respondem por ela",
+        "Explica a diferença entre o projeto e uma app dentro dele",
+        "Reconhece que a SECRET_KEY e as credenciais vão para variáveis de ambiente, não para o código versionado"
+      ],
+      "erros_comuns": [
+        "Confundir projeto com app e criar tudo em um único módulo",
+        "Esquecer de registrar a app em INSTALLED_APPS e não entender por que nada carrega",
+        "Deixar as URLs todas no arquivo do projeto, sem isolar por app",
+        "Versionar a SECRET_KEY e as credenciais junto com o código"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR03.C2",
+      "titulo": "Renderizar páginas com templates sem duplicar código",
+      "descricao": "Carregar um template a partir de uma view, servir arquivos estáticos e imagens, e reaproveitar estrutura com herança de template, partials e url name em vez de caminhos fixos.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.14,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR03.01", "PR03.03"],
+      "evidencias_observaveis": [
+        "Dada uma view, escreve o render() que devolve o template com o contexto certo",
+        "Usa {% extends %} e {% block %} para não repetir cabeçalho e rodapé em cada página",
+        "Troca um caminho fixo no href pelo {% url %} com o nome da rota"
+      ],
+      "erros_comuns": [
+        "Repetir cabeçalho e rodapé em cada template em vez de herdar de um base",
+        "Esquecer o {% load static %} e não entender por que a imagem não aparece",
+        "Escrever o caminho da rota na mão no href e quebrar tudo quando a URL muda",
+        "Confundir a variável do contexto com o nome da variável na view"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR03.C3",
+      "titulo": "Modelar e persistir dados com models e migrações",
+      "descricao": "Declarar um model com os campos adequados ao dado, gerar e aplicar a migração, criar e consultar registros, e filtrar a listagem para implementar uma busca.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR03.02"],
+      "evidencias_observaveis": [
+        "Dado 'uma fotografia tem nome, legenda, data e foto', escreve o model com os campos de tipo correto",
+        "Sabe que alterar o model exige makemigrations e migrate para o banco acompanhar",
+        "Escreve o filter() que devolve só os registros que casam com o termo buscado"
+      ],
+      "erros_comuns": [
+        "Alterar o model e esperar que o banco mude sozinho, sem rodar a migração",
+        "Usar CharField para tudo, inclusive data e imagem",
+        "Confundir o objeto do model com o registro já salvo no banco (esquecer o save())",
+        "Buscar com == em vez dos filtros do ORM (filter, icontains)"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR03.C4",
+      "titulo": "Administrar os dados pelo Django Admin",
+      "descricao": "Registrar um model no Admin, operar o CRUD por essa área e personalizar a listagem com os campos e as ações que a pessoa administradora precisa.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR03.02"],
+      "evidencias_observaveis": [
+        "Reconhece que um model só aparece no Admin depois de registrado",
+        "Identifica o que muda na tela do Admin ao declarar list_display e list_filter",
+        "Explica por que o Admin é para quem administra o site, não para quem visita"
+      ],
+      "erros_comuns": [
+        "Criar o model e procurá-lo no Admin sem tê-lo registrado",
+        "Achar que o Admin é a interface pública da aplicação",
+        "Confundir o superusuário do Admin com um usuário comum cadastrado pelo site",
+        "Mexer direto no banco em vez de usar o Admin ou o ORM"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "PR03.C5",
+      "titulo": "Construir e validar formulários",
+      "descricao": "Declarar um formulário com as classes do Django, exibi-lo no template, validar os dados recebidos e devolver mensagens de erro e de sucesso compreensíveis.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR03.03"],
+      "evidencias_observaveis": [
+        "Dado um formulário de cadastro, aponta onde a validação acontece antes de salvar",
+        "Sabe que is_valid() precisa rodar antes de confiar em cleaned_data",
+        "Usa o framework de messages para avisar a pessoa do erro em vez de falhar em silêncio"
+      ],
+      "erros_comuns": [
+        "Ler request.POST direto e salvar sem passar pela validação do formulário",
+        "Esquecer o {% csrf_token %} no template e tomar erro 403 no envio",
+        "Escrever um método de validação com nome fora do padrão clean_<campo> e ver a regra ser ignorada",
+        "Deixar a pessoa sem nenhuma mensagem quando o envio falha"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo", "dissertativa"]
+    },
+    {
+      "id": "PR03.C6",
+      "titulo": "Autenticar e autorizar pessoas usuárias",
+      "descricao": "Implementar cadastro, login e logout com o sistema de usuários do Django, restringir páginas a quem está autenticado e reconhecer o fluxo de um login por provedor externo via OAuth 2.0.",
+      "nivel_bloom": "analisar",
+      "peso": 0.15,
+      "itens_alvo": 3,
+      "cursos_origem": ["PR03.03", "PR03.04"],
+      "evidencias_observaveis": [
+        "Distingue autenticar (provar quem é) de autorizar (o que pode fazer)",
+        "Sabe qual decorator protege uma view que só pessoas logadas podem abrir",
+        "Explica, no fluxo OAuth 2.0, que a senha é digitada no provedor e não na aplicação"
+      ],
+      "erros_comuns": [
+        "Confundir autenticação com autorização",
+        "Proteger só o link no menu e deixar a URL acessível a quem digita direto",
+        "Guardar senha em texto puro em vez de usar o modelo de usuário do Django",
+        "Achar que a aplicação recebe a senha da pessoa no login via GitHub"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    },
+    {
+      "id": "PR03.C7",
+      "titulo": "Implementar o CRUD completo no fluxo MTV",
+      "descricao": "Percorrer o caminho Model-Template-View para criar, listar, editar e deletar um registro, com a rota, a view e o template de cada operação.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["PR03.05"],
+      "evidencias_observaveis": [
+        "Dado o CRUD de um recurso, nomeia as quatro operações e o que cada view precisa receber",
+        "Identifica que a edição carrega o registro existente no formulário antes de salvar",
+        "Explica o papel de cada letra do MTV no caminho de uma requisição"
+      ],
+      "erros_comuns": [
+        "Confundir a view de criar com a de editar e perder o registro original",
+        "Deletar sem identificar o registro e apagar a coleção inteira",
+        "Esquecer o redirect depois do POST e reenviar o formulário ao atualizar a página",
+        "Achar que o MTV do Django é outro nome para MVC com os mesmos papéis"
+      ],
+      "tipos_de_item": ["multipla_escolha", "analise_codigo"]
+    },
+    {
+      "id": "PR03.C8",
+      "titulo": "Lidar com arquivos de mídia e armazenamento externo",
+      "descricao": "Diferenciar arquivo estático de arquivo de mídia, receber o upload de uma imagem, e reconhecer o que muda ao guardar essa imagem em um bucket S3 em vez do disco local.",
+      "nivel_bloom": "entender",
+      "peso": 0.07,
+      "itens_alvo": 1,
+      "cursos_origem": ["PR03.02", "PR03.05"],
+      "evidencias_observaveis": [
+        "Distingue arquivo estático (CSS, logo do site) de arquivo de mídia (foto enviada pela pessoa)",
+        "Explica em uma frase por que guardar a imagem fora do servidor da aplicação",
+        "Reconhece que a chave de acesso ao bucket é credencial e não vai para o repositório"
+      ],
+      "erros_comuns": [
+        "Tratar a foto enviada pela pessoa como arquivo estático",
+        "Commitar a chave de acesso da AWS no repositório",
+        "Esquecer o MEDIA_URL e não entender por que a imagem não carrega",
+        "Achar que o bucket é um banco de dados"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    }
+  ],
+
+  "cursos": [
+    {
+      "id": "PR03.01",
+      "titulo": "Django: templates e boas práticas",
+      "url": "https://www.alura.com.br/curso-online-django-templates-boas-praticas",
+      "carga_horaria_h": 8,
+      "n_atividades": 49,
+      "atualizado_em": "2025-11-06",
+      "etapa_da_trilha": "Boas práticas",
+      "modulos": [
+        "Iniciando aplicação e subindo o servidor",
+        "Configurações, Git e GitHub",
+        "Projeto, app e views",
+        "Arquivos estáticos",
+        "Boas práticas e partials"
+      ],
+      "conceitos_chave": ["Django", "virtualenv", "servidor de desenvolvimento", "projeto", "app", "view", "URLconf", "template", "arquivos estáticos", "variáveis de ambiente", "url name", "DRY", "partial"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR03.01.O1", "enunciado": "Criar um projeto Django em ambiente virtual e subir o servidor de desenvolvimento", "nivel_bloom": "aplicar", "competencia": "PR03.C1" },
+        { "id": "PR03.01.O2", "enunciado": "Separar projeto e app e isolar as rotas de cada app em seu próprio arquivo de URLs", "nivel_bloom": "aplicar", "competencia": "PR03.C1" },
+        { "id": "PR03.01.O3", "enunciado": "Mover configurações sensíveis para variáveis de ambiente antes de versionar o projeto", "nivel_bloom": "aplicar", "competencia": "PR03.C1" },
+        { "id": "PR03.01.O4", "enunciado": "Renderizar um template a partir de uma view e servir arquivos estáticos e imagens", "nivel_bloom": "aplicar", "competencia": "PR03.C2" },
+        { "id": "PR03.01.O5", "enunciado": "Evitar duplicação com herança de template, partials e url name no lugar de caminhos fixos", "nivel_bloom": "aplicar", "competencia": "PR03.C2" }
+      ],
+      "fora_de_escopo": ["class-based views", "Django REST Framework", "middlewares próprios", "cache", "internacionalização completa"]
+    },
+    {
+      "id": "PR03.02",
+      "titulo": "Django: persistência de dados e Admin",
+      "url": "https://www.alura.com.br/curso-online-django-persistencia-dados-admin",
+      "carga_horaria_h": 10,
+      "n_atividades": 45,
+      "atualizado_em": "2026-02-06",
+      "etapa_da_trilha": "Banco de dados",
+      "modulos": [
+        "Lidando com dados",
+        "Admin",
+        "Avançando no admin",
+        "Imagens e filtros",
+        "Mecanismo de busca"
+      ],
+      "conceitos_chave": ["model", "campo", "migração", "makemigrations", "migrate", "ORM", "QuerySet", "filter", "Django Admin", "superusuário", "list_display", "ForeignKey", "arquivo de mídia", "busca"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR03.02.O1", "enunciado": "Declarar um model com os campos adequados ao dado e aplicar a migração correspondente no banco", "nivel_bloom": "aplicar", "competencia": "PR03.C3" },
+        { "id": "PR03.02.O2", "enunciado": "Criar e consultar registros pelo ORM e exibi-los na página", "nivel_bloom": "aplicar", "competencia": "PR03.C3" },
+        { "id": "PR03.02.O3", "enunciado": "Implementar uma busca filtrando os registros pelo termo informado", "nivel_bloom": "aplicar", "competencia": "PR03.C3" },
+        { "id": "PR03.02.O4", "enunciado": "Registrar um model no Django Admin e operar o CRUD por essa área", "nivel_bloom": "aplicar", "competencia": "PR03.C4" },
+        { "id": "PR03.02.O5", "enunciado": "Personalizar a listagem do Admin e adicionar ações como publicar um registro", "nivel_bloom": "aplicar", "competencia": "PR03.C4" },
+        { "id": "PR03.02.O6", "enunciado": "Receber o upload de uma imagem e configurar o caminho dos arquivos de mídia", "nivel_bloom": "aplicar", "competencia": "PR03.C8" }
+      ],
+      "fora_de_escopo": ["migrações customizadas", "múltiplos bancos", "otimização de queries", "transações explícitas", "PostgreSQL em produção"]
+    },
+    {
+      "id": "PR03.03",
+      "titulo": "Django: autenticação de formulários e alerta",
+      "url": "https://www.alura.com.br/curso-online-django-autenticacao-formularios-alerta",
+      "carga_horaria_h": 10,
+      "n_atividades": 44,
+      "atualizado_em": "2024-01-03",
+      "etapa_da_trilha": "Segurança",
+      "modulos": [
+        "App usuários",
+        "Formulário no Django",
+        "Autenticação de usuários",
+        "Validações",
+        "Refatoração"
+      ],
+      "conceitos_chave": ["forms.Form", "widget", "csrf_token", "is_valid", "cleaned_data", "clean_<campo>", "User", "authenticate", "login", "logout", "messages framework", "partial"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR03.03.O1", "enunciado": "Declarar um formulário com as classes do Django e exibi-lo estilizado no template", "nivel_bloom": "aplicar", "competencia": "PR03.C5" },
+        { "id": "PR03.03.O2", "enunciado": "Validar os dados recebidos com clean e devolver mensagens de erro específicas do campo", "nivel_bloom": "aplicar", "competencia": "PR03.C5" },
+        { "id": "PR03.03.O3", "enunciado": "Exibir alertas de erro e de sucesso com o framework de messages", "nivel_bloom": "aplicar", "competencia": "PR03.C5" },
+        { "id": "PR03.03.O4", "enunciado": "Implementar cadastro, login e logout usando o modelo de usuário do Django", "nivel_bloom": "aplicar", "competencia": "PR03.C6" },
+        { "id": "PR03.03.O5", "enunciado": "Reorganizar os templates em partials para não repetir o bloco de alertas", "nivel_bloom": "aplicar", "competencia": "PR03.C2" }
+      ],
+      "fora_de_escopo": ["recuperação de senha por e-mail", "permissões e grupos avançados", "autenticação em dois fatores", "modelo de usuário customizado"]
+    },
+    {
+      "id": "PR03.04",
+      "titulo": "Django: autenticação com OAuth2.0",
+      "url": "https://www.alura.com.br/curso-online-django-autenticacao-oauth2-0",
+      "carga_horaria_h": 8,
+      "n_atividades": 40,
+      "atualizado_em": "2024-07-18",
+      "etapa_da_trilha": "Segurança",
+      "modulos": [
+        "Servidor",
+        "OAuth 2.0",
+        "Admin, Github e OAuth",
+        "Apenas para pessoas autenticadas",
+        "OAuth com GitHub"
+      ],
+      "conceitos_chave": ["OAuth 2.0", "provedor de identidade", "django-allauth", "registro da aplicação", "decorator", "login_required", "redirect", "área de membros", "STATICFILES"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR03.04.O1", "enunciado": "Explicar o fluxo do OAuth 2.0 e o papel do provedor externo no login", "nivel_bloom": "entender", "competencia": "PR03.C6" },
+        { "id": "PR03.04.O2", "enunciado": "Configurar o django-allauth e registrar a aplicação no provedor para habilitar o login pelo GitHub", "nivel_bloom": "aplicar", "competencia": "PR03.C6" },
+        { "id": "PR03.04.O3", "enunciado": "Restringir uma área da aplicação a pessoas autenticadas usando decorators", "nivel_bloom": "aplicar", "competencia": "PR03.C6" }
+      ],
+      "fora_de_escopo": ["escrever um servidor de autorização", "JWT e refresh tokens", "SAML", "SSO corporativo", "provedores além do GitHub"]
+    },
+    {
+      "id": "PR03.05",
+      "titulo": "Django: CRUD e persistência no S3",
+      "url": "https://www.alura.com.br/curso-online-django-crud-persistencia-s3",
+      "carga_horaria_h": 8,
+      "n_atividades": 43,
+      "atualizado_em": "2024-01-03",
+      "etapa_da_trilha": "Cloud",
+      "modulos": [
+        "Melhorias no projeto",
+        "Inserir fotografias",
+        "Deleção, edição e filtro",
+        "Lidando com a AWS",
+        "Melhorando a persistência"
+      ],
+      "conceitos_chave": ["CRUD", "MTV", "create", "read", "update", "delete", "filtro", "AWS", "bucket S3", "IAM", "credencial", "persistência externa"],
+      "objetivos_de_aprendizagem": [
+        { "id": "PR03.05.O1", "enunciado": "Implementar criar, listar, editar e deletar um registro percorrendo o fluxo Model-Template-View", "nivel_bloom": "aplicar", "competencia": "PR03.C7" },
+        { "id": "PR03.05.O2", "enunciado": "Aplicar um filtro na listagem para mostrar só os registros de uma categoria", "nivel_bloom": "aplicar", "competencia": "PR03.C7" },
+        { "id": "PR03.05.O3", "enunciado": "Criar um bucket no S3 e um usuário na IAM com as permissões necessárias", "nivel_bloom": "aplicar", "competencia": "PR03.C8" },
+        { "id": "PR03.05.O4", "enunciado": "Conectar o Django ao bucket para persistir as imagens e manter as credenciais fora do repositório", "nivel_bloom": "aplicar", "competencia": "PR03.C8" }
+      ],
+      "fora_de_escopo": ["CloudFront e CDN", "políticas IAM avançadas", "infraestrutura como código", "deploy da aplicação em produção", "custos e billing da AWS"]
+    }
+  ],
+
+  "rubrica_proficiencia": {
+    "faixas": [
+      { "nivel": "iniciante", "min_pct": 0, "max_pct": 49, "descritor": "Reconhece o vocabulário do Django, mas não percorre o caminho de uma requisição nem sabe onde mexer para criar uma página nova." },
+      { "nivel": "basico", "min_pct": 50, "max_pct": 69, "descritor": "Cria rota, view e template de uma página simples; erra em migrações, validação de formulário e na diferença entre autenticar e autorizar." },
+      { "nivel": "adequado", "min_pct": 70, "max_pct": 84, "descritor": "Monta uma aplicação com models e migrações, renderiza templates sem duplicar código, valida formulários e implementa cadastro e login com o sistema do Django." },
+      { "nivel": "avancado", "min_pct": 85, "max_pct": 100, "descritor": "Implementa o CRUD completo no fluxo MTV, personaliza o Admin, explica o fluxo OAuth 2.0 e justifica por que credenciais e arquivos de mídia ficam fora do repositório." }
+    ],
+    "nivel_minimo_esperado": "adequado",
+    "observacao": "Faixas definidas pela coordenação ITT, não extraídas da Alura. Atenção: os cursos 4 e 5 da trilha (OAuth 2.0 e S3) são declarados pela Alura para público profissional e tratam de temas de infraestrutura. A matriz cobra deles apenas o conceito, com peso somado de 0.22, e deixa a operação da AWS fora de escopo. Revisar após o primeiro ciclo de aplicação."
+  },
+
+  "blueprint_questionario": {
+    "n_itens_total": 20,
+    "tempo_estimado_min": 45,
+    "por_competencia": {
+      "PR03.C1": 3, "PR03.C2": 3, "PR03.C3": 3, "PR03.C4": 2,
+      "PR03.C5": 3, "PR03.C6": 3, "PR03.C7": 2, "PR03.C8": 1
+    },
+    "por_tipo": { "multipla_escolha": 11, "analise_codigo": 7, "dissertativa": 2 },
+    "por_bloom": { "lembrar_entender": 5, "aplicar": 11, "analisar_avaliar": 4 }
+  },
+
+  "prompt": "prompts/PR03.md",
+
+  "metadados": {
+    "versao": "1.0",
+    "data_extracao": "2026-10-21",
+    "fontes": [
+      "https://www.alura.com.br/formacao-django",
+      "https://www.alura.com.br/curso-online-django-templates-boas-praticas",
+      "https://www.alura.com.br/curso-online-django-persistencia-dados-admin",
+      "https://www.alura.com.br/curso-online-django-autenticacao-formularios-alerta",
+      "https://www.alura.com.br/curso-online-django-autenticacao-oauth2-0",
+      "https://www.alura.com.br/curso-online-django-crud-persistencia-s3",
+      "imagens/planilha-trilhas-atual.jpeg"
+    ],
+    "derivado_de": "Ementa, carga horária, público-alvo e bullets 'O que você vai aprender' das páginas públicas da Alura. Competências, pesos, erros comuns e faixas de proficiência são elaboração pedagógica da ITT."
+  }
+}

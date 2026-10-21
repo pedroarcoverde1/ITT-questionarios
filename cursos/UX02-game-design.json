@@ -1,0 +1,330 @@
+{
+  "id_itt": "UX02",
+  "escola": "UX & Design",
+  "trilha": {
+    "titulo_itt": "Game Design",
+    "titulo_alura": "Game Design",
+    "url": "https://www.alura.com.br/formacao-game-design",
+    "carga_horaria_h": 32,
+    "n_cursos": 4,
+    "publico_alvo": "Adolescentes do ensino fundamental II e médio atendidos pela ITT, sem experiência prévia em projeto de jogos; a trilha é de concepção e documentação, não de programação",
+    "pre_requisitos": [],
+    "projeto_fio_condutor": "Um jogo próprio levado da ideia ao pitch: Game Design Document, protótipo, Game Design Canvas e MVP, direção de arte e apresentação comercial"
+  },
+
+  "competencias": [
+    {
+      "id": "UX02.C1",
+      "titulo": "Analisar o design de jogos publicados e avaliar a maturidade do próprio projeto",
+      "descricao": "Olhar um jogo já lançado e identificar as escolhas de design por trás dele, e aplicar o mesmo olhar crítico ao próprio jogo por autoavaliação e playtest.",
+      "nivel_bloom": "analisar",
+      "peso": 0.09,
+      "itens_alvo": 2,
+      "cursos_origem": ["UX02.01", "UX02.04"],
+      "evidencias_observaveis": [
+        "Dado um jogo conhecido, aponta qual escolha de design produz uma sensação específica em quem joga",
+        "Distingue a opinião pessoal sobre o jogo da análise da escolha de design",
+        "Explica o que um playtest revela que a autoavaliação não revela"
+      ],
+      "erros_comuns": [
+        "Confundir analisar o design com dizer se gostou do jogo",
+        "Analisar só o gráfico e ignorar a mecânica",
+        "Fazer playtest apenas com quem já conhece o projeto",
+        "Tratar a referência como algo a copiar em vez de algo a entender"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "UX02.C2",
+      "titulo": "Definir o conceito do jogo",
+      "descricao": "Responder o que o jogo é, do que ele trata e o que a pessoa faz nele, escolhendo o tema, as ações centrais e as recompensas que sustentam a experiência.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.14,
+      "itens_alvo": 3,
+      "cursos_origem": ["UX02.01"],
+      "evidencias_observaveis": [
+        "Dada uma ideia vaga de jogo, formula a resposta das três perguntas que a delimitam",
+        "Distingue o tema do jogo da mecânica do jogo",
+        "Escolhe a ação central coerente com a experiência que o jogo quer provocar"
+      ],
+      "erros_comuns": [
+        "Descrever a história e achar que isso define o jogo",
+        "Listar várias ações centrais e não escolher nenhuma",
+        "Confundir o gênero do jogo com o tema",
+        "Definir recompensa só como pontuação, sem relação com a ação central"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    },
+    {
+      "id": "UX02.C3",
+      "titulo": "Documentar o projeto em GDD e em Game Design Canvas",
+      "descricao": "Registrar as decisões do jogo em um Game Design Document, sintetizá-las em um Game Design Canvas e delimitar o MVP — o mínimo que já entrega a experiência.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.14,
+      "itens_alvo": 3,
+      "cursos_origem": ["UX02.01", "UX02.02"],
+      "evidencias_observaveis": [
+        "Dado um conjunto de decisões, aponta em que seção do GDD cada uma entra",
+        "Distingue o que o GDD detalha do que o Canvas resume",
+        "Separa, em uma lista de funcionalidades, o que entra no MVP do que fica para depois"
+      ],
+      "erros_comuns": [
+        "Tratar o GDD como documento escrito uma vez e nunca revisado",
+        "Confundir MVP com versão incompleta e sem graça do jogo",
+        "Colocar no MVP tudo que foi idealizado",
+        "Usar o Canvas como substituto do GDD em vez de síntese dele"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    },
+    {
+      "id": "UX02.C4",
+      "titulo": "Projetar a mecânica: loop central, levels e protótipo",
+      "descricao": "Identificar o loop central de ações que o jogo repete, desdobrá-lo em levels com dificuldade progressiva e modularidade, e testar a ideia em um protótipo.",
+      "nivel_bloom": "analisar",
+      "peso": 0.14,
+      "itens_alvo": 3,
+      "cursos_origem": ["UX02.01", "UX02.02"],
+      "evidencias_observaveis": [
+        "Dado um jogo, descreve o ciclo de ações que a pessoa repete do começo ao fim",
+        "Explica o que a modularidade de um level resolve na produção",
+        "Reconhece que o protótipo serve para testar a mecânica, não para parecer bonito"
+      ],
+      "erros_comuns": [
+        "Confundir o loop central com a sequência da história",
+        "Projetar levels por quantidade em vez de por progressão de desafio",
+        "Fazer um protótipo com arte final antes de validar a mecânica",
+        "Achar que dificuldade maior é só colocar mais inimigos"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    },
+    {
+      "id": "UX02.C5",
+      "titulo": "Equilibrar o sistema de recompensas e punições",
+      "descricao": "Estruturar o que o jogo dá e o que o jogo cobra de modo que a pessoa continue jogando, reconhecendo quando a punição desestimula e quando a recompensa perde valor.",
+      "nivel_bloom": "avaliar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["UX02.02"],
+      "evidencias_observaveis": [
+        "Dado um sistema de punição, avalia se ele ensina ou apenas frustra",
+        "Reconhece que recompensa dada o tempo todo deixa de recompensar",
+        "Relaciona a recompensa à ação que o jogo quer incentivar"
+      ],
+      "erros_comuns": [
+        "Punir o erro com perda de progresso longo e afastar quem está aprendendo",
+        "Distribuir recompensas sem relação com o esforço",
+        "Confundir dificuldade com punição",
+        "Achar que mais recompensa sempre significa mais engajamento"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "UX02.C6",
+      "titulo": "Construir narrativa e personagens por arquétipos",
+      "descricao": "Criar a story line do jogo e definir heróis, vilões e coadjuvantes a partir de arquétipos, articulando narrativa, personagem e cenário.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["UX02.01", "UX02.02", "UX02.03"],
+      "evidencias_observaveis": [
+        "Dado um arquétipo, identifica que papel narrativo o personagem cumpre no jogo",
+        "Distingue a story line do roteiro de cada cena",
+        "Relaciona a escolha do cenário à narrativa que o jogo conta"
+      ],
+      "erros_comuns": [
+        "Tratar arquétipo como estereótipo fixo e sem variação",
+        "Criar personagem detalhado que não cumpre nenhuma função no jogo",
+        "Confundir a jornada do herói com a ordem obrigatória dos levels",
+        "Escrever narrativa longa que a mecânica do jogo não sustenta"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "UX02.C7",
+      "titulo": "Dirigir os aspectos visuais do jogo",
+      "descricao": "Aplicar direção de arte ao projeto: concept art, psicologia das cores e acordes cromáticos, contraste e paralaxe no cenário, e o fluxo das interfaces.",
+      "nivel_bloom": "aplicar",
+      "peso": 0.10,
+      "itens_alvo": 2,
+      "cursos_origem": ["UX02.03"],
+      "evidencias_observaveis": [
+        "Dada a sensação desejada em uma cena, escolhe a paleta coerente com ela",
+        "Explica para que serve o contraste na leitura visual de um cenário",
+        "Reconhece o papel do mood board e do concept art antes da produção da arte"
+      ],
+      "erros_comuns": [
+        "Escolher cores por gosto pessoal, sem relação com o clima da cena",
+        "Deixar personagem e fundo com o mesmo valor de contraste e perder a leitura",
+        "Confundir concept art com a arte final do jogo",
+        "Projetar as telas de interface sem pensar no fluxo entre elas"
+      ],
+      "tipos_de_item": ["multipla_escolha"]
+    },
+    {
+      "id": "UX02.C8",
+      "titulo": "Avaliar a viabilidade comercial e apresentar o jogo",
+      "descricao": "Identificar público-alvo e oportunidade no mercado de games, comparar formas de monetização adequadas ao jogo, dimensionar a produção e montar um pitch de apresentação.",
+      "nivel_bloom": "avaliar",
+      "peso": 0.19,
+      "itens_alvo": 3,
+      "cursos_origem": ["UX02.03", "UX02.04"],
+      "evidencias_observaveis": [
+        "Dado um jogo, escolhe a forma de monetização coerente com ele e justifica",
+        "Identifica o público-alvo a partir das características do jogo, não do desejo de alcançar todos",
+        "Nomeia o que um pitch precisa responder: o que é o jogo, para quem, e o que se busca"
+      ],
+      "erros_comuns": [
+        "Definir o público-alvo como 'todo mundo que gosta de jogos'",
+        "Escolher a monetização pelo que dá mais dinheiro, ignorando o tipo de jogo",
+        "Montar pitch que só conta a história e não diz o que se pede ao investidor",
+        "Confundir propriedade intelectual com o arquivo do jogo",
+        "Dimensionar a produção sem considerar o tamanho do time"
+      ],
+      "tipos_de_item": ["multipla_escolha", "dissertativa"]
+    }
+  ],
+
+  "cursos": [
+    {
+      "id": "UX02.01",
+      "titulo": "Game Design: definindo os princípios de um jogo digital",
+      "url": "https://www.alura.com.br/curso-online-game-design-definindo-principios-jogo-digital",
+      "carga_horaria_h": 8,
+      "n_atividades": 47,
+      "atualizado_em": "2025-05-14",
+      "etapa_da_trilha": "Entendendo como nasce um game",
+      "modulos": [
+        "Entendendo o Game Design",
+        "Definindo o que é o seu jogo",
+        "Esboçando um protótipo",
+        "Pensando o Narrative Design",
+        "Pensando imagens e sons do jogo"
+      ],
+      "conceitos_chave": ["game designer", "referência", "três perguntas de Jared Sorensen", "tema", "ação", "recompensa", "protótipo", "prototipagem", "interatividade", "storytelling", "jornada do herói", "story line", "personagem", "cenário", "sound design", "GDD"],
+      "objetivos_de_aprendizagem": [
+        { "id": "UX02.01.O1", "enunciado": "Analisar referências de jogos publicados e identificar a lógica de criação por trás delas", "nivel_bloom": "analisar", "competencia": "UX02.C1" },
+        { "id": "UX02.01.O2", "enunciado": "Delimitar o jogo respondendo às três perguntas de Jared Sorensen e definindo o tema", "nivel_bloom": "aplicar", "competencia": "UX02.C2" },
+        { "id": "UX02.01.O3", "enunciado": "Escolher as ações e as recompensas centrais do jogo de forma coerente entre si", "nivel_bloom": "aplicar", "competencia": "UX02.C2" },
+        { "id": "UX02.01.O4", "enunciado": "Esquematizar um protótipo do jogo e agregar interatividade a ele", "nivel_bloom": "aplicar", "competencia": "UX02.C4" },
+        { "id": "UX02.01.O5", "enunciado": "Criar a story line, os personagens e os cenários do jogo", "nivel_bloom": "aplicar", "competencia": "UX02.C6" },
+        { "id": "UX02.01.O6", "enunciado": "Reunir referências visuais e de sound design para o projeto", "nivel_bloom": "aplicar", "competencia": "UX02.C7" },
+        { "id": "UX02.01.O7", "enunciado": "Registrar as decisões do projeto em um Game Design Document completo", "nivel_bloom": "aplicar", "competencia": "UX02.C3" }
+      ],
+      "fora_de_escopo": ["programação do jogo", "uso de engines", "produção de arte final", "composição musical", "publicação em lojas"]
+    },
+    {
+      "id": "UX02.02",
+      "titulo": "Game Design: viabilizando o jogo como produto",
+      "url": "https://www.alura.com.br/curso-online-game-design-viabilizando-jogo-produto",
+      "carga_horaria_h": 8,
+      "n_atividades": 46,
+      "atualizado_em": "2024-01-12",
+      "etapa_da_trilha": "Transformando o game em produto",
+      "modulos": [
+        "Conhecendo o GDC",
+        "Aplicando o Design Thinking",
+        "Definindo Levels",
+        "Refinando recompensas e punições",
+        "Aprimorando os personagens"
+      ],
+      "conceitos_chave": ["Game Design Canvas", "MVP", "Design Thinking", "loop central", "level design", "modularidade", "recompensa", "punição", "arquétipo", "herói", "vilão"],
+      "objetivos_de_aprendizagem": [
+        { "id": "UX02.02.O1", "enunciado": "Traduzir o GDD em um Game Design Canvas que dê visão clara do projeto", "nivel_bloom": "aplicar", "competencia": "UX02.C3" },
+        { "id": "UX02.02.O2", "enunciado": "Delimitar o MVP do jogo separando o essencial do que fica para depois", "nivel_bloom": "analisar", "competencia": "UX02.C3" },
+        { "id": "UX02.02.O3", "enunciado": "Aplicar Design Thinking para explorar o problema de jogabilidade e idealizar soluções", "nivel_bloom": "aplicar", "competencia": "UX02.C4" },
+        { "id": "UX02.02.O4", "enunciado": "Identificar o loop central do jogo e definir os levels com modularidade", "nivel_bloom": "analisar", "competencia": "UX02.C4" },
+        { "id": "UX02.02.O5", "enunciado": "Estruturar o sistema de recompensas e punições para engajar quem joga", "nivel_bloom": "avaliar", "competencia": "UX02.C5" },
+        { "id": "UX02.02.O6", "enunciado": "Construir heróis e vilões a partir de arquétipos narrativos", "nivel_bloom": "aplicar", "competencia": "UX02.C6" }
+      ],
+      "fora_de_escopo": ["balanceamento por telemetria", "economia de jogo com moeda virtual", "produção e cronograma detalhado", "contratação de equipe"]
+    },
+    {
+      "id": "UX02.03",
+      "titulo": "Game design: refinando aspectos visuais e artísticos do jogo",
+      "url": "https://www.alura.com.br/curso-online-game-design-refinando-aspectos-visuais-artisticos-jogo",
+      "carga_horaria_h": 8,
+      "n_atividades": 41,
+      "atualizado_em": "2024-01-29",
+      "etapa_da_trilha": "Viabilizando o game",
+      "modulos": [
+        "Dimensionando o projeto",
+        "Entendendo direção de arte",
+        "Definindo personagens",
+        "Definindo cenários",
+        "Definindo interfaces"
+      ],
+      "conceitos_chave": ["pipeline", "backlog", "direção de arte", "concept art", "psicologia das cores", "acorde cromático", "mood board", "arquétipo visual", "contraste", "linha de ação", "paralaxe", "fluxo de interfaces", "UI"],
+      "objetivos_de_aprendizagem": [
+        { "id": "UX02.03.O1", "enunciado": "Dimensionar a pipeline de produção de arte e montar o backlog do projeto", "nivel_bloom": "avaliar", "competencia": "UX02.C8" },
+        { "id": "UX02.03.O2", "enunciado": "Aplicar psicologia das cores e acordes cromáticos na direção de arte do jogo", "nivel_bloom": "aplicar", "competencia": "UX02.C7" },
+        { "id": "UX02.03.O3", "enunciado": "Conceituar o visual de protagonista, coadjuvantes e vilãs a partir de arquétipos visuais", "nivel_bloom": "aplicar", "competencia": "UX02.C6" },
+        { "id": "UX02.03.O4", "enunciado": "Definir cenários usando contraste, linhas de ação e paralaxe", "nivel_bloom": "aplicar", "competencia": "UX02.C7" },
+        { "id": "UX02.03.O5", "enunciado": "Definir o fluxo entre as interfaces do jogo a partir de referências de UI", "nivel_bloom": "aplicar", "competencia": "UX02.C7" }
+      ],
+      "fora_de_escopo": ["produção da arte em software gráfico", "modelagem 3D", "animação", "shaders e efeitos técnicos"]
+    },
+    {
+      "id": "UX02.04",
+      "titulo": "Game Design: entenda estratégias para viabilizar e monetizar o seu jogo",
+      "url": "https://www.alura.com.br/curso-online-game-design-estrategias-viabilizar-monetizar-seu-jogo",
+      "carga_horaria_h": 8,
+      "n_atividades": 45,
+      "atualizado_em": "2024-05-16",
+      "etapa_da_trilha": "Viabilizando o game",
+      "modulos": [
+        "Meu jogo está pronto?",
+        "Um jogo, um produto",
+        "Meios e estratégias de negócio",
+        "Finanças e continuidade",
+        "Apresentando seu pitch"
+      ],
+      "conceitos_chave": ["autoavaliação", "playtest", "mercado de games", "público-alvo", "formação de preço", "monetização", "jogo como serviço", "jogo como plataforma", "propriedade intelectual", "plano financeiro", "pitch"],
+      "objetivos_de_aprendizagem": [
+        { "id": "UX02.04.O1", "enunciado": "Avaliar a maturidade do próprio jogo por autoavaliação e playtest", "nivel_bloom": "avaliar", "competencia": "UX02.C1" },
+        { "id": "UX02.04.O2", "enunciado": "Identificar o público-alvo do jogo e as oportunidades de inserção no mercado de games", "nivel_bloom": "analisar", "competencia": "UX02.C8" },
+        { "id": "UX02.04.O3", "enunciado": "Comparar formas de monetização e escolher a adequada ao jogo projetado", "nivel_bloom": "avaliar", "competencia": "UX02.C8" },
+        { "id": "UX02.04.O4", "enunciado": "Montar um plano financeiro e reconhecer o papel da propriedade intelectual", "nivel_bloom": "aplicar", "competencia": "UX02.C8" },
+        { "id": "UX02.04.O5", "enunciado": "Construir um pitch que apresente o jogo, o mercado e o que se busca", "nivel_bloom": "aplicar", "competencia": "UX02.C8" }
+      ],
+      "fora_de_escopo": ["contabilidade e abertura de empresa", "negociação de contratos", "campanhas de marketing pagas", "captação formal de investimento"]
+    }
+  ],
+
+  "rubrica_proficiencia": {
+    "faixas": [
+      { "nivel": "iniciante", "min_pct": 0, "max_pct": 49, "descritor": "Fala sobre jogos a partir do gosto pessoal; não distingue tema de mecânica nem sabe o que um GDD registra." },
+      { "nivel": "basico", "min_pct": 50, "max_pct": 69, "descritor": "Descreve a ideia do próprio jogo e reconhece os nomes dos artefatos; erra ao delimitar o MVP e ao identificar o loop central." },
+      { "nivel": "adequado", "min_pct": 70, "max_pct": 84, "descritor": "Delimita o conceito do jogo, documenta as decisões em GDD e Canvas, identifica o loop central, define levels e constrói personagens por arquétipos." },
+      { "nivel": "avancado", "min_pct": 85, "max_pct": 100, "descritor": "Avalia se um sistema de recompensa e punição sustenta o engajamento, justifica a direção de arte pela experiência pretendida e defende uma estratégia de monetização e um pitch coerentes com o jogo." }
+    ],
+    "nivel_minimo_esperado": "adequado",
+    "observacao": "Faixas definidas pela coordenação ITT, não extraídas da Alura. Atenção: a Alura declara os cursos 2, 3 e 4 para profissionais da área com projeto em andamento, e o curso 4 trata de viabilidade comercial e captação. A matriz cobra o raciocínio de design e de produto, não a prática profissional de mercado. Revisar após o primeiro ciclo de aplicação."
+  },
+
+  "blueprint_questionario": {
+    "n_itens_total": 20,
+    "tempo_estimado_min": 40,
+    "por_competencia": {
+      "UX02.C1": 2, "UX02.C2": 3, "UX02.C3": 3, "UX02.C4": 3,
+      "UX02.C5": 2, "UX02.C6": 2, "UX02.C7": 2, "UX02.C8": 3
+    },
+    "por_tipo": { "multipla_escolha": 18, "dissertativa": 2 },
+    "por_bloom": { "lembrar_entender": 6, "aplicar": 9, "analisar_avaliar": 5 }
+  },
+
+  "prompt": "prompts/UX02.md",
+
+  "metadados": {
+    "versao": "1.0",
+    "data_extracao": "2026-10-21",
+    "fontes": [
+      "https://www.alura.com.br/formacao-game-design",
+      "https://www.alura.com.br/curso-online-game-design-definindo-principios-jogo-digital",
+      "https://www.alura.com.br/curso-online-game-design-viabilizando-jogo-produto",
+      "https://www.alura.com.br/curso-online-game-design-refinando-aspectos-visuais-artisticos-jogo",
+      "https://www.alura.com.br/curso-online-game-design-estrategias-viabilizar-monetizar-seu-jogo",
+      "imagens/planilha-trilhas-atual.jpeg"
+    ],
+    "derivado_de": "Ementa, carga horária, público-alvo e bullets 'O que você vai aprender' das páginas públicas da Alura. Competências, pesos, erros comuns e faixas de proficiência são elaboração pedagógica da ITT. Trilha sem programação: o blueprint não usa o tipo analise_codigo."
+  }
+}

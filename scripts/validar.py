@@ -7,6 +7,7 @@ Só usa a biblioteca padrão (jsonschema não é dependência deste projeto).
 """
 import json
 import os
+import re
 import sys
 from glob import glob
 
@@ -18,6 +19,85 @@ GRUPOS_BLOOM = {
     "aplicar": {"aplicar"},
     "analisar_avaliar": {"analisar", "avaliar", "criar"},
 }
+
+
+def valida_roteiro(d, caminho_prompt):
+    """Confere a seção 3 do prompt contra o blueprint da matriz.
+
+    O prompt é o artefato que a coordenação usa na plataforma; se ele divergir do
+    blueprint, o questionário montado não é o questionário planejado.
+    """
+    erros = []
+    bp = d["blueprint_questionario"]
+    with open(caminho_prompt, encoding="utf-8") as f:
+        md = f.read()
+    if "## 3. Roteiro de montagem" not in md:
+        return ["prompt sem a seção '## 3. Roteiro de montagem'"]
+    sec = md.split("## 3. Roteiro de montagem", 1)[1]
+
+    por_botao, por_comp, com_estimulo = {}, {}, 0
+    for linha in sec.splitlines():
+        if not linha.startswith("|") or "Botão a selecionar" in linha:
+            continue
+        if re.match(r"^\|[\s:|-]+\|$", linha):
+            continue
+        celulas = [c.strip() for c in linha.strip("|").split("|")]
+        if len(celulas) < 4:
+            erros.append(f"linha do roteiro com menos de 4 colunas: {linha.strip()}")
+            continue
+        try:
+            qtd, estimulo = int(celulas[1]), int(celulas[3])
+        except ValueError:
+            erros.append(f"quantidade ou coluna de estímulo não numérica: {linha.strip()}")
+            continue
+        por_botao[celulas[2]] = por_botao.get(celulas[2], 0) + qtd
+        com_estimulo += estimulo
+        comp = f"{d['id_itt']}.{celulas[0].split()[0]}"
+        por_comp[comp] = por_comp.get(comp, 0) + qtd
+
+    n = sum(por_botao.values())
+    if n != bp["n_itens_total"]:
+        erros.append(f"roteiro soma {n} itens, blueprint.n_itens_total = {bp['n_itens_total']}")
+
+    objetivos_bp = sum(v for k, v in bp["por_tipo"].items() if k != "dissertativa")
+    objetivos_rot = por_botao.get("Múltipla escolha", 0) + por_botao.get("Múltipla resposta", 0)
+    if objetivos_rot != objetivos_bp:
+        erros.append(f"roteiro tem {objetivos_rot} itens objetivos, blueprint tem {objetivos_bp}")
+
+    diss_bp = bp["por_tipo"].get("dissertativa", 0)
+    if por_botao.get("Dissertativa", 0) != diss_bp:
+        erros.append(f"roteiro tem {por_botao.get('Dissertativa', 0)} dissertativas, blueprint tem {diss_bp}")
+
+    cod_bp = bp["por_tipo"].get("analise_codigo", 0)
+    if cod_bp and com_estimulo != cod_bp:
+        erros.append(f"coluna 'Com código' soma {com_estimulo}, blueprint.analise_codigo = {cod_bp}")
+
+    for cid, alvo in bp["por_competencia"].items():
+        if por_comp.get(cid, 0) != alvo:
+            erros.append(f"roteiro dá {por_comp.get(cid, 0)} itens a {cid}, blueprint pede {alvo}")
+    for cid in set(por_comp) - set(bp["por_competencia"]):
+        erros.append(f"roteiro cita tema '{cid}' que não é competência da matriz")
+
+    m = re.search(
+        r"\*\*Totais\*\*: (\d+) múltipla escolha · (\d+) múltipla resposta · "
+        r"(\d+) dissertativa = \*\*(\d+) itens\*\*;\s*\n\*\*(\d+)\*\*",
+        sec,
+    )
+    if not m:
+        erros.append("linha '**Totais**' ausente ou fora do formato esperado")
+    else:
+        declarado = tuple(int(x) for x in m.groups())
+        real = (
+            por_botao.get("Múltipla escolha", 0),
+            por_botao.get("Múltipla resposta", 0),
+            por_botao.get("Dissertativa", 0),
+            n,
+            com_estimulo,
+        )
+        if declarado != real:
+            erros.append(f"linha '**Totais**' declara {declarado}, mas a tabela soma {real}")
+
+    return erros
 
 
 def valida(caminho):
@@ -140,8 +220,12 @@ def valida(caminho):
             erro(f"{c['id']}.itens_alvo = {c.get('itens_alvo')} diverge do blueprint ({alvo})")
 
     # --- prompt
-    if not os.path.exists(os.path.join(RAIZ, d["prompt"])):
+    caminho_prompt = os.path.join(RAIZ, d["prompt"])
+    if not os.path.exists(caminho_prompt):
         erro(f"arquivo de prompt não encontrado: {d['prompt']}")
+    else:
+        for e in valida_roteiro(d, caminho_prompt):
+            erro(f"{d['prompt']}: {e}")
 
     return erros
 
