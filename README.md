@@ -100,6 +100,24 @@ O formato está documentado em [`esquema/matriz.schema.json`](esquema/matriz.sch
 (JSON Schema draft 2020-12), útil para autocompletar no editor. A validação executável do
 projeto é o script, que cobre também as regras que o schema não expressa.
 
+## Relatório em PDF
+
+```bash
+python3 scripts/gerar_relatorio.py            # gera relatorios/relatorio-trilhas-itt.pdf
+python3 scripts/gerar_relatorio.py --tex-only # só o .tex, para inspecionar
+```
+
+Reúne num documento só o que a coordenação precisa consultar fora do editor: panorama das
+9 trilhas, e para cada uma a identificação, as competências com suas evidências observáveis,
+cada curso com módulos, objetivos e fora de escopo, a rubrica de proficiência e o prompt
+completo — roteiro de montagem e texto colável na íntegra. Cerca de 90 páginas, com sumário
+navegável.
+
+O conteúdo vem inteiro de `cursos/*.json` e `prompts/*.md`; **não edite o PDF à mão**, altere
+a fonte e gere de novo. Precisa de `pdflatex` (TeX Live) no PATH. Ao acrescentar uma trilha,
+inclua o ID na lista `ORDEM` do script — ele falha de propósito se encontrar uma matriz que
+não esteja nessa lista.
+
 ## Adicionando uma trilha nova
 
 1. Localize a formação em `alura.com.br` e anote a URL.
@@ -111,6 +129,7 @@ projeto é o script, que cobre também as regras que o schema não expressa.
    o validador compara os dois.
 5. Rode `python3 scripts/validar.py` e corrija o que aparecer.
 6. Atualize a linha da trilha em `catalogo.md` e a tabela deste README.
+7. Acrescente o ID à lista `ORDEM` de `scripts/gerar_relatorio.py` e regenere o PDF.
 
 ## Estrutura
 
@@ -119,6 +138,8 @@ catalogo.md                  trilhas da ONG, times e divergências entre planilh
 cursos/                      matrizes de aprendizagem (JSON)
 prompts/                     descrições compactas coláveis (Markdown)
 esquema/matriz.schema.json   formato das matrizes
+relatorios/                  relatório em PDF, gerado (não editar à mão)
 scripts/validar.py           validação de consistência
+scripts/gerar_relatorio.py   monta o relatório em PDF a partir de cursos/ e prompts/
 imagens/                     planilhas de trilhas da ITT (fonte original)
 ```
