@@ -21,18 +21,17 @@ GRUPOS_BLOOM = {
 }
 
 
-def valida_roteiro(d, caminho_prompt):
-    """Confere a seção 3 do prompt contra o blueprint da matriz.
+def le_roteiro(d, caminho_prompt):
+    """Lê a tabela da seção 3 do prompt.
 
-    O prompt é o artefato que a coordenação usa na plataforma; se ele divergir do
-    blueprint, o questionário montado não é o questionário planejado.
+    Devolve (secao, por_botao, por_comp, com_estimulo, erros). É a fonte que tanto o
+    prompt quanto o questionário de `questionarios/` são comparados contra.
     """
     erros = []
-    bp = d["blueprint_questionario"]
     with open(caminho_prompt, encoding="utf-8") as f:
         md = f.read()
     if "## 3. Roteiro de montagem" not in md:
-        return ["prompt sem a seção '## 3. Roteiro de montagem'"]
+        return None, {}, {}, 0, ["prompt sem a seção '## 3. Roteiro de montagem'"]
     sec = md.split("## 3. Roteiro de montagem", 1)[1]
 
     por_botao, por_comp, com_estimulo = {}, {}, 0
@@ -54,6 +53,20 @@ def valida_roteiro(d, caminho_prompt):
         com_estimulo += estimulo
         comp = f"{d['id_itt']}.{celulas[0].split()[0]}"
         por_comp[comp] = por_comp.get(comp, 0) + qtd
+
+    return sec, por_botao, por_comp, com_estimulo, erros
+
+
+def valida_roteiro(d, caminho_prompt):
+    """Confere a seção 3 do prompt contra o blueprint da matriz.
+
+    O prompt é o artefato que a coordenação usa na plataforma; se ele divergir do
+    blueprint, o questionário montado não é o questionário planejado.
+    """
+    bp = d["blueprint_questionario"]
+    sec, por_botao, por_comp, com_estimulo, erros = le_roteiro(d, caminho_prompt)
+    if sec is None:
+        return erros
 
     n = sum(por_botao.values())
     if n != bp["n_itens_total"]:
@@ -97,6 +110,105 @@ def valida_roteiro(d, caminho_prompt):
         if declarado != real:
             erros.append(f"linha '**Totais**' declara {declarado}, mas a tabela soma {real}")
 
+    return erros
+
+
+TIPO_CURTO = {"Múltipla escolha": "MC", "Múltipla resposta": "MR", "Dissertativa": "Dissertativa"}
+
+
+def valida_questionario(d, caminho_prompt, caminho_q):
+    """Confere o questionário escrito de `questionarios/` contra o roteiro do prompt.
+
+    O questionário é o artefato que a coordenação aplica ou usa como referência do que
+    pedir à plataforma; se ele divergir do roteiro, deixa de ser a mesma avaliação.
+    Checa: numeração sequencial dos itens, itens por tipo, itens por competência, itens
+    com código/estímulo, presença de gabarito ou rubrica em cada item, e a tabela
+    'Gabarito resumido' conferindo com os cabeçalhos.
+    """
+    _, por_botao_rot, por_comp_rot, com_estimulo_rot, erros = le_roteiro(d, caminho_prompt)
+    if erros:
+        return []  # o roteiro já é inválido; valida_roteiro reporta
+    with open(caminho_q, encoding="utf-8") as f:
+        md = f.read()
+
+    erros = []
+    itens = []  # (numero, tipo, competencia, tem_estimulo)
+    cabecalho = re.compile(
+        r"^## (\d+) · ([^·\n]+?) · (C\d+)[^·\n]*(?: · com (código|estímulo))?\s*$", re.M
+    )
+    blocos = list(cabecalho.finditer(md))
+    for i, m in enumerate(blocos):
+        num, tipo, comp, estimulo = int(m.group(1)), m.group(2).strip(), m.group(3), m.group(4)
+        itens.append((num, tipo, f"{d['id_itt']}.{comp}", bool(estimulo)))
+        if tipo not in TIPO_CURTO:
+            erros.append(f"item {num}: tipo desconhecido '{tipo}'")
+        corpo = md[m.end(): blocos[i + 1].start() if i + 1 < len(blocos) else len(md)]
+        if tipo == "Dissertativa":
+            if "**O que a resposta precisa conter:**" not in corpo:
+                erros.append(f"item {num}: dissertativa sem rubrica de correção")
+        elif "**Gabarito:" not in corpo:
+            erros.append(f"item {num}: sem linha '**Gabarito:'")
+
+    esperado = sum(por_botao_rot.values())
+    if len(itens) != esperado:
+        erros.append(f"questionário tem {len(itens)} itens, o roteiro pede {esperado}")
+    if [n for n, _, _, _ in itens] != list(range(1, len(itens) + 1)):
+        erros.append("itens não numerados de 1 a N em sequência")
+
+    por_tipo = {}
+    por_comp = {}
+    com_estimulo = 0
+    for _, tipo, comp, est in itens:
+        por_tipo[tipo] = por_tipo.get(tipo, 0) + 1
+        por_comp[comp] = por_comp.get(comp, 0) + 1
+        com_estimulo += est
+    for tipo in set(por_tipo) | set(por_botao_rot):
+        if por_tipo.get(tipo, 0) != por_botao_rot.get(tipo, 0):
+            erros.append(
+                f"questionário tem {por_tipo.get(tipo, 0)} itens de '{tipo}', "
+                f"o roteiro pede {por_botao_rot.get(tipo, 0)}"
+            )
+    for comp in sorted(set(por_comp) | set(por_comp_rot)):
+        if por_comp.get(comp, 0) != por_comp_rot.get(comp, 0):
+            erros.append(
+                f"questionário dá {por_comp.get(comp, 0)} itens a {comp}, "
+                f"o roteiro pede {por_comp_rot.get(comp, 0)}"
+            )
+    if com_estimulo != com_estimulo_rot:
+        erros.append(
+            f"questionário tem {com_estimulo} itens com código/estímulo, "
+            f"o roteiro pede {com_estimulo_rot}"
+        )
+
+    # --- tabela 'Gabarito resumido': duas metades por linha, 4 células cada
+    if "## Gabarito resumido" not in md:
+        erros.append("sem a seção '## Gabarito resumido'")
+        return erros
+    tab = md.split("## Gabarito resumido", 1)[1]
+    resumo = {}
+    for linha in tab.splitlines():
+        if not linha.startswith("|") or "Gabarito |" in linha:
+            continue
+        if re.match(r"^\|[\s:|-]+\|$", linha):
+            continue
+        celulas = [c.strip() for c in linha.strip("|").split("|")]
+        for inicio in range(0, len(celulas) - 3, 4):
+            num, tipo, comp = celulas[inicio: inicio + 3]
+            if not num.isdigit():
+                continue
+            resumo[int(num)] = (tipo, comp)
+    for num, tipo, comp, _ in itens:
+        if num not in resumo:
+            erros.append(f"item {num} ausente da tabela 'Gabarito resumido'")
+            continue
+        esperado_linha = (TIPO_CURTO.get(tipo, tipo), comp.split(".", 1)[1])
+        if resumo[num] != esperado_linha:
+            erros.append(
+                f"item {num}: 'Gabarito resumido' diz {resumo[num]}, "
+                f"o cabeçalho do item diz {esperado_linha}"
+            )
+    for num in sorted(set(resumo) - {n for n, _, _, _ in itens}):
+        erros.append(f"'Gabarito resumido' lista o item {num}, que não existe no questionário")
     return erros
 
 
@@ -226,6 +338,13 @@ def valida(caminho):
     else:
         for e in valida_roteiro(d, caminho_prompt):
             erro(f"{d['prompt']}: {e}")
+
+        # --- questionário escrito (opcional: só é checado quando existe)
+        rel_q = os.path.join("questionarios", f"{idt}.md")
+        caminho_q = os.path.join(RAIZ, rel_q)
+        if os.path.exists(caminho_q):
+            for e in valida_questionario(d, caminho_prompt, caminho_q):
+                erro(f"{rel_q}: {e}")
 
     return erros
 

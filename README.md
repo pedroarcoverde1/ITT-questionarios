@@ -4,12 +4,13 @@ A **ITT** é uma ONG que ensina computação para adolescentes do ensino fundame
 usando trilhas (formações) da Alura. Este repositório responde a uma pergunta: **ao concluir a
 trilha, o estudante atingiu um nível considerável?**
 
-Para cada trilha existem dois artefatos:
+Para cada trilha existem três artefatos:
 
 | Artefato | Para quê |
 |----------|----------|
 | `cursos/<ID>-<slug>.json` | **Matriz de aprendizagem**: competências, objetivos por curso, rubrica de proficiência e blueprint do questionário. É o documento que a coordenação revisa e ajusta. |
 | `prompts/<ID>.md` | **Texto colável + roteiro de montagem**: a seção 2 é o prompt que se cola na plataforma parceira (define o tema das questões); a seção 3 diz quantas questões por tema e qual botão de tipo selecionar. |
+| `questionarios/<ID>.md` | **Questionário montado**: os 20 itens escritos por extenso, com gabarito e o motivo de cada alternativa errada. É a referência do que pedir à plataforma — e pode ser aplicado como está. |
 
 O status de cada trilha está em [`catalogo.md`](catalogo.md).
 
@@ -17,17 +18,17 @@ O status de cada trilha está em [`catalogo.md`](catalogo.md).
 
 As 9 trilhas da planilha atual da ITT, cobrindo 39 cursos e 329 horas.
 
-| ID | Escola | Trilha | Matriz | Prompt |
-|----|--------|--------|--------|--------|
-| PR01 | Programação | A partir do zero: iniciante em programação | [json](cursos/PR01-iniciante-programacao.json) | [md](prompts/PR01.md) |
-| PR02 | Programação | Aprenda a programar em Python com Orientação a Objetos | [json](cursos/PR02-python-orientacao-objetos.json) | [md](prompts/PR02.md) |
-| PR03 | Programação | Django: crie aplicações em Python | [json](cursos/PR03-django-aplicacoes-python.json) | [md](prompts/PR03.md) |
-| PR06 | Programação | Desenvolva jogos com Unity | [json](cursos/PR06-jogos-unity.json) | [md](prompts/PR06.md) |
-| PR12 | Programação | Boas práticas em Python | [json](cursos/PR12-boas-praticas-python.json) | [md](prompts/PR12.md) |
-| FE01 | Front-end | HTML e CSS para projetos web | [json](cursos/FE01-html-css-projetos-web.json) | [md](prompts/FE01.md) |
-| FE03 | Front-end | Desenvolvimento Front-end com JavaScript | [json](cursos/FE03-front-end-javascript.json) | [md](prompts/FE03.md) |
-| UX02 | UX & Design | Game Design | [json](cursos/UX02-game-design.json) | [md](prompts/UX02.md) |
-| UX03 | UX & Design | Blender | [json](cursos/UX03-blender.json) | [md](prompts/UX03.md) |
+| ID | Escola | Trilha | Matriz | Prompt | Questionário |
+|----|--------|--------|--------|--------|--------------|
+| PR01 | Programação | A partir do zero: iniciante em programação | [json](cursos/PR01-iniciante-programacao.json) | [md](prompts/PR01.md) | [md](questionarios/PR01.md) |
+| PR02 | Programação | Aprenda a programar em Python com Orientação a Objetos | [json](cursos/PR02-python-orientacao-objetos.json) | [md](prompts/PR02.md) | [md](questionarios/PR02.md) |
+| PR03 | Programação | Django: crie aplicações em Python | [json](cursos/PR03-django-aplicacoes-python.json) | [md](prompts/PR03.md) | [md](questionarios/PR03.md) |
+| PR06 | Programação | Desenvolva jogos com Unity | [json](cursos/PR06-jogos-unity.json) | [md](prompts/PR06.md) | [md](questionarios/PR06.md) |
+| PR12 | Programação | Boas práticas em Python | [json](cursos/PR12-boas-praticas-python.json) | [md](prompts/PR12.md) | [md](questionarios/PR12.md) |
+| FE01 | Front-end | HTML e CSS para projetos web | [json](cursos/FE01-html-css-projetos-web.json) | [md](prompts/FE01.md) | [md](questionarios/FE01.md) |
+| FE03 | Front-end | Desenvolvimento Front-end com JavaScript | [json](cursos/FE03-front-end-javascript.json) | [md](prompts/FE03.md) | [md](questionarios/FE03.md) |
+| UX02 | UX & Design | Game Design | [json](cursos/UX02-game-design.json) | [md](prompts/UX02.md) | [md](questionarios/UX02.md) |
+| UX03 | UX & Design | Blender | [json](cursos/UX03-blender.json) | [md](prompts/UX03.md) | [md](questionarios/UX03.md) |
 
 ## Como usar
 
@@ -38,7 +39,10 @@ As 9 trilhas da planilha atual da ITT, cobrindo 39 cursos e 329 horas.
    indicada para aquele tema.
 3. Confira os totais do roteiro: 20 itens por trilha, 2 deles dissertativos, e a contagem
    de itens com trecho de código.
-4. Aplique o questionário depois da trilha concluída e reporte a faixa de proficiência de
+4. Compare o que a plataforma devolveu com `questionarios/<ID>.md`, item a item — a ordem é
+   a mesma do roteiro. Onde o item gerado vier mais fraco, use o de lá. Se vários vierem
+   rasos, cole dois ou três itens do arquivo no prompt como amostra e peça de novo.
+5. Aplique o questionário depois da trilha concluída e reporte a faixa de proficiência de
    `cursos/<ID>-*.json` → `rubrica_proficiencia`.
 
 O **nível mínimo esperado** em todas as trilhas é a faixa **adequado (70–84%)**. Abaixo disso,
@@ -80,6 +84,25 @@ O que **não** vem da Alura e é elaboração pedagógica da ITT, portanto revis
 - Cada curso declara um `fora_de_escopo` — é a fronteira que impede o gerador de cobrar
   conteúdo que a trilha não ensinou.
 
+## Questionários montados
+
+O prompt diz **o que pedir** à plataforma; `questionarios/` traz os 20 itens de cada trilha
+**já escritos** — enunciado, alternativas, gabarito e o motivo de cada alternativa errada.
+São **180 itens**, **59** deles com trecho de código (ou, nas trilhas sem programação, com
+estímulo em texto). O índice e as convenções estão em
+[`questionarios/README.md`](questionarios/README.md).
+
+Servem para comparar com o que a plataforma devolveu, para colar como amostra de calibragem
+quando o gerado vier raso, ou para aplicar direto: os itens objetivos têm gabarito e as
+dissertativas têm rubrica de três pontos.
+
+A pasta [`questoes/`](questoes/) é anterior e mais estreita: só os itens com código de FE03,
+PR02 e PR03, com o comentário dos distratores mais detalhado. O texto dos itens é o mesmo nos
+dois lugares.
+
+Em todos eles o gabarito é a alternativa **A**, para facilitar a revisão pela coordenação —
+**embaralhe antes de aplicar**.
+
 ## Validação
 
 ```bash
@@ -95,6 +118,11 @@ Checa também o **roteiro da seção 3 de cada prompt contra o blueprint da matr
 total de itens, itens objetivos, dissertativas, a contagem da coluna "Com código" e os itens
 por competência, além da linha `**Totais**` conferir com a própria tabela. É a garantia de
 que o questionário montado na plataforma é o questionário planejado.
+
+E, quando `questionarios/<ID>.md` existe, confere o **questionário escrito contra esse
+roteiro**: numeração sequencial de 1 a 20, itens por tipo, itens por competência, contagem de
+itens com código ou estímulo, gabarito presente em cada item objetivo, rubrica em cada
+dissertativa, e a tabela "Gabarito resumido" conferindo com o cabeçalho de cada item.
 
 O formato está documentado em [`esquema/matriz.schema.json`](esquema/matriz.schema.json)
 (JSON Schema draft 2020-12), útil para autocompletar no editor. A validação executável do
@@ -127,9 +155,12 @@ não esteja nessa lista.
 4. Escreva `prompts/<ID>.md` com as 3 seções dos prompts existentes: como montar, texto
    para colar e roteiro de montagem. O roteiro precisa fechar com o blueprint da matriz —
    o validador compara os dois.
-5. Rode `python3 scripts/validar.py` e corrija o que aparecer.
-6. Atualize a linha da trilha em `catalogo.md` e a tabela deste README.
-7. Acrescente o ID à lista `ORDEM` de `scripts/gerar_relatorio.py` e regenere o PDF.
+5. Se quiser a referência aplicável, escreva `questionarios/<ID>.md` com os 20 itens na
+   ordem das linhas do roteiro (veja as convenções em `questionarios/README.md`). É opcional:
+   o validador só checa o arquivo quando ele existe.
+6. Rode `python3 scripts/validar.py` e corrija o que aparecer.
+7. Atualize a linha da trilha em `catalogo.md` e a tabela deste README.
+8. Acrescente o ID à lista `ORDEM` de `scripts/gerar_relatorio.py` e regenere o PDF.
 
 ## Estrutura
 
@@ -137,6 +168,8 @@ não esteja nessa lista.
 catalogo.md                  trilhas da ONG, times e divergências entre planilhas
 cursos/                      matrizes de aprendizagem (JSON)
 prompts/                     descrições compactas coláveis (Markdown)
+questionarios/               os 20 itens de cada trilha, escritos (referência de aplicação)
+questoes/                    só os itens com código de FE03, PR02 e PR03, comentados
 esquema/matriz.schema.json   formato das matrizes
 relatorios/                  relatório em PDF, gerado (não editar à mão)
 scripts/validar.py           validação de consistência
