@@ -148,6 +148,24 @@ não esteja nessa lista.
 
 ## Adicionando uma trilha nova
 
+### Com a skill do Claude Code
+
+O repositório traz a skill [`gerar-questionario`](.claude/skills/gerar-questionario/SKILL.md),
+que recebe a ementa de um curso ou trilha — texto colado, arquivo ou URL da Alura — e gera
+a matriz em `cursos/`, o prompt em `prompts/`, roda o validador e registra a trilha no
+catálogo, no README e no relatório. Com o Claude Code aberto nesta pasta:
+
+```
+/gerar-questionario <cole a ementa, o caminho do arquivo ou a URL> — ID PR07
+```
+
+ou só peça "gere o questionário desta ementa". O método que a skill segue está em
+[`references/matriz.md`](.claude/skills/gerar-questionario/references/matriz.md) e
+[`references/prompt.md`](.claude/skills/gerar-questionario/references/prompt.md); ao mudar
+uma convenção do repositório, atualize esses arquivos junto.
+
+### À mão
+
 1. Localize a formação em `alura.com.br` e anote a URL.
 2. Para cada curso dela, abra `alura.com.br/curso-online-<slug>` e colete carga horária,
    ementa, público-alvo e os bullets de "O que você vai aprender".
@@ -165,8 +183,10 @@ não esteja nessa lista.
 ## Estrutura
 
 ```
+.claude/skills/              skill gerar-questionario: ementa → matriz + prompt
 catalogo.md                  trilhas da ONG, times e divergências entre planilhas
 cursos/                      matrizes de aprendizagem (JSON)
+ementas/                     ementas recebidas sem página pública (criada quando preciso)
 prompts/                     descrições compactas coláveis (Markdown)
 questionarios/               os 20 itens de cada trilha, escritos (referência de aplicação)
 questoes/                    só os itens com código de FE03, PR02 e PR03, comentados
