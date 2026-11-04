@@ -12,7 +12,9 @@ Para cada trilha existem três artefatos:
 | `prompts/<ID>.md` | **Texto colável + roteiro de montagem**: a seção 2 é o prompt que se cola na plataforma parceira (define o tema das questões); a seção 3 diz quantas questões por tema e qual botão de tipo selecionar. |
 | `questionarios/<ID>.md` | **Questionário montado**: os 20 itens escritos por extenso, com gabarito e o motivo de cada alternativa errada. É a referência do que pedir à plataforma — e pode ser aplicado como está. |
 
-O status de cada trilha está em [`catalogo.md`](catalogo.md).
+O status de cada trilha está em [`catalogo.md`](catalogo.md). Para o fluxo de uso completo —
+qual artefato serve a quem, como aplicar um questionário e como acrescentar uma trilha — veja
+[`entrega.md`](entrega.md).
 
 ## Trilhas prontas
 
@@ -152,17 +154,19 @@ não esteja nessa lista.
 
 O repositório traz a skill [`gerar-questionario`](.claude/skills/gerar-questionario/SKILL.md),
 que recebe a ementa de um curso ou trilha — texto colado, arquivo ou URL da Alura — e gera
-a matriz em `cursos/`, o prompt em `prompts/`, roda o validador e registra a trilha no
-catálogo, no README e no relatório. Com o Claude Code aberto nesta pasta:
+os três artefatos: a matriz em `cursos/`, o prompt em `prompts/` e os 20 itens escritos em
+`questionarios/`. Ela roda o validador e registra a trilha no catálogo, no README e no
+relatório. Com o Claude Code aberto nesta pasta:
 
 ```
 /gerar-questionario <cole a ementa, o caminho do arquivo ou a URL> — ID PR07
 ```
 
 ou só peça "gere o questionário desta ementa". O método que a skill segue está em
-[`references/matriz.md`](.claude/skills/gerar-questionario/references/matriz.md) e
-[`references/prompt.md`](.claude/skills/gerar-questionario/references/prompt.md); ao mudar
-uma convenção do repositório, atualize esses arquivos junto.
+[`references/matriz.md`](.claude/skills/gerar-questionario/references/matriz.md),
+[`references/prompt.md`](.claude/skills/gerar-questionario/references/prompt.md) e
+[`references/questionario.md`](.claude/skills/gerar-questionario/references/questionario.md);
+ao mudar uma convenção do repositório, atualize esses arquivos junto.
 
 ### À mão
 
@@ -183,8 +187,9 @@ uma convenção do repositório, atualize esses arquivos junto.
 ## Estrutura
 
 ```
-.claude/skills/              skill gerar-questionario: ementa → matriz + prompt
+.claude/skills/              skill gerar-questionario: ementa → matriz + prompt + itens
 catalogo.md                  trilhas da ONG, times e divergências entre planilhas
+entrega.md                   guia de handoff: fluxo de uso e para que serve cada artefato
 cursos/                      matrizes de aprendizagem (JSON)
 ementas/                     ementas recebidas sem página pública (criada quando preciso)
 prompts/                     descrições compactas coláveis (Markdown)

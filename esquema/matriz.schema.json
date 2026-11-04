@@ -23,7 +23,7 @@
       "properties": {
         "titulo_itt": { "type": "string", "description": "Nome como aparece na planilha da ONG" },
         "titulo_alura": { "type": "string", "description": "Nome atual na Alura; pode divergir do anterior" },
-        "url": { "type": "string", "format": "uri" },
+        "url": { "type": "string", "minLength": 1, "description": "URL pública da ementa ou, quando não há página publicada, caminho relativo para o texto salvo em ementas/" },
         "carga_horaria_h": { "type": "integer", "minimum": 1 },
         "n_cursos": { "type": "integer", "minimum": 1 },
         "publico_alvo": { "type": "string" },
@@ -82,10 +82,10 @@
         "properties": {
           "id": { "type": "string", "pattern": "^(PR|FE|UX|DO)[0-9]{2}\\.[0-9]{2}$" },
           "titulo": { "type": "string" },
-          "url": { "type": "string", "format": "uri" },
+          "url": { "type": "string", "minLength": 1, "description": "URL pública do curso ou caminho relativo para a ementa salva em ementas/" },
           "carga_horaria_h": { "type": "integer", "minimum": 1 },
-          "n_atividades": { "type": "integer", "minimum": 1 },
-          "atualizado_em": { "type": "string", "format": "date", "description": "Data em que a Alura atualizou o curso" },
+          "n_atividades": { "type": ["integer", "null"], "minimum": 1, "description": "Nulo quando a fonte não declara o número de atividades" },
+          "atualizado_em": { "type": ["string", "null"], "format": "date", "description": "Data em que a Alura atualizou o curso; nulo quando a fonte não a declara" },
           "etapa_da_trilha": { "type": "string", "description": "Nome do passo da trilha a que o curso pertence" },
           "modulos": { "type": "array", "minItems": 1, "items": { "type": "string" } },
           "conceitos_chave": { "type": "array", "minItems": 1, "items": { "type": "string" } },
